@@ -132,7 +132,7 @@ class ContextProvider():
 
     def start_cache(self):
         try:
-            route = '%s:%s' % (self.cache_server_ip, self.cache_server_port)
+            route = '%s:%s' % (self.cache_server_url, self.cache_server_port)
             return memcache.Client([route], debug=0)
         except:
             return None
