@@ -1,5 +1,7 @@
 from flask import Flask, request
 import xml.etree.ElementTree as ET
+import memcache
+
 
 class ContextProvider():
     def __init__(self):
@@ -9,6 +11,11 @@ class ContextProvider():
         self.orion_data = None
         self.app = None
         self.max_cache_time = 360
+        self.ip_cache = '127.0.0.1'
+        self.port_cache = '11211'
+        self.max_cache_time = 360
+        self.cache = self.start_cache()
+
 
     def run(self, route, funct):
         self.route = route
@@ -18,17 +25,20 @@ class ContextProvider():
 
         @self.app.route(self.route, methods=['POST'])
         def __provider_task__():
+            print request.data
             self.c_type = request.headers['Content-Type']
             self.orion_data = self.__get_orion_data__(request)
             service_provider_response = self.function()
             response = self.__parse_response__(service_provider_response)
             return response
+
         self.app.run(host='127.0.0.1', port=1026)
 
     def __get_orion_data__(self, cb_request):
 
         if self.c_type == 'application/json':
             orion_data = cb_request.json
+
         else:
             try:
                 query_context_request = ET.fromstring(cb_request.data)
@@ -49,16 +59,17 @@ class ContextProvider():
                     orion_data = {'entities': orion_id}
 
             except ET.ParseError:
+
                 return 0
 
         return orion_data
 
-    def __parse_response__(self,dm_entity_List):
+    def __parse_response__(self, dm_entity_list):
         try:
-            if len(dm_entity_List):
+            if len(dm_entity_list) != 0:
                 query_context_response = ET.Element('queryContextResponse')
                 context_response_list = ET.SubElement(query_context_response, 'contextResponseList')
-                for entity in dm_entity_List:
+                for entity in dm_entity_list:
                     context_element_response = ET.SubElement(context_response_list, 'contextElementResponse')
                     context_element = ET.SubElement(context_element_response, 'contextElement')
                     entity_id = ET.SubElement(context_element, 'entityId', {"type": entity['type'], 'isPattern': entity['isPattern']})
@@ -110,3 +121,31 @@ class ContextProvider():
             reason_phrase.text = 'No context elements found'
 
         return ET.tostring(query_context_response, 'utf-8')
+
+    def start_cache(self):
+        try:
+            route = '%s:%s' % (self.ip_cache, self.port_cache)
+            return memcache.Client([route], debug=0)
+        except:
+            return None
+
+    def check_cache(self, key):
+        try:
+            if self.cache is not None:
+                return self.cache.get(key)
+            else:
+                return None
+        except:
+            return None
+
+    def update_cache(self, key, data, life_time):
+        try:
+            if self.cache is not None:
+                if len(key) > 250:
+                    raise SyntaxError('Key too long')
+
+                self.cache.set(key, data, time=int(life_time))
+            else:
+                return None
+        except:
+            return None

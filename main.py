@@ -3,22 +3,40 @@ import functions as f
 
 cp = CP.ContextProvider()
 
-def get_data_function():
-    response_format = 'xml'
-    max_cache_time = 360
 
+def get_data_function():
 ########################################
     entities = cp.orion_data['entities']
-    attributes = cp.orion_data['attributes']
+    if 'attributes' in cp.orion_data:
+        attributes = cp.orion_data['attributes']
+        print attributes
+
 ########################################
-
-    entitiy_id = []
+    entity_id = []
     for i in range(len(entities)):
-        entitiy_id.append(entities[i]['id'])
-    _id = sorted(f.select_ids(entitiy_id))
+        entity_id.append(entities[i]['id'])
+    _id = sorted(f.select_ids(entity_id))
 
-    sevici_response = f.request_sevici(_id, max_time=max_cache_time)
 
-    return sevici_response
+    if _id == range(_id[0], _id[len(_id)-1]+1):
+        key = "[range%s-%s]" % (str(_id[0]), str(_id[len(_id)-1]))
+    else:
+        key = "%s" % str(_id)
+
+    if 'attributes' in cp.orion_data:
+        key = key,"/%s" % str(attributes)
+
+
+    key = key.replace(" ", "").replace("'", "")
+    cached_response = cp.check_cache(key)
+    if cached_response is None:
+        sevici_response = f.request_sevici(_id, max_time=cp.max_cache_time)
+        cp.update_cache(key, sevici_response[0], sevici_response[1])
+        return sevici_response[0]
+    else:
+        print "cached_response"
+        return cached_response
+
+
 
 cp.run('/v1/queryContext',get_data_function)

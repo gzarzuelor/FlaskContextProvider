@@ -1,13 +1,10 @@
 __author__ = 'b.gzr'
 import re
-import csv
 import time
 import json
 import urllib2
 import requests
-# import memcache
 import unicodedata
-from flask import jsonify
 from xml.dom import minidom
 import xml.etree.ElementTree as ET
 import DataManager as DM
@@ -90,7 +87,7 @@ def select_ids(orion_ids):
         pattern = "[urnSevilac:.*]*"
         a = len(re.match(pattern, orion_ids[i]).group())
         pattern_id = orion_ids[i][a:]+"$"
-        clean_pattern = pattern_id.replace(".","").replace("*","")
+        clean_pattern = pattern_id.replace(".", "").replace("*", "")
         if len(clean_pattern) <= 4:
             for e in range(1, 261):
                 if re.match(pattern_id, str(e)):
@@ -115,7 +112,7 @@ def get_sevici_data(sevici_id):
     return fields
 
 
-def request_data(id_):
+def request_sevici(id_, max_time=1):
     """
     Parses the response in xml format
         :param id_: entity id number
@@ -128,7 +125,7 @@ def request_data(id_):
             fields = get_sevici_data(id_[i])
             _id = "urn::Sevilla:Sevici%s" % str(id_[i])
 
-            entity.entity_add(_id, 'sevici',ispattern='false')
+            entity.entity_add(_id, 'sevici', ispattern='false')
             for s in fields:
                 if s.tag == "updated":
                     s.tag = "timeinstant"
@@ -150,7 +147,7 @@ def request_data(id_):
                     if station['number'] == str(id_[i]):
                         pos = station['latitude']+","+station['longitude']
                         entity.attribute.attribute_add('position', 'coords', pos)
-                        entity.attribute.metadata.metadata_add('location','string', 'WGS84')
+                        entity.attribute.metadata.metadata_add('location', 'string', 'WGS84')
                         entity.attribute.add_metadatas_to_attrib('position')
                         entity.attribute.metadata.metadata_list_purge()
 
@@ -161,43 +158,12 @@ def request_data(id_):
         entity.entity_list_purge()
         l_time = (time.time() - max(life_time))
 
+        if l_time < 1:
+            l_time = 1
+        else:
+            l_time = max_time - l_time
+
         return [response_data, l_time]
+
     except:
-        return [[], 359]
-
-
-def request_sevici(_id, max_time=1):
-    """
-    Manages the cache, and chooses the request function type
-    if it is required
-        :param _id: entity id number
-        :param accept: response format
-        :param max_time: default max cache life time
-        :rtype : str
-    """
-    # mc = memcache.Client(['127.0.0.1:11211'], debug=0)
-    # cache = True
-    # res = ''
-
-    # if _id == range(_id[0], _id[len(_id)-1]+1):
-    #     key = "[range%s-%s]%s" % (str(_id[0]), str(_id[len(_id)-1]), accept)
-    #
-    # else:
-    #     key = "%s%s" % (str(_id), accept)
-    #     key = key.replace(" ", "").replace("'", "")
-    #     if len(key) > 250:
-    #         cache = False
-    # if cache:
-    #     res = mc.get(key)
-    #
-    # if res is None:
-    re_sev = request_data(_id)
-    res = re_sev[0]
-        # if re_sev[1] < 1:
-        #     exp_time = 1
-        # else:
-        #     exp_time = max_time - re_sev[1]
-        # if cache:
-        #     mc.set(key, res, time=int(exp_time))
-
-    return res
+        return [[], 1]
