@@ -7,7 +7,7 @@ import memcache
 class ContextProvider():
     def __init__(self):
         config = ConfigParser.ConfigParser()
-        config.read("./file/config.ini")
+        config.read("./config.ini")
 
         self.provider_url = config.get('PROVIDER', 'provider_url')
         self.provider_port = int(config.get('PROVIDER', 'provider_port'))

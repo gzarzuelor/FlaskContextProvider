@@ -31,7 +31,6 @@ def get_data_function():
         cp.update_cache(key, sevici_response[0], sevici_response[1])
         return sevici_response[0]
     else:
-        print "cached response"
         return cached_response
 
 cp.run('/v1/queryContext',get_data_function)
