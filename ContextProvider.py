@@ -16,7 +16,6 @@ class ContextProvider():
         self.max_cache_time = 360
         self.cache = self.start_cache()
 
-
     def run(self, route, funct):
         self.route = route
         self.function = funct
@@ -25,7 +24,6 @@ class ContextProvider():
 
         @self.app.route(self.route, methods=['POST'])
         def __provider_task__():
-            print request.data
             self.c_type = request.headers['Content-Type']
             self.orion_data = self.__get_orion_data__(request)
             service_provider_response = self.function()
@@ -59,7 +57,6 @@ class ContextProvider():
                     orion_data = {'entities': orion_id}
 
             except ET.ParseError:
-
                 return 0
 
         return orion_data
@@ -78,7 +75,7 @@ class ContextProvider():
                     if 'attributes' in entity:
                         context_attribute_list = ET.SubElement(context_element, 'contextAttributeList')
                         for attribute in entity['attributes']:
-                            if not 'attributes' in self.orion_data or attribute['name'] in self.orion_data['attributes']:
+                            if not 'attributes' in self.orion_data or ('attributes' in self.orion_data and attribute['name'] in self.orion_data['attributes']):
                                 context_attribute = ET.SubElement(context_attribute_list, 'contextAttribute')
                                 name = ET.SubElement(context_attribute, 'name')
                                 name.text = attribute['name']

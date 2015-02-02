@@ -3,15 +3,13 @@ import functions as f
 
 cp = CP.ContextProvider()
 
-
 def get_data_function():
 ########################################
     entities = cp.orion_data['entities']
     if 'attributes' in cp.orion_data:
         attributes = cp.orion_data['attributes']
-        print attributes
-
 ########################################
+
     entity_id = []
     for i in range(len(entities)):
         entity_id.append(entities[i]['id'])
@@ -24,8 +22,7 @@ def get_data_function():
         key = "%s" % str(_id)
 
     if 'attributes' in cp.orion_data:
-        key = key,"/%s" % str(attributes)
-
+        key = "%s/%s" % (key, str(attributes))
 
     key = key.replace(" ", "").replace("'", "")
     cached_response = cp.check_cache(key)
@@ -34,9 +31,6 @@ def get_data_function():
         cp.update_cache(key, sevici_response[0], sevici_response[1])
         return sevici_response[0]
     else:
-        print "cached_response"
         return cached_response
-
-
 
 cp.run('/v1/queryContext',get_data_function)
