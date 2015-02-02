@@ -1,19 +1,30 @@
 from flask import Flask, request
 import xml.etree.ElementTree as ET
+import ConfigParser
 import memcache
 
 
 class ContextProvider():
     def __init__(self):
+        config = ConfigParser.ConfigParser()
+        config.read("./file/config.ini")
+
+        self.provider_url = config.get('PROVIDER', 'provider_url')
+        self.provider_port = int(config.get('PROVIDER', 'provider_port'))
+
+
+        self.cache_server_url = config.get('CACHE', 'cache_server_ip')
+        self.cache_server_port = config.get('CACHE', 'cache_server_port')
+        self.max_cache_time = int(config.get('CACHE', 'max_cache_time'))
+
+
         self.c_type = None
         self.route = None
         self.function = None
         self.orion_data = None
         self.app = None
-        self.max_cache_time = 360
-        self.ip_cache = '127.0.0.1'
-        self.port_cache = '11211'
-        self.max_cache_time = 360
+
+
         self.cache = self.start_cache()
 
     def run(self, route, funct):
@@ -30,7 +41,7 @@ class ContextProvider():
             response = self.__parse_response__(service_provider_response)
             return response
 
-        self.app.run(host='127.0.0.1', port=1026)
+        self.app.run(host=self.provider_url, port=self.provider_port)
 
     def __get_orion_data__(self, cb_request):
 
@@ -121,7 +132,7 @@ class ContextProvider():
 
     def start_cache(self):
         try:
-            route = '%s:%s' % (self.ip_cache, self.port_cache)
+            route = '%s:%s' % (self.cache_server_ip, self.cache_server_port)
             return memcache.Client([route], debug=0)
         except:
             return None
