@@ -81,20 +81,11 @@ def load_stations():
         return 0
 
 
-def select_ids(orion_ids):
-    n = []
-    for i in range(len(orion_ids)):
-        pattern = "[urnSevilac:.*]*"
-        a = len(re.match(pattern, orion_ids[i]).group())
-        pattern_id = orion_ids[i][a:]+"$"
-        clean_pattern = pattern_id.replace(".", "").replace("*", "")
-        if len(clean_pattern) <= 4:
-            for e in range(1, 261):
-                if re.match(pattern_id, str(e)):
-                    n.append(e)
-    if len(n) == 0:
-        n = [0]
-    return n
+def select_id(orion_id):
+
+    pattern = "urn::Sevilla:Sevici"
+    a = len(re.match(pattern, orion_id).group())
+    return orion_id[a:]
 
 
 def get_sevici_data(sevici_id):
@@ -103,7 +94,7 @@ def get_sevici_data(sevici_id):
         :param sevici_id: sevici id number
         :rtype : list
     """
-    url = 'http://www.sevici.es/service/stationdetails/seville/'+str(sevici_id)
+    url = 'http://www.sevici.es/service/stationdetails/seville/'+sevici_id
     response = requests.get(url)
     response.raise_for_status()
     root = ET.fromstring(response.text)
@@ -112,47 +103,47 @@ def get_sevici_data(sevici_id):
     return fields
 
 
-def request_sevici(id_, max_time=1):
+def request_sevici(_id, max_time=1):
     """
     Parses the response in xml format
         :param id_: entity id number
         :rtype : list
     """
     entity = DM.Entity()
-    life_time = [time.time()]
+    id_ = select_id(_id)
+
+    life_time = []
     try:
-        for i in range(len(id_)):
-            fields = get_sevici_data(id_[i])
-            _id = "urn::Sevilla:Sevici%s" % str(id_[i])
+        fields = get_sevici_data(id_)
+        entity.entity_add(_id, 'sevici', ispattern='false')
 
-            entity.entity_add(_id, 'sevici', ispattern='false')
-            for s in fields:
-                if s.tag == "updated":
-                    s.tag = "timeinstant"
-                    life_time.append(float(s.text))
-                    s.text = norm_time(s.text)
-                    fieldtype = "urn:x-ogc:def:trs:IDAS:1.0:ISO8601"
-                else:
-                    fieldtype = "integer"
+        for s in fields:
+            if s.tag == "updated":
+                s.tag = "timeinstant"
+                life_time.append(float(s.text))
+                s.text = norm_time(s.text)
+                fieldtype = "urn:x-ogc:def:trs:IDAS:1.0:ISO8601"
+            else:
+                fieldtype = "integer"
 
-                entity.attribute.attribute_add(s.tag, fieldtype, s.text)
+            entity.attribute.attribute_add(s.tag, fieldtype, s.text)
 
+        stations = load_stations()
+        if stations == 0:
+            make_stations_jsonfile()
             stations = load_stations()
-            if stations == 0:
-                make_stations_jsonfile()
-                stations = load_stations()
 
-            if stations != 0:
-                for station in stations:
-                    if station['number'] == str(id_[i]):
-                        pos = station['latitude']+","+station['longitude']
-                        entity.attribute.attribute_add('position', 'coords', pos)
-                        entity.attribute.metadata.metadata_add('location', 'string', 'WGS84')
-                        entity.attribute.add_metadatas_to_attrib('position')
-                        entity.attribute.metadata.metadata_list_purge()
+        if stations != 0:
+            for station in stations:
+                if station['number'] == str(id_):
+                    pos = station['latitude']+","+station['longitude']
+                    entity.attribute.attribute_add('position', 'coords', pos)
+                    entity.attribute.metadata.metadata_add('location', 'string', 'WGS84')
+                    entity.attribute.add_metadatas_to_attrib('position')
+                    entity.attribute.metadata.metadata_list_purge()
 
-            entity.add_attributes_to_entity(_id)
-            entity.attribute.attribute_list_purge()
+        entity.add_attributes_to_entity(_id)
+        entity.attribute.attribute_list_purge()
 
         response_data = entity.get_entity_list()[:]
         entity.entity_list_purge()
@@ -162,7 +153,7 @@ def request_sevici(id_, max_time=1):
             l_time = 1
         else:
             l_time = max_time - l_time
-
+        return [[], 1]
         return [response_data, l_time]
 
     except:

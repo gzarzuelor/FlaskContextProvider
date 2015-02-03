@@ -54,12 +54,12 @@ class Metadata():
             :param metadata_list: metadata list
             :rtype : list
         """
-        for i in metadata_list:
-            for element in i:
+        for i in range(len(metadata_list)):
+            for element in metadata_list[i]:
                 if element not in ['name', 'type', 'value']:
                     msg = "Metadata.metadata_list_add(): List was not added due to an incorrect format."
                     raise ContextProviderError(msg)
-        self._metadata_list = metadata_list[:]
+            self._metadata_list.append(metadata_list)
         return self.get_metadata_list()[:]
 
     def metadata_purge(self, metadata_name):
@@ -134,13 +134,13 @@ class Attributes():
             :param attribute_list: attribute list
             :rtype : list
         """
-        for i in attribute_list:
-            for element in i:
+        for i in range(len(attribute_list)):
+            for element in attribute_list[i]:
                 if element not in ['name', 'type', 'value', 'metadatas', 'isDomain']:
                     msg = "Entity.attribute_list_add(): List was not added due to an incorrect format."
                     raise ContextProviderError(msg)
+            self._attribute_list.append(attribute_list)
 
-        self._attribute_list = attribute_list[:]
         return self.get_attribute_list()[:]
 
     def attribute_purge(self, attribute_name):
@@ -230,13 +230,12 @@ class Entity():
             :param entity_list: entity list
             :rtype : list
         """
-        for i in entity_list:
-            for element in i:
+        for i in range(len(entity_list)):
+            for element in entity_list[i]:
                 if element not in ['id', 'type', 'isPattern', 'attributes']:
                     msg = "Entity.check_entity(): Entity list was not added due to an incorrect format."
                     raise ContextProviderError(msg)
-
-        self.__entity_list = entity_list[:]
+            self.__entity_list.append(entity_list[i])
 
         return self.get_entity_list()[:]
 

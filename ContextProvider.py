@@ -1,8 +1,42 @@
 from flask import Flask, request
 import xml.etree.ElementTree as ET
+import re
+import json
 import ConfigParser
 import memcache
 
+
+def make_registry_json():
+    entities = []
+    for i in range(1, 261):
+        entities.append('urn::Sevilla:Sevici%s' % str(i))
+
+    registry = {'entities':entities}
+
+    with open('file/registry.json', 'w') as jsonfile:
+        jregistry = json.dumps(registry)
+        jsonfile.write(jregistry)
+
+def load_registry_json():
+    try:
+        with open('file/registry.json', 'r') as registry_file:
+            registry = json.loads(registry_file.read())
+        return registry
+    except Exception:
+        return 0
+
+
+def check_entity_registration(_id):
+    entity_list = []
+    registry = load_registry_json()
+    entities = registry['entities']
+    for i in range(len(entities)):
+        pattern_id = "%s$" % _id
+        match = re.match(pattern_id, entities[i])
+        if match is not None:
+            entity_list.append(entities[i])
+
+    return entity_list
 
 class ContextProvider():
     def __init__(self):
@@ -12,18 +46,15 @@ class ContextProvider():
         self.provider_url = config.get('PROVIDER', 'provider_url')
         self.provider_port = int(config.get('PROVIDER', 'provider_port'))
 
-
         self.cache_server_url = config.get('CACHE', 'cache_server_ip')
         self.cache_server_port = config.get('CACHE', 'cache_server_port')
         self.max_cache_time = int(config.get('CACHE', 'max_cache_time'))
-
 
         self.c_type = None
         self.route = None
         self.function = None
         self.orion_data = None
         self.app = None
-
 
         self.cache = self.start_cache()
 
@@ -44,19 +75,36 @@ class ContextProvider():
         self.app.run(host=self.provider_url, port=self.provider_port)
 
     def __get_orion_data__(self, cb_request):
-
+        entity_list = []
         if self.c_type == 'application/json':
-            orion_data = cb_request.json
+            entities = cb_request.json['entities']
+            for i in range(len(entities)):
+                entity = entities[i]
+                if entity['isPattern'] == 'true':
+                    entities_list = check_entity_registration(entity['id'])
+                    for i in range(len(entities_list)):
+                        entity_list.append({'id': entities_list[i], 'type': entity['type'], 'isPattern': 'false'})
+                else:
+                    entity_list.append({'id': entity['id'], 'type': entity['type'], 'isPattern': 'false'})
+
+            cb_request.json['entities'] = entity_list
+            return cb_request.json
 
         else:
             try:
                 query_context_request = ET.fromstring(cb_request.data)
                 entity_ids = query_context_request.findall('.//entityIdList//entityId')
+
                 orion_id = []
                 for entity_id in entity_ids:
                     entity_dict = entity_id.attrib
                     entity_dict['id'] = entity_id.find('.//id').text
-                    orion_id.append(entity_dict)
+                    if entity_dict['isPattern'] == 'true':
+                        entities = check_entity_registration(entity_dict['id'])
+                        for i in range(len(entities)):
+                            orion_id.append({'id': entities[i], 'type': entity_dict['type'], 'isPattern': 'false'})
+                    else:
+                        orion_id.append(entity_dict)
                 query_context_request = ET.fromstring(cb_request.data)
                 attributes = query_context_request.findall('.//attributeList//attribute')
                 if len(attributes) != 0:
@@ -135,12 +183,13 @@ class ContextProvider():
             route = '%s:%s' % (self.cache_server_url, self.cache_server_port)
             return memcache.Client([route], debug=0)
         except:
+
             return None
 
     def check_cache(self, key):
         try:
             if self.cache is not None:
-                return self.cache.get(key)
+                return self.cache.get(str(key))
             else:
                 return None
         except:
@@ -152,7 +201,7 @@ class ContextProvider():
                 if len(key) > 250:
                     raise SyntaxError('Key too long')
 
-                self.cache.set(key, data, time=int(life_time))
+                return self.cache.set(str(key), data, time=life_time)
             else:
                 return None
         except:
