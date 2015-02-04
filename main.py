@@ -2,7 +2,9 @@ import ContextProvider as CP
 import DataManager as DM
 import functions as f
 
+
 cp = CP.ContextProvider()
+
 
 def get_data_function():
     ############################################
@@ -23,6 +25,7 @@ def get_data_function():
             sevici_response = f.request_sevici(entity_id_list[e], max_time=cp.max_cache_time)
             if len(sevici_response[0]) != 0:
                 response_data.entity_list_add(sevici_response[0])
+
                 cp.update_cache(entity_id_list[e], sevici_response[0], sevici_response[1])
         else:
             response_data.entity_list_add(cached_response)

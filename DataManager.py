@@ -2,17 +2,9 @@ __author__ = 'b.gzr'
 import warnings
 
 
-class ContextProviderError():
-    def __init__(self, message, level='e'):
-        """
-        Exception raised for errors.
-            :param message: input expression in which the error occurred
-            :param level: warning level
-        """
-        if level == 'w':
-            warnings.warn(message)
-        else:
-            warnings.warn(message)
+
+def data_manager_error(message):
+    warnings.warn(message)
 
 
 class Metadata():
@@ -43,7 +35,7 @@ class Metadata():
         for i in self.get_metadata_list():
             if i['name'] == name:
                 msg = "Metadata.metadata_add(): Metadata name %s is already in use" % name
-                raise ContextProviderError(msg)
+                data_manager_error(msg)
         self.get_metadata_list().append(metadata_dict)
 
         return self.get_metadata_list()[:]
@@ -55,11 +47,15 @@ class Metadata():
             :rtype : list
         """
         for i in range(len(metadata_list)):
+            z = 0
             for element in metadata_list[i]:
                 if element not in ['name', 'type', 'value']:
+                    z += 1
                     msg = "Metadata.metadata_list_add(): List was not added due to an incorrect format."
-                    raise ContextProviderError(msg)
-            self._metadata_list.append(metadata_list)
+                    data_manager_error(msg)
+            if z == 0:
+                self._metadata_list.append(metadata_list[i])
+
         return self.get_metadata_list()[:]
 
     def metadata_purge(self, metadata_name):
@@ -75,7 +71,7 @@ class Metadata():
                 z += 1
         if z == 0:
             msg = "Metadata.metadata_purge(): Metadata name %s do not exist" % metadata_name
-            raise ContextProviderError(msg)
+            data_manager_error(msg)
 
         return self.get_metadata_list()[:]
 
@@ -122,7 +118,7 @@ class Attributes():
         for i in self.get_attribute_list():
             if i['name'] == name:
                 msg = "Attributes.attribute_add(): Attribute name %s is already in use" % name
-                raise ContextProviderError(msg)
+                data_manager_error(msg)
 
         self.get_attribute_list().append(attribute_dict)
 
@@ -135,11 +131,14 @@ class Attributes():
             :rtype : list
         """
         for i in range(len(attribute_list)):
+            z = 0
             for element in attribute_list[i]:
                 if element not in ['name', 'type', 'value', 'metadatas', 'isDomain']:
-                    msg = "Entity.attribute_list_add(): List was not added due to an incorrect format."
-                    raise ContextProviderError(msg)
-            self._attribute_list.append(attribute_list)
+                    z += 1
+                    msg = "Attribute.attribute_list_add(): Element %s is not part of an attribute list." % element
+                    data_manager_error(msg)
+            if z == 0:
+                self._attribute_list.append(attribute_list[i])
 
         return self.get_attribute_list()[:]
 
@@ -156,7 +155,7 @@ class Attributes():
                 z += 1
         if z == 0:
             msg = "Attributes.attribute_purge(): Attribute name %s do not exist" % attribute_name
-            raise ContextProviderError(msg)
+            data_manager_error(msg)
 
         return self.get_attribute_list()[:]
 
@@ -174,7 +173,7 @@ class Attributes():
         """
         if len(self.metadata.get_metadata_list()) == 0:
             msg = "Attributes.add_metadatas_to_attrib(): Empty metadata_list was passed to the function."
-            raise ContextProviderError(msg)
+            data_manager_error(msg)
 
         else:
             z = 0
@@ -184,7 +183,7 @@ class Attributes():
                     z += 1
             if z == 0:
                 msg = "Attributes.add_metadatas_to_attrib(): Attribute name %s do not exist" % attribute_name
-                raise ContextProviderError(msg)
+                data_manager_error(msg)
 
             return self.get_attribute_list()[:]
 
@@ -218,7 +217,7 @@ class Entity():
         for i in self.get_entity_list():
             if i['id'] == entity_id:
                 msg = "Entity.entity_add(): Entity was not added, id %s already exists" % entity_id
-                raise ContextProviderError(msg)
+                data_manager_error(msg)
 
         self.get_entity_list().append(entity_dict)
 
@@ -230,12 +229,16 @@ class Entity():
             :param entity_list: entity list
             :rtype : list
         """
+
         for i in range(len(entity_list)):
+            z = 0
             for element in entity_list[i]:
                 if element not in ['id', 'type', 'isPattern', 'attributes']:
-                    msg = "Entity.check_entity(): Entity list was not added due to an incorrect format."
-                    raise ContextProviderError(msg)
-            self.__entity_list.append(entity_list[i])
+                    msg = "Entity.entity_list_add(): Element %s is not part of an entity list." % element
+                    data_manager_error(msg)
+                    z += 1
+            if z == 0:
+                self.__entity_list.append(entity_list[i])
 
         return self.get_entity_list()[:]
 
@@ -252,7 +255,7 @@ class Entity():
                 z += 1
         if z == 0:
             msg = "Entity.entity_purge(): Entity %s do not exist" % entity_id
-            raise ContextProviderError(msg)
+            data_manager_error(msg)
 
         return self.get_entity_list()[:]
 
@@ -270,7 +273,7 @@ class Entity():
         """
         if len(self.attribute.get_attribute_list()) == 0:
             msg = "Element.add_entity_attrib(): Empty attribute_list passed to the function"
-            raise ContextProviderError(msg)
+            data_manager_error(msg)
 
         else:
             z = 0
@@ -280,6 +283,6 @@ class Entity():
                     z += 1
             if z == 0:
                 msg = "Entity.add_entity_attrib(): Entity %s do not exist" % entity_id
-                raise ContextProviderError(msg)
+                data_manager_error(msg)
 
             return self.get_entity_list()[:]

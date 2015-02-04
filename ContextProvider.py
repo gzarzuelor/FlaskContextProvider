@@ -6,23 +6,26 @@ import ConfigParser
 import memcache
 
 
+
+
 def make_registry_json():
     entities = []
     for i in range(1, 261):
         entities.append('urn::Sevilla:Sevici%s' % str(i))
 
-    registry = {'entities':entities}
+    registry = {'entities': entities}
 
     with open('file/registry.json', 'w') as jsonfile:
         jregistry = json.dumps(registry)
         jsonfile.write(jregistry)
+
 
 def load_registry_json():
     try:
         with open('file/registry.json', 'r') as registry_file:
             registry = json.loads(registry_file.read())
         return registry
-    except Exception:
+    except IOError:
         return 0
 
 
@@ -38,17 +41,19 @@ def check_entity_registration(_id):
 
     return entity_list
 
+
 class ContextProvider():
     def __init__(self):
+
         config = ConfigParser.ConfigParser()
         config.read("./config.ini")
 
         self.provider_url = config.get('PROVIDER', 'provider_url')
         self.provider_port = int(config.get('PROVIDER', 'provider_port'))
-
         self.cache_server_url = config.get('CACHE', 'cache_server_ip')
         self.cache_server_port = config.get('CACHE', 'cache_server_port')
         self.max_cache_time = int(config.get('CACHE', 'max_cache_time'))
+
 
         self.c_type = None
         self.route = None
@@ -82,8 +87,8 @@ class ContextProvider():
                 entity = entities[i]
                 if entity['isPattern'] == 'true':
                     entities_list = check_entity_registration(entity['id'])
-                    for i in range(len(entities_list)):
-                        entity_list.append({'id': entities_list[i], 'type': entity['type'], 'isPattern': 'false'})
+                    for e in range(len(entities_list)):
+                        entity_list.append({'id': entities_list[e], 'type': entity['type'], 'isPattern': 'false'})
                 else:
                     entity_list.append({'id': entity['id'], 'type': entity['type'], 'isPattern': 'false'})
 
@@ -183,7 +188,6 @@ class ContextProvider():
             route = '%s:%s' % (self.cache_server_url, self.cache_server_port)
             return memcache.Client([route], debug=0)
         except:
-
             return None
 
     def check_cache(self, key):
