@@ -153,7 +153,7 @@ def request_sevici(_id, max_time=1):
             l_time = 1
         else:
             l_time = max_time - l_time
-        return [[], 1]
+
         return [response_data, l_time]
 
     except:
