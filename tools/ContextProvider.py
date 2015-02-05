@@ -13,14 +13,14 @@ def make_registry_json():
 
     registry = {'entities': entities}
 
-    with open('file/registry.json', 'w') as jsonfile:
+    with open('./etc/FlaskContextProvider/registry.json', 'w') as jsonfile:
         jregistry = json.dumps(registry)
         jsonfile.write(jregistry)
 
 
 def load_registry_json():
     try:
-        with open('file/registry.json', 'r') as registry_file:
+        with open('./etc/FlaskContextProvider/registry.json', 'r') as registry_file:
             registry = json.loads(registry_file.read())
         return registry
     except IOError:
@@ -42,7 +42,7 @@ def check_entity_registration(_id):
 
 class ContextProvider():
     def __init__(self):
-
+        make_registry_json()
         config = ConfigParser.ConfigParser()
         config.read("./etc/FlaskContextProvider/FlaskContextProvider.ini")
 
