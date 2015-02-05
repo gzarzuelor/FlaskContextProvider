@@ -7,7 +7,6 @@ import memcache
 
 
 
-
 def make_registry_json():
     entities = []
     for i in range(1, 261):
@@ -46,7 +45,7 @@ class ContextProvider():
     def __init__(self):
 
         config = ConfigParser.ConfigParser()
-        config.read("./config.ini")
+        config.read("./etc/FlaskContextProvider/FlaskContextProvider.ini")
 
         self.provider_url = config.get('PROVIDER', 'provider_url')
         self.provider_port = int(config.get('PROVIDER', 'provider_port'))
