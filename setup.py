@@ -9,5 +9,5 @@ setup(
     author='Guillermo',
     author_email='gzarrub@gmail.com',
     description='',
-    install_requires=['flask', 'python-memcached']
+    install_requires=['flask', 'python-memcached', 'requests']
 )

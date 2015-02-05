@@ -1,48 +1,13 @@
 import xml.etree.ElementTree as ET
 from flask import Flask, request
+import registry as reg
 import ConfigParser
 import memcache
-import json
-import re
 
-
-def make_registry_json():
-    entities = []
-    for i in range(1, 261):
-        entities.append('urn::Sevilla:Sevici%s' % str(i))
-
-    registry = {'entities': entities}
-
-    with open('./etc/FlaskContextProvider/registry.json', 'w') as jsonfile:
-        jregistry = json.dumps(registry)
-        jsonfile.write(jregistry)
-
-
-def load_registry_json():
-    try:
-        with open('./etc/FlaskContextProvider/registry.json', 'r') as registry_file:
-            registry = json.loads(registry_file.read())
-        return registry
-    except IOError:
-        return 0
-
-
-def check_entity_registration(_id):
-    entity_list = []
-    registry = load_registry_json()
-    entities = registry['entities']
-    for i in range(len(entities)):
-        pattern_id = "%s$" % _id
-        match = re.match(pattern_id, entities[i])
-        if match is not None:
-            entity_list.append(entities[i])
-
-    return entity_list
 
 
 class ContextProvider():
     def __init__(self):
-        make_registry_json()
         config = ConfigParser.ConfigParser()
         config.read("./etc/FlaskContextProvider/FlaskContextProvider.ini")
 
@@ -64,7 +29,6 @@ class ContextProvider():
     def run(self, route, funct):
         self.route = route
         self.function = funct
-
         self.app = Flask('ContextProvider')
 
         @self.app.route(self.route, methods=['POST'])
@@ -84,7 +48,7 @@ class ContextProvider():
             for i in range(len(entities)):
                 entity = entities[i]
                 if entity['isPattern'] == 'true':
-                    entities_list = check_entity_registration(entity['id'])
+                    entities_list = reg.check_entity_registration(entity['type'], entity['id'])
                     for e in range(len(entities_list)):
                         entity_list.append({'id': entities_list[e], 'type': entity['type'], 'isPattern': 'false'})
                 else:
@@ -103,7 +67,7 @@ class ContextProvider():
                     entity_dict = entity_id.attrib
                     entity_dict['id'] = entity_id.find('.//id').text
                     if entity_dict['isPattern'] == 'true':
-                        entities = check_entity_registration(entity_dict['id'])
+                        entities = reg.check_entity_registration(entity_dict['type'], entity_dict['id'])
                         for i in range(len(entities)):
                             orion_id.append({'id': entities[i], 'type': entity_dict['type'], 'isPattern': 'false'})
                     else:
