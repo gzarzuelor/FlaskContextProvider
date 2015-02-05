@@ -1,10 +1,9 @@
-from flask import Flask, request
 import xml.etree.ElementTree as ET
-import re
-import json
+from flask import Flask, request
 import ConfigParser
 import memcache
-
+import json
+import re
 
 
 def make_registry_json():

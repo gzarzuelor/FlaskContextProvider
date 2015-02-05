@@ -2,7 +2,6 @@ __author__ = 'b.gzr'
 import warnings
 
 
-
 def data_manager_error(message):
     warnings.warn(message)
 

@@ -1,0 +1,8 @@
+#IntelJ Idea
+.idea/
+
+#virtualenv
+.venv/
+
+#Python
+*.pyc

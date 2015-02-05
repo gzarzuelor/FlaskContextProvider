@@ -1,13 +1,13 @@
 __author__ = 'b.gzr'
-import re
-import time
-import json
-import urllib2
-import requests
-import unicodedata
-from xml.dom import minidom
 import xml.etree.ElementTree as ET
-import DataManager as DM
+import tools.DataManager as DM
+from xml.dom import minidom
+import unicodedata
+import requests
+import urllib2
+import json
+import time
+import re
 
 
 def norm_data(s):

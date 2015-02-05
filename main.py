@@ -1,5 +1,5 @@
-import ContextProvider as CP
-import DataManager as DM
+import tools.ContextProvider as CP
+import tools.DataManager as DM
 import functions as f
 
 
