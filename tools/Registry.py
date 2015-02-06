@@ -54,27 +54,33 @@ class Registry():
                 else:
                     headers = {'Content-Type': 'application/json', 'Accept': 'application/json'}
 
-                registry = self.load_registry_json()
                 payload = DM.Entity()
-                reg_id, reg_types, reg_attrb ,reg_attrb_val, reg_attrb_type = self.load_registry_file()
+                regs, reg_id, reg_types, reg_attrb, reg_attrb_type = self.load_registry_file()
 
-                reg_entities = {}
                 for i in range(len(reg_id)):
                     for e in range(len(reg_id[i])):
                         payload.entity_add(reg_id[i][e], reg_types[i])
                     data = json.dumps({'entities': payload.get_entity_list()})
                     response = requests.post(url, headers=headers, data=data)
-
+                    z = 0
                     if 'contextRegistrationResponses' in response.json():
                         responses = response.json()['contextRegistrationResponses']
-                        for i in range(len(responses)):
-                            entities = responses[i]['contextRegistration']['entities']
-                            for e in range(len(entities)):
-                                reg_entities[reg_types[i]].append(entities[e]['id'])
+                        for e in range(len(responses)):
+                            entities = responses[e]['contextRegistration']['entities']
+                            for t in range(len(entities)):
+                                if entities[t]['id'] not in reg_id[i]:
+                                    z += 1
+                            attributes = responses[e]['contextRegistration']['attributes']
+                            for t in range(len(attributes)):
+                                if (attributes[t]['name'] not in reg_attrb[i]
+                                        or attributes[t]['type'] not in reg_attrb_type[i]):
+                                    z += 1
+                        if z != 0:
+                            print "%s has changed at registry.ini update registration, (registration ID)" % regs[i]
                     else:
-                        reg_entities[reg_types[i]] = None
+                        print "%s it's not registered, new registry or expired one?" % regs[i]
                     payload.entity_list_purge()
-                print reg_entities
+
 
             except requests.RequestException as e:
                 print "%s" % e.message
@@ -88,20 +94,16 @@ class Registry():
         entity_list = []
         entities_type = []
         attribute_list = []
-        attribute_list_values = []
         attribute_list_types = []
 
         for i in range(len(sections)):
             entity_list.append('')
             entities_type.append('')
             attribute_list.append('')
-            attribute_list_values.append('')
             attribute_list_types.append('')
-            entity_list[i] =  config.get(sections[i], 'entity_ids').replace(" ","").split(",")
-            entities_type[i] =  config.get(sections[i], 'entity_type')
-            attribute_list[i] = config.get(sections[i], 'attributes').replace(" ","").split(",")
-            attribute_list_values[i] = config.get(sections[i], 'attrib_val').replace(" ","").split(",")
-            attribute_list_types[i] = config.get(sections[i], 'attrib_type').replace(" ","").split(",")
+            entity_list[i] = config.get(sections[i], 'entity_ids').replace(" ", "").split(",")
+            entities_type[i] = config.get(sections[i], 'entity_type')
+            attribute_list[i] = config.get(sections[i], 'attributes').replace(" ", "").split(",")
+            attribute_list_types[i] = config.get(sections[i], 'attrb_type').replace(" ", "").split(",")
 
-        return entity_list, entities_type, attribute_list, attribute_list_values, attribute_list_types
-
+        return sections, entity_list, entities_type, attribute_list, attribute_list_types

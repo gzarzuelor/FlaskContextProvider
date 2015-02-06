@@ -1,7 +1,9 @@
 import tools.ContextProvider as CP
 import tools.DataManager as DM
+import tools.Registry as r
 import sevici.sevici as f
 
+reg = r.Registry()
 
 def get_data_example(_id, _type, max_cache_time):
     """
@@ -45,3 +47,4 @@ def get_data_example(_id, _type, max_cache_time):
     return response
 
 CP.ContextProvider('/v1/queryContext', f.get_data)
+
