@@ -1,7 +1,7 @@
 import xml.etree.ElementTree as ET
 from flask import Flask, request
 import tools.DataManager as DM
-import registry as reg
+import tools.Registry as R
 import ConfigParser
 import memcache
 
@@ -21,7 +21,8 @@ class ContextProvider():
         self.orion_data = None
         self.c_type = None
         self.cache = self.__start_cache__()
-
+        self.reg = R.Registry()
+        self.reg.get_registered_entities('http://130.206.85.12:1026')
         app = Flask('ContextProvider')
 
         @app.route(route, methods=['POST'])
@@ -31,6 +32,7 @@ class ContextProvider():
 
             entities = self.orion_data['entities']
             response_data = DM.Entity()
+
             entity_id_list = []
             entity_type_list = []
 
@@ -66,7 +68,7 @@ class ContextProvider():
             for i in range(len(entities)):
                 entity = entities[i]
                 if entity['isPattern'] == 'true':
-                    entities_list = reg.check_entity_registration(entity['type'], entity['id'])
+                    entities_list = self.reg.check_entity_registration(entity['type'], entity['id'])
                     for e in range(len(entities_list)):
                         entity_list.append({'id': entities_list[e], 'type': entity['type'], 'isPattern': 'false'})
                 else:
@@ -85,7 +87,7 @@ class ContextProvider():
                     entity_dict = entity_id.attrib
                     entity_dict['id'] = entity_id.find('.//id').text
                     if entity_dict['isPattern'] == 'true':
-                        entities = reg.check_entity_registration(entity_dict['type'], entity_dict['id'])
+                        entities = self.reg.check_entity_registration(entity_dict['type'], entity_dict['id'])
                         for i in range(len(entities)):
                             orion_id.append({'id': entities[i], 'type': entity_dict['type'], 'isPattern': 'false'})
                     else:
