@@ -74,7 +74,7 @@ def load_stations():
         :rtype : list
     """
     try:
-        with open('file/stations.json', 'r') as stations_file:
+        with open('sevici/file/stations.json', 'r') as stations_file:
             stations = json.loads(stations_file.read())
         return stations
     except Exception:
@@ -88,7 +88,7 @@ def select_id(orion_id):
     return orion_id[a:]
 
 
-def get_sevici_data(sevici_id):
+def get_station_data(sevici_id):
     """
     Makes the sevici request
         :param sevici_id: sevici id number
@@ -103,10 +103,10 @@ def get_sevici_data(sevici_id):
     return fields
 
 
-def request_sevici(_id, max_time=1):
+def get_data(_id, max_time=1):
     """
     Parses the response in xml format
-        :param id_: entity id number
+        :param _id: entity id number
         :rtype : list
     """
     entity = DM.Entity()
@@ -114,7 +114,7 @@ def request_sevici(_id, max_time=1):
 
     life_time = []
     try:
-        fields = get_sevici_data(id_)
+        fields = get_station_data(id_)
         entity.entity_add(_id, 'sevici', ispattern='false')
 
         for s in fields:

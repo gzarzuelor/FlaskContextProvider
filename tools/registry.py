@@ -39,7 +39,7 @@ def check_entity_registration(entity_type,_id):
     return entity_list
 
 
-def registered_entities(cb_url, token=''):
+def get_registered_entities(cb_url, token=''):
         try:
             url = cb_url+'/v1/registry/discoverContextAvailability'
             if len(token) != 0:
@@ -63,12 +63,10 @@ def registered_entities(cb_url, token=''):
                         for e in range(len(entities)):
                             reg_entities[entity_type].append(entities[e]['id'])
                 else:
-                    reg_entities[entity_type].append("llamada a accion de nuevo registro")
+                    reg_entities[entity_type] = None
                 payload.entity_list_purge()
-
             print reg_entities
-            # return response
 
         except requests.RequestException as e:
-            print "ContextBroker.get_response(): %s" % e.message
+            print "%s" % e.message
             return -1

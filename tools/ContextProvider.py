@@ -8,6 +8,7 @@ import memcache
 
 class ContextProvider():
     def __init__(self):
+
         config = ConfigParser.ConfigParser()
         config.read("./etc/FlaskContextProvider/FlaskContextProvider.ini")
 
