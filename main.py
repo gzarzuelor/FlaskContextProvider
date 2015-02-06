@@ -5,18 +5,19 @@ import sevici.sevici as f
 
 reg = r.Registry()
 
+
 def get_data_example(_id, _type, max_cache_time):
     """
         This is an example function which shows you how to manage the data in order
         to add it properly to the Context Provider response. This example uses the
-        DataManager class but if you don't feel at ease with it and you prefer build
-        the  response on your own, verify that your response matches with the example
+        DataManager class but if you don't feel at ease with it and you prefer to build
+        the response on your own, verify that your response matches with the example
         response.
 
         The function will be called one time for each entity that the Context Provider
-        will being asked to, so take into account that  this functions have to make to
-        give response for just one entity, in addition to this, you don't have to take
-        care about patterned ids, there are a previous method that process them.
+        will be asked to, so take into account that this functions have to give response
+        for just one entity, in addition to this, you don't have to take care about patterned
+        ids, there are a previous method that processes them and returns non patterned ids.
 
             :param _id: entity_id
             :param _type: entity_type
@@ -47,4 +48,3 @@ def get_data_example(_id, _type, max_cache_time):
     return response
 
 CP.ContextProvider('/v1/queryContext', f.get_data)
-
