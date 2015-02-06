@@ -1,13 +1,13 @@
 import xml.etree.ElementTree as ET
 from flask import Flask, request
+import tools.DataManager as DM
 import registry as reg
 import ConfigParser
 import memcache
 
 
-
 class ContextProvider():
-    def __init__(self):
+    def __init__(self, route, function):
 
         config = ConfigParser.ConfigParser()
         config.read("./etc/FlaskContextProvider/FlaskContextProvider.ini")
@@ -18,29 +18,46 @@ class ContextProvider():
         self.cache_server_port = config.get('CACHE', 'cache_server_port')
         self.max_cache_time = int(config.get('CACHE', 'max_cache_time'))
 
-
-        self.c_type = None
-        self.route = None
-        self.function = None
         self.orion_data = None
-        self.app = None
+        self.c_type = None
+        self.cache = self.__start_cache__()
 
-        self.cache = self.start_cache()
+        app = Flask('ContextProvider')
 
-    def run(self, route, funct):
-        self.route = route
-        self.function = funct
-        self.app = Flask('ContextProvider')
-
-        @self.app.route(self.route, methods=['POST'])
+        @app.route(route, methods=['POST'])
         def __provider_task__():
             self.c_type = request.headers['Content-Type']
             self.orion_data = self.__get_orion_data__(request)
-            service_provider_response = self.function()
-            response = self.__parse_response__(service_provider_response)
+
+            entities = self.orion_data['entities']
+            response_data = DM.Entity()
+            entity_id_list = []
+            entity_type_list = []
+
+            for i in range(len(entities)):
+                entity_id_list.append(entities[i]['id'])
+                entity_type_list.append(entities[i]['type'])
+
+            for e in range(len(entity_id_list)):
+                key = "%s/%s" % (entity_id_list[e], entity_type_list[e])
+                cached_response = self.__check_cache__(key)
+
+                if cached_response is None:
+                    response = function(entity_id_list[e], entity_type_list[e], self.max_cache_time)
+
+                    if len(response[0]) != 0:
+                        response_data.entity_list_add(response[0])
+                        if response[1] < 1:
+                            response[1] = 1
+                        self.__update_cache__(key, response[0], response[1])
+
+                else:
+                    response_data.entity_list_add(cached_response)
+
+            response = self.__parse_response__(response_data.get_entity_list())
             return response
 
-        self.app.run(host=self.provider_url, port=self.provider_port)
+        app.run(host=self.provider_url, port=self.provider_port)
 
     def __get_orion_data__(self, cb_request):
         entity_list = []
@@ -146,14 +163,14 @@ class ContextProvider():
 
         return ET.tostring(query_context_response, 'utf-8')
 
-    def start_cache(self):
+    def __start_cache__(self):
         try:
             route = '%s:%s' % (self.cache_server_url, self.cache_server_port)
             return memcache.Client([route], debug=0)
         except:
             return None
 
-    def check_cache(self, key):
+    def __check_cache__(self, key):
         try:
             if self.cache is not None:
                 return self.cache.get(str(key))
@@ -162,7 +179,7 @@ class ContextProvider():
         except:
             return None
 
-    def update_cache(self, key, data, life_time):
+    def __update_cache__(self, key, data, life_time):
         try:
             if self.cache is not None:
                 if len(key) > 250:

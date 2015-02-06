@@ -63,7 +63,7 @@ def make_stations_jsonfile():
     """
     stations = get_stations()
     if stations != 0:
-        with open('file/stations.json', 'w') as jsonfile:
+        with open('sevici/file/stations.json', 'w') as jsonfile:
             jstations = json.dumps(stations)
             jsonfile.write(jstations)
 
@@ -82,7 +82,11 @@ def load_stations():
 
 
 def select_id(orion_id):
-
+    """
+    Select the sevici id
+        :param _id: orion_id
+        :rtype : sevici_id
+    """
     pattern = "urn::Sevilla:Sevici"
     a = len(re.match(pattern, orion_id).group())
     return orion_id[a:]
@@ -103,10 +107,10 @@ def get_station_data(sevici_id):
     return fields
 
 
-def get_data(_id, max_time=1):
+def get_data(_id, _type, max_time=1):
     """
     Parses the response in xml format
-        :param _id: entity id number
+        :param _id: entity id
         :rtype : list
     """
     entity = DM.Entity()

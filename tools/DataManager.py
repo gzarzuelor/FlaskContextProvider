@@ -10,7 +10,7 @@ class Metadata():
 
     def __init__(self):
         """
-        Manage a metadata list in order to add it
+        Manages a metadata list in order to add it
         to one or several attributes
         """
         self._metadata_list = []
@@ -191,7 +191,7 @@ class Entity():
 
     def __init__(self):
         """
-        Manage an entity list in order to add it
+        Manages an entity list in order to add it
         to one Context Broker method
         """
         self.__entity_list = []

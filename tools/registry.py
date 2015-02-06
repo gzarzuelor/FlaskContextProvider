@@ -9,8 +9,8 @@ def make_registry_json():
     for i in range(1, 261):
         entities.append('urn::Sevilla:Sevici%s' % str(i))
 
-    registry = {'sevici':entities}
-    registry['tipodeprueba']=['a','b']
+    registry = {'sevici': entities}
+    registry['tipodeprueba'] = ['a', 'b']
 
     with open('./etc/FlaskContextProvider/registry.json', 'w') as jsonfile:
         jregistry = json.dumps(registry)
@@ -26,7 +26,7 @@ def load_registry_json():
         return 0
 
 
-def check_entity_registration(entity_type,_id):
+def check_entity_registration(entity_type, _id):
     entity_list = []
     registry = load_registry_json()
     entities = registry[entity_type]
