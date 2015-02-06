@@ -44,4 +44,4 @@ def get_data_example(_id, _type, max_cache_time):
 
     return response
 
-# CP.ContextProvider('/v1/queryContext', f.get_data)
+CP.ContextProvider('/v1/queryContext', f.get_data)
