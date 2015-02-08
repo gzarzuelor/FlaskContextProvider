@@ -21,8 +21,8 @@ class ContextProvider():
         self.orion_data = None
         self.c_type = None
         self.cache = self.__start_cache__()
-        self.reg = R.Registry()
-        self.reg.get_registered_entities('http://130.206.85.12:1026')
+        self.reg = R.Registry('http://130.206.127.30:4000/v1')
+        self.reg.get_registered_entities()
         app = Flask('ContextProvider')
 
         @app.route(route, methods=['POST'])

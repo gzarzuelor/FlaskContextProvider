@@ -1,9 +1,6 @@
 import tools.ContextProvider as CP
 import tools.DataManager as DM
-import tools.Registry as r
 import sevici.sevici as f
-
-reg = r.Registry()
 
 
 def get_data_example(_id, _type, max_cache_time):
