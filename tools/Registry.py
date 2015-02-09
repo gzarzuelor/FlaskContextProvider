@@ -153,6 +153,7 @@ ContextBroker data :\n%s""" % (regs[i], regs[i], response.text)
                                             self.add_registry_json(reg[1],reg[0])
 
                             else:
+
                                 reg_response = self.register_context(reg[4], payload.get_entity_list(),payload.attribute.get_attribute_list(), duration=reg[6])
                                 if reg_response != -1:
                                     self.add_registry_json(reg[1],reg[0])
