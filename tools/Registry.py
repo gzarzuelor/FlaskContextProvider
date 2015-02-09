@@ -1,6 +1,7 @@
 __author__ = 'b.gzr'
 import DataManager as DM
 import ConfigParser
+import datetime
 import warnings
 import requests
 import json
@@ -93,36 +94,69 @@ class Registry():
                                 responses = response.json()['contextRegistrationResponses']
                                 for e in range(len(responses)):
                                     if not responses[e]['contextRegistration']['providingApplication'] == self.cp_url:
-                                        print "another provider has %s registered" % regs[i]
+
+                                        msg = """\n
+Another provider has %s registered, please check etc/Registry/registry.ini and
+tools/registryUtils/registration.log files to be sure that there hasn't been any
+mistake in a previous registration. If you find a registration error, search the
+registration_id at .../registration.log and update the registration with
+manual_register_context(reg, registration_ID) method.""" % regs[i]
+                                        warnings.warn(msg)
 
                                     else:
                                         entities = responses[e]['contextRegistration']['entities']
+                                        cb_entities = []
                                         for t in range(len(entities)):
-                                            if (entities[t]['id'] not in reg[0]
-                                                    or entities[t]['type'] != reg[1]):
+                                            cb_entities.append(entities[t]['id'])
+                                            if entities[t]['id'] not in reg[0]:
+                                                print entities[t]['id']
+                                                z += 1
+
+                                        for t in range(len(reg[0])):
+                                            if reg[0][t] not in cb_entities:
+                                                print reg[0][t]
                                                 z += 1
 
                                         attributes = responses[e]['contextRegistration']['attributes']
+                                        cb_attributes = []
+                                        cb_attributes_type = []
                                         for t in range(len(attributes)):
-                                            if (attributes[t]['name'] not in reg[2]
-                                                    or attributes[t]['type'] not in reg[3]):
+                                            cb_attributes.append(attributes[t]['name'])
+                                            cb_attributes_type.append(attributes[t]['type'])
+
+                                            if attributes[t]['name'] not in reg[2]:
+                                                print attributes[t]['name']
+                                                z += 1
+                                            if attributes[t]['type'] not in reg[3]:
+                                                print attributes[t]['type']
                                                 z += 1
 
+                                        for t in range(len(reg[2])):
+                                            if reg[2][t] not in cb_attributes:
+                                                print reg[2][t]
+                                                z += 1
+
+                                        for t in range(len(reg[3])):
+                                            if reg[3][t] not in cb_attributes_type:
+                                                print reg[3][t]
+                                                z += 1
                                         if z != 0:
-                                            print "%s has changed at registry.ini update registration, (registration ID)" % regs[i]
-                                            # registration_id = search registration_id
-                                            # reg_response = self.register_context(reg[4], payload.get_entity_list(),payload.attribute.get_attribute_list(), duration=reg[6], registration_id=registration_id)
-                                            # if reg_response != -1:
-                                            #     self.add_registry_json(reg[1],reg[0])
+                                            msg = """\n
+%s at etc/Registry/registry.ini has changed compared to ContextBroker
+data. If you want to update the ContextBroker registration, look for the
+registration_id associated to %s at tools/registryUtils/registration.log
+and use manual_register_context(reg, registration_ID) method to send it,
+otherwise please correct your etc/Registry/registry.ini.\n
+ContextBroker data :\n%s""" % (regs[i], regs[i], response.text)
+                                            warnings.warn(msg)
                                         else:
                                             self.add_registry_json(reg[1],reg[0])
 
                             else:
-                                print "%s it's not registered, new registry or expired one?" % regs[i]
-                                # registration_id = search registration_id
-                                # reg_response = self.register_context(reg[4], payload.get_entity_list(),payload.attribute.get_attribute_list(), duration=reg[6], registration_id=registration_id)
-                                # if reg_response != -1:
-                                #     self.add_registry_json(reg[1],reg[0])
+                                reg_response = self.register_context(reg[4], payload.get_entity_list(),payload.attribute.get_attribute_list(), duration=reg[6])
+                                if reg_response != -1:
+                                    self.add_registry_json(reg[1],reg[0])
+                                    print "%s it's now registered, your registration information is:\n%s" % (regs[i], reg_response.text)
 
                             payload.entity_list_purge()
                             payload.attribute.attribute_list_purge()
@@ -147,13 +181,13 @@ class Registry():
                 warnings.warn("Registry %s has an incorrect definition" % reg)
                 return 0
 
-            return [entity_list, entities_type, attribute_list, attribute_list_types, ContBroker, token]
+            return [entity_list, entities_type, attribute_list, attribute_list_types, ContBroker, token, duration]
 
         except ConfigParser.Error:
             warnings.warn("Registry %s has an incorrect definition" % reg)
             return 0
 
-    def register_context(self, cb_url, entities, attribute_list, duration='PT24H', registration_id=''):
+    def register_context(self, cb_url, entities, attribute_list, duration='PT24H'):
 
         payload = {
             "contextRegistrations": [{
@@ -164,17 +198,57 @@ class Registry():
             "duration": duration
         }
 
-        if registration_id != '':
-            payload['registrationId'] = registration_id
-
         data = json.dumps(payload)
         url = cb_url+'/v1/registry/registerContext'
 
         try:
             response = requests.post(url, headers=self.headers, data=data)
+            with open('./tools/registryUtils/registration.log', 'a') as log:
+                log_str = '%s %s\n %s\n %s\n' % (datetime.datetime.now(), cb_url, payload, response.text)
+                log.write(log_str)
+                log.close()
             return response
 
         except requests.RequestException as e:
             print "%s" % e.message
             return -1
 
+    def manual_register_context(self, reg, registration_id):
+
+        registry = self.load_registry_file(reg)
+        payload = DM.Entity()
+
+        if registry  != 0:
+            for e in range(len(registry[0])):
+                payload.entity_add(registry[0][e], registry[1])
+
+            for e in range(len(registry[2])):
+                payload.attribute.attribute_add(registry[2][e], registry[3][e], is_domain='false')
+
+        payload = {
+            "contextRegistrations": [{
+                'entities': payload.get_entity_list(),
+                'attributes': payload.attribute.get_attribute_list(),
+                'providingApplication': self.cp_url,
+            }],
+            "duration": registry[6],
+            "registrationId": registration_id
+        }
+
+        data = json.dumps(payload)
+        url = registry[4]+'/v1/registry/registerContext'
+
+        if registry[5] != 'None':
+            self.headers['X-Auth-Token'] = registry[5]
+
+        try:
+            response = requests.post(url, headers=self.headers, data=data)
+            with open('./tools/registryUtils/registration.log', 'a') as log:
+                log_str = '%s %s\n %s\n %s\n' % (datetime.datetime.now(), registry[4], payload, response.text)
+                log.write(log_str)
+                log.close()
+            return response
+
+        except requests.RequestException as e:
+            print "%s" % e.message
+            return -1

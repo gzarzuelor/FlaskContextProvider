@@ -23,6 +23,7 @@ class ContextProvider():
         self.cache = self.__start_cache__()
         self.reg = R.Registry('http://130.206.127.30:4000/v1')
         self.reg.get_registered_entities()
+
         app = Flask('ContextProvider')
 
         @app.route(route, methods=['POST'])
@@ -92,6 +93,7 @@ class ContextProvider():
                             orion_id.append({'id': entities[i], 'type': entity_dict['type'], 'isPattern': 'false'})
                     else:
                         orion_id.append(entity_dict)
+
                 query_context_request = ET.fromstring(cb_request.data)
                 attributes = query_context_request.findall('.//attributeList//attribute')
                 if len(attributes) != 0:
