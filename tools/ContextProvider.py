@@ -1,3 +1,4 @@
+
 import xml.etree.ElementTree as ET
 from flask import Flask, request
 import tools.DataManager as DM
@@ -121,7 +122,7 @@ class ContextProvider():
 
     def __parse_response__(self, dm_entity_list):
         """
-        Parses the data of a DataManager List.
+        Parses the data of a DataManager List to xml.
             :param dm_entity_list: response list
             :rtype : str
         """
@@ -138,7 +139,11 @@ class ContextProvider():
                     if 'attributes' in entity:
                         context_attribute_list = ET.SubElement(context_element, 'contextAttributeList')
                         for attribute in entity['attributes']:
-                            if not 'attributes' in self.orion_data or ('attributes' in self.orion_data and attribute['name'] in self.orion_data['attributes']):
+                            # This "if" checks the attributes that the user has requested, if user doesn't specify
+                            # any attribute, the "for" makes the if at each loop, on the contrary, if user requests
+                            # an "attribute-filtered" response, the attribute only will be added if it is on the
+                            # requested attribute list.
+                            if 'attributes'not in self.orion_data or ('attributes' in self.orion_data and attribute['name'] in self.orion_data['attributes']):
                                 context_attribute = ET.SubElement(context_attribute_list, 'contextAttribute')
                                 name = ET.SubElement(context_attribute, 'name')
                                 name.text = attribute['name']
@@ -185,7 +190,6 @@ class ContextProvider():
     def __start_cache__(self):
         """
         Starts a memcache client.
-            :rtype : bool
         """
         try:
             route = '%s:%s' % (self.cache_server_url, self.cache_server_port)
@@ -204,7 +208,7 @@ class ContextProvider():
                 return self.cache.get(str(key))
             else:
                 return None
-        except:
+        except :
             return None
 
     def __update_cache__(self, key, data, life_time):
