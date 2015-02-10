@@ -18,6 +18,7 @@ def get_data_example(_id, _type, max_cache_time):
 
             :param _id: entity_id
             :param _type: entity_type
+            :param max_cache_time: max_cache_time
             :rtype : list
     """
 
@@ -45,4 +46,3 @@ def get_data_example(_id, _type, max_cache_time):
     return response
 
 CP.ContextProvider('/v1/queryContext', f.get_data)
-

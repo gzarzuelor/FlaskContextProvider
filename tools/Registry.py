@@ -90,8 +90,8 @@ class Registry():
             self.config.read(self.registration_path)
             regs = self.config.sections()
             payload = DM.Entity()
-            self.clean_registry_json()
             if len(regs) != 0:
+                self.clean_registry_json()
                 for i in range(len(regs)):
                     reg = self.load_registry_file(regs[i])
                     if reg != 0:
@@ -249,7 +249,8 @@ ContextBroker data :\n%s""" % (regs[i], regs[i], response.text)
         update of a registration can't be done automatically.
         So to make a registration upload, this method must be
         used after look for the registration_id at the
-        registration log file.
+        registration log file and the registration label at
+        registry.ini.
 
         If a change is detected in the registry.ini file a
         warning will be showed at the ContextProvider start
