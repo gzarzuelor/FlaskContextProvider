@@ -1,4 +1,4 @@
-
+# How it works
 1.  First at all, you have to write your own function to get the data from the source, the
     function is different for every situation and depends on the data source.
 
