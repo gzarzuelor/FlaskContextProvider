@@ -28,8 +28,13 @@ class ContextProvider():
 
         @app.route(route, methods=['POST'])
         def __provider_task__():
+            """
+            Defines the process which is going to be done every time
+            a post access is detected.
+                :rtype : str
+            """
             self.c_type = request.headers['Content-Type']
-            self.orion_data = self.__get_orion_data__(request)
+            self.orion_data = self.__get_cb_data__(request)
 
             entities = self.orion_data['entities']
             response_data = DM.Entity()
@@ -62,7 +67,12 @@ class ContextProvider():
 
         app.run(host=self.provider_url, port=self.provider_port)
 
-    def __get_orion_data__(self, cb_request):
+    def __get_cb_data__(self, cb_request):
+        """
+        Gets the ContextBroker request data and parses it to a json dict.
+            :param cb_request: ContextBroker request
+            :rtype : dict
+        """
         entity_list = []
         if self.c_type == 'application/json':
             entities = cb_request.json['entities']
@@ -110,6 +120,11 @@ class ContextProvider():
         return orion_data
 
     def __parse_response__(self, dm_entity_list):
+        """
+        Parses the data of a DataManager List.
+            :param dm_entity_list: response list
+            :rtype : str
+        """
         try:
             if len(dm_entity_list) != 0:
                 query_context_response = ET.Element('queryContextResponse')
@@ -168,6 +183,10 @@ class ContextProvider():
         return ET.tostring(query_context_response, 'utf-8')
 
     def __start_cache__(self):
+        """
+        Starts a memcache client.
+            :rtype : bool
+        """
         try:
             route = '%s:%s' % (self.cache_server_url, self.cache_server_port)
             return memcache.Client([route], debug=0)
@@ -175,6 +194,11 @@ class ContextProvider():
             return None
 
     def __check_cache__(self, key):
+        """
+        checks if it exists a cache entry of the key param.
+            :param key: cache response id
+            :rtype : list
+        """
         try:
             if self.cache is not None:
                 return self.cache.get(str(key))
@@ -184,6 +208,13 @@ class ContextProvider():
             return None
 
     def __update_cache__(self, key, data, life_time):
+        """
+        Adds a new cache entry.
+            :param key: cache response id
+            :param data: response
+            :param life_time: time at cache
+            :rtype : bool
+        """
         try:
             if self.cache is not None:
                 if len(key) > 250:
@@ -192,5 +223,5 @@ class ContextProvider():
                 return self.cache.set(str(key), data, time=life_time)
             else:
                 return None
-        except:
+        except SyntaxError:
             return None
