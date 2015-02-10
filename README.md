@@ -13,5 +13,5 @@ ContextProvider.
 
 Links
 -------------------------
-1. [Installing the software]()
-2. [How it works?](https://github.com/gzarrub/FlaskContextProvider/blob/master/etc/FlaskContextProvider/How%20it%20works.md)
+1. [Installing the software](https://github.com/gzarrub/FlaskContextProvider/blob/master/etc/FlaskContextProvider/Installing-the-software.md)
+2. [How it works?](https://github.com/gzarrub/FlaskContextProvider/blob/master/etc/FlaskContextProvider/How-it-works.md)
