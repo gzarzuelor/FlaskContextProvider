@@ -33,7 +33,8 @@
 ```
     import tools.ContextProvider as CP
     
-    def your_get_data_function_name(_id, _type, max_cache_time)
+    def your_get_data_function_name(_id, _type, max_cache_time):
+        ...
     CP.ContextProvider('/v1/queryContext', your_get_data_function_name)
 ```
 
