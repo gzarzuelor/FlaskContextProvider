@@ -30,6 +30,8 @@
 3.  Modify the [FlaskContextProvider config file](https://github.com/gzarrub/FlaskContextProvider/blob/master/etc/FlaskContextProvider/FlaskContextProvider.ini) according to your requirements, provider url, provider port...
 
 4.  Finally launch the provider:
+5.  <
         import tools.ContextProvider as CP
         def your_get_data_function_name(_id, _type, max_cache_time)
         CP.ContextProvider('/v1/queryContext', your_get_data_function_name)
+    <
