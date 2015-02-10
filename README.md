@@ -1,7 +1,7 @@
 # FlaskContextProvider
 
-The FlaskContextProvider is a python software that creates a [Flask](http://flask.pocoo.org/)  which allows 
-to link a ContextBroker with another service. 
+The FlaskContextProvider is a python software that creates a [Flask](http://flask.pocoo.org/) server which 
+allows to link a ContextBroker with another service. 
 
 It is thought to provide real time data from sources which might have problems with the 
 traffic that a periodical uptateContext suppose, and even so be able to work as a 
