@@ -84,7 +84,7 @@ def load_stations():
 def select_id(orion_id):
     """
     Select the sevici id
-        :param _id: orion_id
+        :param orion_id: orion_id
         :rtype : sevici_id
     """
     pattern = "urn::Sevilla:Sevici"

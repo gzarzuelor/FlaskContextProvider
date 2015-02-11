@@ -1,9 +1,9 @@
-
 import xml.etree.ElementTree as ET
 from flask import Flask, request
 import tools.DataManager as DM
 import tools.Registry as R
 import ConfigParser
+import warnings
 import memcache
 
 
@@ -12,12 +12,16 @@ class ContextProvider():
 
         config = ConfigParser.ConfigParser()
         config.read("./etc/FlaskContextProvider/FlaskContextProvider.ini")
+        try:
+            self.provider_url = config.get('PROVIDER', 'provider_url')
+            self.provider_port = int(config.get('PROVIDER', 'provider_port'))
+            self.cache_server_url = config.get('CACHE', 'cache_server_ip')
+            self.cache_server_port = config.get('CACHE', 'cache_server_port')
+            self.max_cache_time = int(config.get('CACHE', 'max_cache_time'))
 
-        self.provider_url = config.get('PROVIDER', 'provider_url')
-        self.provider_port = int(config.get('PROVIDER', 'provider_port'))
-        self.cache_server_url = config.get('CACHE', 'cache_server_ip')
-        self.cache_server_port = config.get('CACHE', 'cache_server_port')
-        self.max_cache_time = int(config.get('CACHE', 'max_cache_time'))
+        except (ConfigParser.NoSectionError, ConfigParser.NoOptionError) as e:
+            warnings.warn("%sat FlaskContextProvider.ini" % e, stacklevel=2)
+            exit(-1)
 
         self.orion_data = None
         self.c_type = None
@@ -47,12 +51,12 @@ class ContextProvider():
                 entity_id_list.append(entities[i]['id'])
                 entity_type_list.append(entities[i]['type'])
 
-            for e in range(len(entity_id_list)):
-                key = "%s/%s" % (entity_id_list[e], entity_type_list[e])
+            for i in range(len(entity_id_list)):
+                key = "%s/%s" % (entity_id_list[i], entity_type_list[i])
                 cached_response = self.__check_cache__(key)
 
                 if cached_response is None:
-                    response = function(entity_id_list[e], entity_type_list[e], self.max_cache_time)
+                    response = function(entity_id_list[i], entity_type_list[i], self.max_cache_time)
 
                     if len(response[0]) != 0:
                         response_data.entity_list_add(response[0])
@@ -194,7 +198,9 @@ class ContextProvider():
         try:
             route = '%s:%s' % (self.cache_server_url, self.cache_server_port)
             return memcache.Client([route], debug=0)
-        except:
+
+        except Exception as e:
+            warnings.warn("%s" % e, stacklevel=1)
             return None
 
     def __check_cache__(self, key):
@@ -208,7 +214,8 @@ class ContextProvider():
                 return self.cache.get(str(key))
             else:
                 return None
-        except :
+        except Exception as e:
+            warnings.warn("%s" % e, stacklevel=1)
             return None
 
     def __update_cache__(self, key, data, life_time):
@@ -222,10 +229,12 @@ class ContextProvider():
         try:
             if self.cache is not None:
                 if len(key) > 250:
-                    raise SyntaxError('Key too long')
+                    raise SyntaxError("%s it's a too long key, check your entity ids" % key)
 
                 return self.cache.set(str(key), data, time=life_time)
             else:
-                return None
-        except SyntaxError:
-            return None
+                return False
+
+        except SyntaxError as e:
+            warnings.warn("%s" % e, stacklevel=1)
+            return False

@@ -3,7 +3,7 @@ import warnings
 
 
 def data_manager_error(message):
-    warnings.warn(message)
+    warnings.warn(message, stacklevel=2)
 
 
 class Metadata():

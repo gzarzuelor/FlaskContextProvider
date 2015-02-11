@@ -167,12 +167,12 @@ otherwise please correct your etc/Registry/registry.ini.\n
 ContextBroker data :\n%s""" % (regs[i], regs[i], response.text)
                                         warnings.warn(msg)
                                     else:
-                                        self.add_registry_json(reg[1],reg[0])
+                                        self.add_registry_json(reg[1], reg[0])
 
                         else:
-                            reg_response = self.register_context(reg[4], payload.get_entity_list(),payload.attribute.get_attribute_list(), duration=reg[6])
+                            reg_response = self.register_context(reg[4], payload.get_entity_list(), payload.attribute.get_attribute_list(), duration=reg[6])
                             if reg_response != -1:
-                                self.add_registry_json(reg[1],reg[0])
+                                self.add_registry_json(reg[1], reg[0])
                                 print "%s it's now registered, your registration information is:\n%s" % (regs[i], reg_response.text)
 
                         payload.entity_list_purge()
@@ -195,7 +195,7 @@ ContextBroker data :\n%s""" % (regs[i], regs[i], response.text)
             entities_type = self.config.get(reg, 'entity_type')
             attribute_list = self.config.get(reg, 'attributes').replace(" ", "").split(",")
             attribute_list_types = self.config.get(reg, 'attrb_type').replace(" ", "").split(",")
-            ContBroker = self.config.get(reg, 'ContBroker').replace(" ", "")
+            cont_broker = self.config.get(reg, 'cont_broker').replace(" ", "")
             token = self.config.get(reg, 'token').replace(" ", "")
             duration = self.config.get(reg, 'duration').replace(" ", "")
 
@@ -203,10 +203,10 @@ ContextBroker data :\n%s""" % (regs[i], regs[i], response.text)
                 warnings.warn("Registry %s has an incorrect definition" % reg)
                 return 0
 
-            return [entity_list, entities_type, attribute_list, attribute_list_types, ContBroker, token, duration]
+            return [entity_list, entities_type, attribute_list, attribute_list_types, cont_broker, token, duration]
 
-        except ConfigParser.Error:
-            warnings.warn("Registry %s has an incorrect definition" % reg)
+        except (ConfigParser.NoSectionError, ConfigParser.NoOptionError) as e:
+            warnings.warn("%sat registry.ini" % e, stacklevel=2)
             return 0
 
     def register_context(self, cb_url, entities, attribute_list, duration='PT24H'):
