@@ -26,6 +26,7 @@ import urllib2
 import json
 import time
 import re
+import os
 
 
 def norm_data(s):
@@ -81,7 +82,7 @@ def make_stations_jsonfile():
     """
     stations = get_stations()
     if stations != 0:
-        with open('sevici/file/stations.json', 'w') as jsonfile:
+        with open('%s/sevici/file/stations.json' % os.getcwd(), 'w') as jsonfile:
             jstations = json.dumps(stations)
             jsonfile.write(jstations)
 
@@ -92,7 +93,7 @@ def load_stations():
         :rtype : list
     """
     try:
-        with open('sevici/file/stations.json', 'r') as stations_file:
+        with open('%s/sevici/file/stations.json' % os.getcwd(), 'r') as stations_file:
             stations = json.loads(stations_file.read())
         return stations
     except Exception:

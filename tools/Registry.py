@@ -28,8 +28,8 @@ import re
 
 class Registry():
     def __init__(self, cp_url):
-        self.path = './tools/registryUtils/registry.json'
-        self.registration_path = './etc/Registry/registry.ini'
+        self.path = '%s/tools/registryUtils/registry.json' % os.getcwd()
+        self.registration_path = '%s/etc/Registry/registry.ini' % os.getcwd()
 
         self.cp_url = cp_url
         self.headers = {'Content-Type': 'application/json', 'Accept': 'application/json'}

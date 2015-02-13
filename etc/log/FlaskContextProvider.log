@@ -1,1 +1,5 @@
 2015-02-13 09:50:34,095 - INFO - Starting new HTTP connection (1): 130.206.85.12
+2015-02-13 11:16:40,882 - INFO - Starting new HTTP connection (1): 130.206.85.12
+2015-02-13 11:16:41,081 - DEBUG - "POST /v1/registry/discoverContextAvailability HTTP/1.1" 200 36224
+2015-02-13 11:16:41,407 - INFO -  * Running on http://127.0.0.1:4000/ (Press CTRL+C to quit)
+2015-02-13 11:17:30,062 - INFO - Starting new HTTP connection (1): 130.206.85.12
