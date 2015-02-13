@@ -273,6 +273,7 @@ class ContextProvider():
 
 
 def __start_log__(log_name):
+
     logger = logging.getLogger()
     logger.setLevel(logging.DEBUG)
     formatter = logging.Formatter('%(asctime)s - %(levelname)s - %(message)s')
