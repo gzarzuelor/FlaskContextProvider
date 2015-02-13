@@ -32,7 +32,7 @@ class ContextProvider():
     def __init__(self, function):
 
         config = ConfigParser.ConfigParser()
-        config.read("./etc/FlaskContextProvider/FlaskContextProvider.ini")
+        config.read("etc/FlaskContextProvider/FlaskContextProvider.ini")
         try:
             self.provider_url = config.get('PROVIDER', 'provider_url')
             self.provider_port = int(config.get('PROVIDER', 'provider_port'))
