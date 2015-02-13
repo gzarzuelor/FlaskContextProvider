@@ -14,7 +14,6 @@ class Registry():
         self.registration_path = './etc/Registry/registry.ini'
 
         self.cp_url = cp_url
-
         self.headers = {'Content-Type': 'application/json', 'Accept': 'application/json'}
         self.config = ConfigParser.ConfigParser()
 
@@ -123,7 +122,7 @@ tools/registryUtils/registration.log files to be sure that there hasn't been any
 mistake in a previous registration. If you find a registration error, search the
 registration_id at .../registration.log and update the registration with
 manual_register_context(reg, registration_ID) method.""" % regs[i]
-                                    warnings.warn(msg)
+                                    warnings.warn(msg, stacklevel=2)
 
                                 else:
                                     entities = responses[e]['contextRegistration']['entities']
@@ -165,7 +164,7 @@ registration_id associated to %s at tools/registryUtils/registration.log
 and use manual_register_context(reg, registration_ID) method to send it,
 otherwise please correct your etc/Registry/registry.ini.\n
 ContextBroker data :\n%s""" % (regs[i], regs[i], response.text)
-                                        warnings.warn(msg)
+                                        warnings.warn(msg, stacklevel=2)
                                     else:
                                         self.add_registry_json(reg[1], reg[0])
 

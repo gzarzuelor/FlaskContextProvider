@@ -5,16 +5,20 @@ import tools.Registry as R
 import ConfigParser
 import warnings
 import memcache
+import logging
+import re
 
 
 class ContextProvider():
-    def __init__(self, route, function):
+    def __init__(self, function):
 
         config = ConfigParser.ConfigParser()
         config.read("./etc/FlaskContextProvider/FlaskContextProvider.ini")
         try:
             self.provider_url = config.get('PROVIDER', 'provider_url')
             self.provider_port = int(config.get('PROVIDER', 'provider_port'))
+            self.public_provider_url = config.get('PROVIDER', 'public_provider_url')
+
             self.cache_server_url = config.get('CACHE', 'cache_server_ip')
             self.cache_server_port = config.get('CACHE', 'cache_server_port')
             self.max_cache_time = int(config.get('CACHE', 'max_cache_time'))
@@ -23,14 +27,15 @@ class ContextProvider():
             warnings.warn("%sat FlaskContextProvider.ini" % e, stacklevel=2)
             exit(-1)
 
+        route = self.__get_route__()
         self.orion_data = None
         self.c_type = None
         self.cache = self.__start_cache__()
-        self.reg = R.Registry('http://130.206.127.30:4000/v1')
+
+        self.reg = R.Registry(self.public_provider_url)
         self.reg.get_registered_entities()
 
         app = Flask('ContextProvider')
-
         @app.route(route, methods=['POST'])
         def __provider_task__():
             """
@@ -71,6 +76,33 @@ class ContextProvider():
             return response
 
         app.run(host=self.provider_url, port=self.provider_port)
+
+    def __get_route__(self):
+        if len(re.findall("http[s]?://", self.public_provider_url)) == 0:
+            msg = "Please, add http:// or https:// to your public_provider_url field at FlaskContextProvider.ini"
+            warnings.warn(msg, stacklevel=2)
+            exit(-1)
+
+        url_pattern = 'http[s]?://(?:[$-_@.&+]|[!*\(\),]|(?:%[0-9a-fA-F][0-9a-fA-F]))+'
+        if len(re.findall(url_pattern, self.public_provider_url)) != 0:
+            find_port = ':%s' % str(self.provider_port)
+            port_pos = self.public_provider_url.find(find_port)
+            if port_pos != -1:
+                sub_route = self.public_provider_url[port_pos+len(find_port):]
+                if sub_route[len(sub_route)-1] == '/':
+                    provider_route = sub_route+'queryContext'
+                else:
+                    provider_route = sub_route+'/queryContext'
+
+                return provider_route
+            else:
+                msg = "Your provider_port and public_provider port doesn't match"
+                warnings.warn(msg, stacklevel=2)
+                exit(-1)
+        else:
+            msg = "Incorrect url, try something like http://example_url:provider_port/directory"
+            warnings.warn(msg, stacklevel=2)
+            exit(-1)
 
     def __get_cb_data__(self, cb_request):
         """
@@ -238,3 +270,19 @@ class ContextProvider():
         except SyntaxError as e:
             warnings.warn("%s" % e, stacklevel=1)
             return False
+
+
+def __start_log__(log_name):
+    logger = logging.getLogger()
+    logger.setLevel(logging.DEBUG)
+    formatter = logging.Formatter('%(asctime)s - %(levelname)s - %(message)s')
+
+    fh = logging.FileHandler('etc/log/%s.log' % log_name)
+    fh.setLevel(logging.DEBUG)
+    fh.setFormatter(formatter)
+    logger.addHandler(fh)
+
+    ch = logging.StreamHandler()
+    ch.setLevel(logging.INFO)
+    ch.setFormatter(formatter)
+    logger.addHandler(ch)
