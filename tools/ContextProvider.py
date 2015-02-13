@@ -31,8 +31,13 @@ import os
 
 class ContextProvider():
     def __init__(self, function):
+        pos = str(__file__).find('tools')
+        self.main_path =  str(__file__)[:pos]
+
+
+        self.__start_log__('FlaskContextProvider')
         config = ConfigParser.ConfigParser()
-        config.read("%s/etc/FlaskContextProvider/FlaskContextProvider.ini" % os.getcwd())
+        config.read("%setc/FlaskContextProvider/FlaskContextProvider.ini" % self.main_path)
         try:
             self.provider_url = config.get('PROVIDER', 'provider_url')
             self.provider_port = int(config.get('PROVIDER', 'provider_port'))
@@ -290,19 +295,17 @@ class ContextProvider():
             warnings.warn("%s" % e, stacklevel=1)
             return False
 
+    def __start_log__(self, log_name):
 
-def __start_log__(log_name):
+        logger = logging.getLogger()
+        logger.setLevel(logging.DEBUG)
+        formatter = logging.Formatter('%(asctime)s - %(levelname)s - %(message)s')
+        fh = logging.FileHandler('%setc/log/%s.log' % (self.main_path, log_name))
+        fh.setLevel(logging.DEBUG)
+        fh.setFormatter(formatter)
+        logger.addHandler(fh)
 
-    logger = logging.getLogger()
-    logger.setLevel(logging.DEBUG)
-    formatter = logging.Formatter('%(asctime)s - %(levelname)s - %(message)s')
-
-    fh = logging.FileHandler('%s/etc/log/%s.log' % (os.getcwd(), log_name))
-    fh.setLevel(logging.DEBUG)
-    fh.setFormatter(formatter)
-    logger.addHandler(fh)
-
-    ch = logging.StreamHandler()
-    ch.setLevel(logging.INFO)
-    ch.setFormatter(formatter)
-    logger.addHandler(ch)
+        ch = logging.StreamHandler()
+        ch.setLevel(logging.INFO)
+        ch.setFormatter(formatter)
+        logger.addHandler(ch)

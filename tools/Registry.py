@@ -24,12 +24,13 @@ import warnings
 import requests
 import json
 import re
+import os
 
 
 class Registry():
     def __init__(self, cp_url):
-        self.path = '%s/tools/registryUtils/registry.json' % os.getcwd()
-        self.registration_path = '%s/etc/Registry/registry.ini' % os.getcwd()
+        self.path = 'tools/registryUtils/registry.json'
+        self.registration_path = 'etc/Registry/registry.ini'
 
         self.cp_url = cp_url
         self.headers = {'Content-Type': 'application/json', 'Accept': 'application/json'}
@@ -304,7 +305,7 @@ ContextBroker data :\n%s""" % (regs[i], regs[i], response.text)
 
         try:
             response = requests.post(url, headers=self.headers, data=data)
-            with open('./tools/registryUtils/registration.log', 'a') as log:
+            with open('tools/registryUtils/registration.log', 'a') as log:
                 log_str = '%s %s\n %s\n %s\n' % (datetime.datetime.now(), registry[4], payload, response.text)
                 log.write(log_str)
                 log.close()
