@@ -207,3 +207,9 @@
 2015-02-13 13:38:27,730 - INFO - Starting new HTTP connection (1): www.sevici.es
 2015-02-13 13:38:28,250 - DEBUG - "GET /service/stationdetails/seville/1 HTTP/1.1" 200 161
 2015-02-13 13:38:28,260 - INFO - 127.0.0.1 - - [13/Feb/2015 13:38:28] "POST /v1/queryContext HTTP/1.1" 200 -
+2015-02-13 13:43:30,887 - INFO - Starting new HTTP connection (1): 130.206.85.12
+2015-02-13 13:43:31,049 - DEBUG - "POST /v1/registry/discoverContextAvailability HTTP/1.1" 200 36224
+2015-02-13 13:43:31,157 - INFO -  * Running on http://127.0.0.1:4000/ (Press CTRL+C to quit)
+2015-02-13 13:43:51,696 - INFO - Starting new HTTP connection (1): www.sevici.es
+2015-02-13 13:43:51,778 - DEBUG - "GET /service/stationdetails/seville/1 HTTP/1.1" 200 161
+2015-02-13 13:43:51,788 - INFO - 127.0.0.1 - - [13/Feb/2015 13:43:51] "POST /v1/queryContext HTTP/1.1" 200 -
