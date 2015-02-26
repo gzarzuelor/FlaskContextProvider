@@ -1,33 +1,20 @@
-#!/usr/bin/python
-# Copyright 2015 Telefonica Investigacion y Desarrollo, S.A.U
-#
-# This file is part of FlaskContextProvider.
-#
-# FlaskContextProvider is free software: you can redistribute it and/or
-# modify it under the terms of the GNU Affero General Public License as
-# published by the Free Software Foundation, either version 3 of the
-# License, or (at your option) any later version.
-#
-# FlaskContextProvider is distributed in the hope that it will be useful,
-# but WITHOUT ANY WARRANTY; without even the implied warranty of
-# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU Affero
-# General Public License for more details.
-#
-# You should have received a copy of the GNU Affero General Public License
-# along with Orion Context Broker. If not, see http://www.gnu.org/licenses/.
-
+__author__ = 'b.gzr'
 import warnings
+import logging
+
 
 
 def data_manager_error(message):
-    warnings.warn(message, stacklevel=2)
+    logging.basicConfig(format='%(asctime)s %(levelname)s: %(message)s', datefmt='%m/%d/%Y %I:%M:%S %p', filename='log/error.log', level=logging.WARNING)
+    warnings.warn(message)
+    logging.warning(message)
 
 
 class Metadata():
 
     def __init__(self):
         """
-        Manages a metadata list in order to add it
+        Manage a metadata list in order to add it
         to one or several attributes
         """
         self._metadata_list = []
@@ -52,6 +39,8 @@ class Metadata():
             if i['name'] == name:
                 msg = "Metadata.metadata_add(): Metadata name %s is already in use" % name
                 data_manager_error(msg)
+                return self.get_metadata_list()[:]
+
         self.get_metadata_list().append(metadata_dict)
 
         return self.get_metadata_list()[:]
@@ -135,6 +124,7 @@ class Attributes():
             if i['name'] == name:
                 msg = "Attributes.attribute_add(): Attribute name %s is already in use" % name
                 data_manager_error(msg)
+                return self.get_attribute_list()[:]
 
         self.get_attribute_list().append(attribute_dict)
 
@@ -208,7 +198,7 @@ class Entity():
 
     def __init__(self):
         """
-        Manages an entity list in order to add it
+        Manage an entity list in order to add it
         to one Context Broker method
         """
         self.__entity_list = []
@@ -234,6 +224,7 @@ class Entity():
             if i['id'] == entity_id:
                 msg = "Entity.entity_add(): Entity was not added, id %s already exists" % entity_id
                 data_manager_error(msg)
+                return self.get_entity_list()[:]
 
         self.get_entity_list().append(entity_dict)
 
