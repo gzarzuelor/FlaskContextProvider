@@ -24,6 +24,7 @@ import tools.Registry as R
 import ConfigParser
 import warnings
 import memcache
+import inspect
 import logging
 import re
 import os
@@ -31,13 +32,11 @@ import os
 
 class ContextProvider():
     def __init__(self, function):
-        pos = str(__file__).find('tools')
-        self.main_path =  str(__file__)[:pos]
 
-
+        self.file_path = os.path.realpath(os.path.abspath(os.path.split(inspect.getfile(inspect.currentframe()))[0]))
         self.__start_log__('FlaskContextProvider')
         config = ConfigParser.ConfigParser()
-        config.read("%setc/FlaskContextProvider/FlaskContextProvider.ini" % self.main_path)
+        config.read("%s/../etc/FlaskContextProvider/FlaskContextProvider.ini" % self.file_path)
         try:
             self.provider_url = config.get('PROVIDER', 'provider_url')
             self.provider_port = int(config.get('PROVIDER', 'provider_port'))
@@ -300,7 +299,7 @@ class ContextProvider():
         logger = logging.getLogger()
         logger.setLevel(logging.DEBUG)
         formatter = logging.Formatter('%(asctime)s - %(levelname)s - %(message)s')
-        fh = logging.FileHandler('%setc/log/%s.log' % (self.main_path, log_name))
+        fh = logging.FileHandler('%s/../etc/log/%s.log' % (self.file_path, log_name))
         fh.setLevel(logging.DEBUG)
         fh.setFormatter(formatter)
         logger.addHandler(fh)

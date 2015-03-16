@@ -22,6 +22,8 @@ import tools.DataManager as DM
 import sevici.sevici as f
 
 
+
+
 def get_data_example(_id, _type, max_cache_time):
     """
         This is an example function which shows you how to manage the data in order
@@ -63,5 +65,4 @@ def get_data_example(_id, _type, max_cache_time):
     response = [data_response, l_time]
 
     return response
-
 CP.ContextProvider(f.get_data)

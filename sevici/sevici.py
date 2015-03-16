@@ -23,9 +23,11 @@ from xml.dom import minidom
 import unicodedata
 import requests
 import urllib2
+import inspect
 import json
 import time
 import re
+import os
 
 
 def norm_data(s):
@@ -81,9 +83,8 @@ def make_stations_jsonfile():
     """
     stations = get_stations()
     if stations != 0:
-        pos = str(__file__).find('sevici')
-        sevici_path =  str(__file__)[:pos]
-        with open('%ssevici/file/stations.json' % sevici_path, 'w') as jsonfile:
+        sevici_path = os.path.realpath(os.path.abspath(os.path.split(inspect.getfile(inspect.currentframe()))[0]))
+        with open('%s/file/stations.json' % sevici_path, 'w') as jsonfile:
             jstations = json.dumps(stations)
             jsonfile.write(jstations)
 
@@ -94,9 +95,8 @@ def load_stations():
         :rtype : list
     """
     try:
-        pos = str(__file__).find('sevici')
-        sevici_path =  str(__file__)[:pos]
-        with open('%ssevici/file/stations.json' % sevici_path, 'r') as stations_file:
+        sevici_path = os.path.realpath(os.path.abspath(os.path.split(inspect.getfile(inspect.currentframe()))[0]))
+        with open('%s/file/stations.json' % sevici_path, 'r') as stations_file:
             stations = json.loads(stations_file.read())
         return stations
     except Exception:

@@ -22,18 +22,18 @@ import ConfigParser
 import datetime
 import warnings
 import requests
+import inspect
 import json
 import re
 import os
 
 
+
 class Registry():
     def __init__(self, cp_url):
-        pos = str(__file__).find('tools')
-        self.main_path =  str(__file__)[:pos]
-
-        self.path = '%stools/registryUtils/registry.json' % self.main_path
-        self.registration_path = '%setc/Registry/registry.ini' % self.main_path
+        self.file_path = os.path.realpath(os.path.abspath(os.path.split(inspect.getfile(inspect.currentframe()))[0]))
+        self.path = '%s/registryUtils/registry.json' % self.file_path
+        self.registration_path = '%s/../etc/Registry/registry.ini' % self.file_path
 
         self.cp_url = cp_url
         self.headers = {'Content-Type': 'application/json', 'Accept': 'application/json'}
@@ -254,7 +254,7 @@ ContextBroker data :\n%s""" % (regs[i], regs[i], response.text)
 
         try:
             response = requests.post(url, headers=self.headers, data=data)
-            with open('./tools/registryUtils/registration.log', 'a') as log:
+            with open('%s/registryUtils/registration.log' % self.file_path, 'a') as log:
                 log_str = '%s %s\n %s\n %s\n' % (datetime.datetime.now(), cb_url, payload, response.text)
                 log.write(log_str)
                 log.close()
@@ -308,7 +308,7 @@ ContextBroker data :\n%s""" % (regs[i], regs[i], response.text)
 
         try:
             response = requests.post(url, headers=self.headers, data=data)
-            with open('%stools/registryUtils/registration.log' % self.main_path, 'a') as log:
+            with open('%s/registryUtils/registration.log' % self.file_path, 'a') as log:
                 log_str = '%s %s\n %s\n %s\n' % (datetime.datetime.now(), registry[4], payload, response.text)
                 log.write(log_str)
                 log.close()

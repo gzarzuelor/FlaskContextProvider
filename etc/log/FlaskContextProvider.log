@@ -213,3 +213,75 @@
 2015-02-13 13:43:51,696 - INFO - Starting new HTTP connection (1): www.sevici.es
 2015-02-13 13:43:51,778 - DEBUG - "GET /service/stationdetails/seville/1 HTTP/1.1" 200 161
 2015-02-13 13:43:51,788 - INFO - 127.0.0.1 - - [13/Feb/2015 13:43:51] "POST /v1/queryContext HTTP/1.1" 200 -
+2015-03-16 11:26:17,657 - INFO - Starting new HTTP connection (1): 130.206.85.12
+2015-03-16 11:26:17,858 - DEBUG - "POST /v1/registry/discoverContextAvailability HTTP/1.1" 200 36224
+2015-03-16 11:26:18,049 - INFO -  * Running on http://127.0.0.1:4000/ (Press CTRL+C to quit)
+2015-03-16 11:38:06,453 - INFO - Starting new HTTP connection (1): 130.206.85.12
+2015-03-16 11:38:06,628 - DEBUG - "POST /v1/registry/discoverContextAvailability HTTP/1.1" 200 36224
+2015-03-16 11:38:06,739 - INFO -  * Running on http://127.0.0.1:4000/ (Press CTRL+C to quit)
+2015-03-16 11:40:34,651 - INFO - Starting new HTTP connection (1): 130.206.85.12
+2015-03-16 11:40:34,831 - DEBUG - "POST /v1/registry/discoverContextAvailability HTTP/1.1" 200 36224
+2015-03-16 11:40:34,937 - INFO -  * Running on http://127.0.0.1:4000/ (Press CTRL+C to quit)
+2015-03-16 11:46:52,496 - INFO - Starting new HTTP connection (1): 130.206.85.12
+2015-03-16 11:46:52,671 - DEBUG - "POST /v1/registry/discoverContextAvailability HTTP/1.1" 200 36224
+2015-03-16 11:46:52,778 - INFO -  * Running on http://127.0.0.1:4000/ (Press CTRL+C to quit)
+2015-03-16 11:49:15,861 - INFO - Starting new HTTP connection (1): 130.206.85.12
+2015-03-16 11:49:16,111 - DEBUG - "POST /v1/registry/discoverContextAvailability HTTP/1.1" 200 36224
+2015-03-16 11:49:16,256 - INFO -  * Running on http://127.0.0.1:4000/ (Press CTRL+C to quit)
+2015-03-16 11:51:24,223 - INFO - Starting new HTTP connection (1): 130.206.85.12
+2015-03-16 11:51:24,411 - DEBUG - "POST /v1/registry/discoverContextAvailability HTTP/1.1" 200 36224
+2015-03-16 11:51:24,517 - INFO -  * Running on http://127.0.0.1:4000/ (Press CTRL+C to quit)
+2015-03-16 11:52:09,367 - INFO - Starting new HTTP connection (1): 130.206.85.12
+2015-03-16 11:52:09,578 - DEBUG - "POST /v1/registry/discoverContextAvailability HTTP/1.1" 200 36224
+2015-03-16 11:52:09,701 - INFO -  * Running on http://127.0.0.1:4000/ (Press CTRL+C to quit)
+2015-03-16 11:52:24,839 - INFO - Starting new HTTP connection (1): 130.206.85.12
+2015-03-16 11:52:25,029 - DEBUG - "POST /v1/registry/discoverContextAvailability HTTP/1.1" 200 36224
+2015-03-16 11:52:25,135 - INFO -  * Running on http://127.0.0.1:4000/ (Press CTRL+C to quit)
+2015-03-16 11:53:03,766 - INFO - Starting new HTTP connection (1): 130.206.85.12
+2015-03-16 11:53:03,940 - DEBUG - "POST /v1/registry/discoverContextAvailability HTTP/1.1" 200 36224
+2015-03-16 11:53:04,048 - INFO -  * Running on http://127.0.0.1:4000/ (Press CTRL+C to quit)
+2015-03-16 11:53:40,773 - INFO - Starting new HTTP connection (1): 130.206.85.12
+2015-03-16 11:53:40,950 - DEBUG - "POST /v1/registry/discoverContextAvailability HTTP/1.1" 200 36224
+2015-03-16 11:53:41,059 - INFO -  * Running on http://127.0.0.1:4000/ (Press CTRL+C to quit)
+2015-03-16 11:56:25,526 - INFO - Starting new HTTP connection (1): 130.206.85.12
+2015-03-16 11:56:25,703 - DEBUG - "POST /v1/registry/discoverContextAvailability HTTP/1.1" 200 36224
+2015-03-16 11:56:25,809 - INFO -  * Running on http://127.0.0.1:4000/ (Press CTRL+C to quit)
+2015-03-16 12:06:19,378 - INFO - Starting new HTTP connection (1): 130.206.85.12
+2015-03-16 12:06:19,589 - DEBUG - "POST /v1/registry/discoverContextAvailability HTTP/1.1" 200 36224
+2015-03-16 12:06:19,714 - INFO -  * Running on http://127.0.0.1:4000/ (Press CTRL+C to quit)
+2015-03-16 12:07:41,604 - INFO -  * Running on http://127.0.0.1:4000/ (Press CTRL+C to quit)
+2015-03-16 12:08:10,923 - INFO - Starting new HTTP connection (1): 130.206.85.12
+2015-03-16 12:08:11,098 - DEBUG - "POST /v1/registry/discoverContextAvailability HTTP/1.1" 200 36224
+2015-03-16 12:08:11,207 - INFO -  * Running on http://127.0.0.1:4000/ (Press CTRL+C to quit)
+2015-03-16 12:49:43,970 - INFO - Starting new HTTP connection (1): 130.206.85.12
+2015-03-16 12:49:44,148 - DEBUG - "POST /v1/registry/discoverContextAvailability HTTP/1.1" 200 36224
+2015-03-16 12:49:44,267 - INFO -  * Running on http://127.0.0.1:4000/ (Press CTRL+C to quit)
+2015-03-16 12:50:42,842 - INFO - Starting new HTTP connection (1): 130.206.85.12
+2015-03-16 12:50:42,924 - DEBUG - "POST /v1/registry/discoverContextAvailability HTTP/1.1" 200 94
+2015-03-16 12:50:42,927 - INFO - Starting new HTTP connection (1): 130.206.85.12
+2015-03-16 12:50:43,028 - DEBUG - "POST /v1/registry/registerContext HTTP/1.1" 200 75
+2015-03-16 12:50:44,302 - INFO - Starting new HTTP connection (1): 130.206.85.12
+2015-03-16 12:50:44,482 - DEBUG - "POST /v1/registry/discoverContextAvailability HTTP/1.1" 200 36224
+2015-03-16 12:50:44,612 - INFO -  * Running on http://127.0.0.1:4000/ (Press CTRL+C to quit)
+2015-03-16 12:51:51,118 - INFO - Starting new HTTP connection (1): 130.206.85.12
+2015-03-16 12:51:51,322 - DEBUG - "POST /v1/registry/discoverContextAvailability HTTP/1.1" 200 36224
+2015-03-16 12:51:51,431 - INFO -  * Running on http://127.0.0.1:4000/ (Press CTRL+C to quit)
+2015-03-16 12:53:54,561 - INFO - Starting new HTTP connection (1): 130.206.85.12
+2015-03-16 12:53:54,736 - DEBUG - "POST /v1/registry/discoverContextAvailability HTTP/1.1" 200 36224
+2015-03-16 12:53:54,842 - INFO -  * Running on http://127.0.0.1:4000/ (Press CTRL+C to quit)
+2015-03-16 12:57:37,885 - INFO - Starting new HTTP connection (1): 130.206.85.12
+2015-03-16 12:57:38,062 - DEBUG - "POST /v1/registry/discoverContextAvailability HTTP/1.1" 200 36224
+2015-03-16 12:57:38,171 - INFO -  * Running on http://127.0.0.1:4000/ (Press CTRL+C to quit)
+2015-03-16 13:03:48,596 - INFO - Starting new HTTP connection (1): 130.206.85.12
+2015-03-16 13:03:48,786 - DEBUG - "POST /v1/registry/discoverContextAvailability HTTP/1.1" 200 36224
+2015-03-16 13:03:48,892 - INFO -  * Running on http://127.0.0.1:4000/ (Press CTRL+C to quit)
+2015-03-16 13:06:11,130 - INFO - Starting new HTTP connection (1): www.sevici.es
+2015-03-16 13:06:11,673 - DEBUG - "GET /service/stationdetails/seville/26 HTTP/1.1" 200 159
+2015-03-16 13:06:11,813 - INFO - Starting new HTTP connection (1): www.sevici.es
+2015-03-16 13:06:11,907 - DEBUG - "GET /service/stationdetails/seville/260 HTTP/1.1" 200 159
+2015-03-16 13:06:11,915 - INFO - 127.0.0.1 - - [16/Mar/2015 13:06:11] "POST /v1/queryContext HTTP/1.1" 200 -
+2015-03-16 13:06:54,822 - INFO - Starting new HTTP connection (1): www.sevici.es
+2015-03-16 13:06:54,913 - DEBUG - "GET /service/stationdetails/seville/26 HTTP/1.1" 200 160
+2015-03-16 13:06:54,921 - INFO - Starting new HTTP connection (1): www.sevici.es
+2015-03-16 13:06:55,013 - DEBUG - "GET /service/stationdetails/seville/260 HTTP/1.1" 200 160
+2015-03-16 13:06:55,020 - INFO - 127.0.0.1 - - [16/Mar/2015 13:06:55] "POST /v1/queryContext HTTP/1.1" 200 -
