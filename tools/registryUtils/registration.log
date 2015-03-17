@@ -12,10 +12,10 @@
   "duration" : "P6M",
   "registrationId" : "54c2118c1860a34448096422"
 
-}2015-03-16 12:50:43.029000 http://130.206.85.12:1026
- {'duration': 'PT1H', 'contextRegistrations': [{'providingApplication': 'http://130.206.127.30:4000/v1', 'entities': [{'type': 'test', 'id': 'entityA1', 'isPattern': 'false'}, {'type': 'test', 'id': 'entityB1', 'isPattern': 'false'}, {'type': 'test', 'id': 'entityC1', 'isPattern': 'false'}, {'type': 'test', 'id': 'entityD1', 'isPattern': 'false'}, {'type': 'test', 'id': 'entityE1', 'isPattern': 'false'}, {'type': 'test', 'id': 'entityF1', 'isPattern': 'false'}], 'attributes': [{'isDomain': 'false', 'type': 'integer', 'name': 'attrib1'}, {'isDomain': 'false', 'type': 'float', 'name': 'attrib2'}, {'isDomain': 'false', 'type': 'integer', 'name': 'attrib3'}]}]}
+2015-03-17 09:32:38.908000 http://130.206.85.12:1026
+ {'duration': 'PT24H', 'contextRegistrations': [{'providingApplication': 'http://130.206.127.30:4000/v1', 'entities': [{'type': 'tusbic', 'id': 'urn::Santander:Tusbic2', 'isPattern': 'false'}, {'type': 'tusbic', 'id': 'urn::Santander:Tusbic3', 'isPattern': 'false'}, {'type': 'tusbic', 'id': 'urn::Santander:Tusbic4', 'isPattern': 'false'}, {'type': 'tusbic', 'id': 'urn::Santander:Tusbic5', 'isPattern': 'false'}, {'type': 'tusbic', 'id': 'urn::Santander:Tusbic6', 'isPattern': 'false'}, {'type': 'tusbic', 'id': 'urn::Santander:Tusbic7', 'isPattern': 'false'}, {'type': 'tusbic', 'id': 'urn::Santander:Tusbic8', 'isPattern': 'false'}, {'type': 'tusbic', 'id': 'urn::Santander:Tusbic9', 'isPattern': 'false'}, {'type': 'tusbic', 'id': 'urn::Santander:Tusbic10', 'isPattern': 'false'}, {'type': 'tusbic', 'id': 'urn::Santander:Tusbic11', 'isPattern': 'false'}, {'type': 'tusbic', 'id': 'urn::Santander:Tusbic12', 'isPattern': 'false'}, {'type': 'tusbic', 'id': 'urn::Santander:Tusbic13', 'isPattern': 'false'}, {'type': 'tusbic', 'id': 'urn::Santander:Tusbic14', 'isPattern': 'false'}, {'type': 'tusbic', 'id': 'urn::Santander:Tusbic15', 'isPattern': 'false'}, {'type': 'tusbic', 'id': 'urn::Santander:Tusbic16', 'isPattern': 'false'}, {'type': 'tusbic', 'id': 'urn::Santander:Tusbic17', 'isPattern': 'false'}], 'attributes': [{'isDomain': 'false', 'type': 'integer', 'name': 'available'}, {'isDomain': 'false', 'type': 'integer', 'name': 'free'}, {'isDomain': 'false', 'type': 'integer', 'name': 'total'}, {'isDomain': 'false', 'type': 'integer', 'name': 'ticket'}, {'isDomain': 'false', 'type': 'integer', 'name': 'open'}, {'isDomain': 'false', 'type': 'urn:x-ogc:def:trs:IDAS:1.0:ISO8601', 'name': 'timeinstant'}, {'isDomain': 'false', 'type': 'integer', 'name': 'connected'}, {'isDomain': 'false', 'type': 'coords', 'name': 'position'}]}]}
  {
-  "duration" : "PT1H",
-  "registrationId" : "5506c379a85d635937a52429"
+  "duration" : "PT24H",
+  "registrationId" : "5507e691a85d635937a5242a"
 }
 

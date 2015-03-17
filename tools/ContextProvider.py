@@ -31,7 +31,7 @@ import os
 
 
 class ContextProvider():
-    def __init__(self, function):
+    def __init__(self, **kwargs):
 
         self.file_path = os.path.realpath(os.path.abspath(os.path.split(inspect.getfile(inspect.currentframe()))[0]))
         self.__start_log__('FlaskContextProvider')
@@ -84,7 +84,10 @@ class ContextProvider():
                 cached_response = self.__check_cache__(key)
 
                 if cached_response is None:
-                    response = function(entity_id_list[i], entity_type_list[i], self.max_cache_time)
+                    response = [[], 1]
+                    for k, f in kwargs.iteritems():
+                        if entity_type_list[i] == k:
+                            response = f(entity_id_list[i], entity_type_list[i], self.max_cache_time)
 
                     if len(response[0]) != 0:
                         response_data.entity_list_add(response[0])

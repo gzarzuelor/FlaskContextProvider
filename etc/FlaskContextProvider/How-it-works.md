@@ -37,6 +37,13 @@
     
     def your_get_data_function_name(_id, _type, max_cache_time):
         ...
-    CP.ContextProvider('/v1/queryContext', your_get_data_function_name)
+    CP.ContextProvider(Entity_type=your_get_data_function_name)
+
+    Additionally if it is considered necessary, CP.ContextProvider() is able to manage multiple get_data_functions, but each different get_data_function must be associated to a different entity_type.
+    CP.ContextProvider(Entity_type_A=your_get_data_function_name_A, Entity_type_B=your_get_data_function_name_B)
+
+    Taking that into account if a get_data_function manages several entity_types, the function must be added one time for each entity_type.
+    CP.ContextProvider(Entity_type_A=your_get_data_function_name, Entity_type_B=your_get_data_function_name)
+
 ```
 
