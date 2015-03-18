@@ -12,7 +12,7 @@
     """
     ```           
     At [main.py](https://github.com/gzarrub/FlaskContextProvider/blob/master/main.py) there is an example get data function
-    to see a more complex and complete example see: [sevici.py](https://github.com/gzarrub/FlaskContextProvider/blob/master/sevici/sevici.py)
+    to see a more complex and complete example see: [sevici.py](https://github.com/gzarrub/FlaskContextProvider/blob/master/providers/sevici/sevici.py)
 
     The function will be called one time for each entity that the Context Provider
     will be asked to, so take into account that this functions have to give response
