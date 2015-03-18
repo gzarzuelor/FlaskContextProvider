@@ -133,7 +133,11 @@ class Registry():
                         response = requests.post(url, headers=self.headers, data=data)
 
                         z = 0
-                        if 'contextRegistrationResponses' in response.json():
+                        if response.status_code != 200:
+                                    msg = "%s" % response.text
+                                    warnings.warn(msg, stacklevel=2)
+
+                        elif 'contextRegistrationResponses' in response.json():
                             responses = response.json()['contextRegistrationResponses']
                             for e in range(len(responses)):
                                 if not responses[e]['contextRegistration']['providingApplication'] == self.cp_url:
