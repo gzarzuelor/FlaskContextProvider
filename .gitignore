@@ -6,6 +6,7 @@
 
 #Python
 *.pyc
+*.egg-info
 
 #log files
 *.log
