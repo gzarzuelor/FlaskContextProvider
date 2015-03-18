@@ -19,9 +19,10 @@
 
 import tools.ContextProvider as CP
 import tools.DataManager as DM
-import sevici.sevici as s
-import tusbic.tusbic as t
-
+from providers.sevici import sevici as sevici
+from providers.tusbic import tusbic as tusbic
+from providers.villo import villo as villo
+from providers.valenbisi import valenbisi as valenvisi
 
 def get_data_example(_id, _type, max_cache_time):
     """
@@ -66,5 +67,5 @@ def get_data_example(_id, _type, max_cache_time):
     return response
 
 
-CP.ContextProvider(sevici=s.get_data, tusbic=t.get_data)
+CP.ContextProvider(sevici=sevici.get_data, tusbic=tusbic.get_data, valenbisi=valenvisi.get_data, villo=villo.get_data)
 

@@ -1004,3 +1004,53 @@ AttributeError: 'NoneType' object has no attribute 'group'
 2015-03-17 10:29:08,391 - DEBUG - "GET /service/stationdetails/seville/260 HTTP/1.1" 200 159
 2015-03-17 10:29:08,631 - INFO - 127.0.0.1 - - [17/Mar/2015 10:29:08] "POST /v1/queryContext HTTP/1.1" 200 -
 2015-03-17 10:29:46,895 - INFO - 127.0.0.1 - - [17/Mar/2015 10:29:46] "POST /v1/queryContext HTTP/1.1" 200 -
+2015-03-18 11:23:22,862 - INFO - Starting new HTTP connection (1): 130.206.85.12
+2015-03-18 11:23:23,075 - DEBUG - "POST /v1/registry/discoverContextAvailability HTTP/1.1" 200 36224
+2015-03-18 11:23:23,178 - INFO - Starting new HTTP connection (1): 130.206.85.12
+2015-03-18 11:23:23,329 - DEBUG - "POST /v1/registry/discoverContextAvailability HTTP/1.1" 200 3400
+2015-03-18 11:23:23,530 - INFO -  * Running on http://127.0.0.1:1026/ (Press CTRL+C to quit)
+2015-03-18 11:30:29,263 - INFO - Starting new HTTP connection (1): www.tusbic.es
+2015-03-18 11:30:29,565 - DEBUG - "GET /service/stationdetails/santander/2 HTTP/1.1" 200 162
+2015-03-18 11:30:30,760 - INFO - 127.0.0.1 - - [18/Mar/2015 11:30:30] "POST /v1/queryContext HTTP/1.1" 200 -
+2015-03-18 11:30:53,667 - INFO - 127.0.0.1 - - [18/Mar/2015 11:30:53] "POST /v1/queryContext HTTP/1.1" 200 -
+2015-03-18 11:31:03,964 - INFO - Starting new HTTP connection (1): www.tusbic.es
+2015-03-18 11:31:04,117 - DEBUG - "GET /service/stationdetails/santander/3 HTTP/1.1" 200 161
+2015-03-18 11:31:04,121 - INFO - Starting new HTTP connection (1): www.tusbic.es
+2015-03-18 11:31:04,253 - DEBUG - "GET /service/stationdetails/santander/4 HTTP/1.1" 200 161
+2015-03-18 11:31:04,257 - INFO - Starting new HTTP connection (1): www.tusbic.es
+2015-03-18 11:31:04,391 - DEBUG - "GET /service/stationdetails/santander/5 HTTP/1.1" 200 160
+2015-03-18 11:31:04,397 - INFO - Starting new HTTP connection (1): www.tusbic.es
+2015-03-18 11:31:04,542 - DEBUG - "GET /service/stationdetails/santander/6 HTTP/1.1" 200 161
+2015-03-18 11:31:04,548 - INFO - Starting new HTTP connection (1): www.tusbic.es
+2015-03-18 11:31:04,687 - DEBUG - "GET /service/stationdetails/santander/7 HTTP/1.1" 200 161
+2015-03-18 11:31:04,691 - INFO - Starting new HTTP connection (1): www.tusbic.es
+2015-03-18 11:31:04,812 - DEBUG - "GET /service/stationdetails/santander/8 HTTP/1.1" 200 161
+2015-03-18 11:31:04,816 - INFO - Starting new HTTP connection (1): www.tusbic.es
+2015-03-18 11:31:04,950 - DEBUG - "GET /service/stationdetails/santander/9 HTTP/1.1" 200 160
+2015-03-18 11:31:04,954 - INFO - Starting new HTTP connection (1): www.tusbic.es
+2015-03-18 11:31:05,088 - DEBUG - "GET /service/stationdetails/santander/10 HTTP/1.1" 200 160
+2015-03-18 11:31:05,092 - INFO - Starting new HTTP connection (1): www.tusbic.es
+2015-03-18 11:31:05,226 - DEBUG - "GET /service/stationdetails/santander/11 HTTP/1.1" 200 161
+2015-03-18 11:31:05,232 - INFO - Starting new HTTP connection (1): www.tusbic.es
+2015-03-18 11:31:05,401 - DEBUG - "GET /service/stationdetails/santander/12 HTTP/1.1" 200 161
+2015-03-18 11:31:05,404 - INFO - Starting new HTTP connection (1): www.tusbic.es
+2015-03-18 11:31:05,546 - DEBUG - "GET /service/stationdetails/santander/13 HTTP/1.1" 200 161
+2015-03-18 11:31:05,552 - INFO - Starting new HTTP connection (1): www.tusbic.es
+2015-03-18 11:31:05,658 - DEBUG - "GET /service/stationdetails/santander/14 HTTP/1.1" 200 161
+2015-03-18 11:31:05,663 - INFO - Starting new HTTP connection (1): www.tusbic.es
+2015-03-18 11:31:05,779 - DEBUG - "GET /service/stationdetails/santander/15 HTTP/1.1" 200 160
+2015-03-18 11:31:05,785 - INFO - Starting new HTTP connection (1): www.tusbic.es
+2015-03-18 11:31:05,891 - DEBUG - "GET /service/stationdetails/santander/16 HTTP/1.1" 200 161
+2015-03-18 11:31:05,894 - INFO - Starting new HTTP connection (1): www.tusbic.es
+2015-03-18 11:31:06,003 - DEBUG - "GET /service/stationdetails/santander/17 HTTP/1.1" 200 161
+2015-03-18 11:31:06,019 - INFO - 127.0.0.1 - - [18/Mar/2015 11:31:06] "POST /v1/queryContext HTTP/1.1" 200 -
+2015-03-18 12:32:10,470 - INFO - Starting new HTTP connection (1): 130.206.85.12
+2015-03-18 12:32:10,648 - DEBUG - "POST /v1/registry/discoverContextAvailability HTTP/1.1" 200 36224
+2015-03-18 12:32:10,753 - INFO - Starting new HTTP connection (1): 130.206.85.12
+2015-03-18 12:32:10,877 - DEBUG - "POST /v1/registry/discoverContextAvailability HTTP/1.1" 200 3400
+2015-03-18 12:32:10,887 - INFO -  * Running on http://127.0.0.1:4000/ (Press CTRL+C to quit)
+2015-03-18 12:43:30,178 - INFO - Starting new HTTP connection (1): 130.206.85.12
+2015-03-18 12:43:30,358 - DEBUG - "POST /v1/registry/discoverContextAvailability HTTP/1.1" 200 36224
+2015-03-18 12:43:31,220 - INFO - Starting new HTTP connection (1): 130.206.85.12
+2015-03-18 12:43:31,341 - DEBUG - "POST /v1/registry/discoverContextAvailability HTTP/1.1" 200 3400
+2015-03-18 12:43:31,351 - INFO -  * Running on http://127.0.0.1:4000/ (Press CTRL+C to quit)

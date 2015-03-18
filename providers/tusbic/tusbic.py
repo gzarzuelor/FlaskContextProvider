@@ -50,11 +50,11 @@ def norm_time(s):
 
 def get_stations():
     """
-    Obtains the stations xml provided by http://www.sevici.es
+    Obtains the stations xml provided by http://www.tusbic.es
         :rtype : list
     """
     try:
-        response = urllib2.urlopen('http://www.sevici.es/service/carto')
+        response = urllib2.urlopen('http://www.tusbic.es/service/carto')
         xmldoc = minidom.parse(response)
         item_list = xmldoc.getElementsByTagName('marker')
         stations = []
@@ -83,8 +83,10 @@ def make_stations_jsonfile():
     """
     stations = get_stations()
     if stations != 0:
-        sevici_path = os.path.realpath(os.path.abspath(os.path.split(inspect.getfile(inspect.currentframe()))[0]))
-        with open('%s/file/stations.json' % sevici_path, 'w') as jsonfile:
+        tusbic_path = os.path.realpath(os.path.abspath(os.path.split(inspect.getfile(inspect.currentframe()))[0]))
+        if not os.path.exists('%s/file' % tusbic_path):
+            os.mkdir('%s/file' % tusbic_path)
+        with open('%s/file/stations.json' % tusbic_path, 'w') as jsonfile:
             jstations = json.dumps(stations)
             jsonfile.write(jstations)
 
@@ -95,8 +97,8 @@ def load_stations():
         :rtype : list
     """
     try:
-        sevici_path = os.path.realpath(os.path.abspath(os.path.split(inspect.getfile(inspect.currentframe()))[0]))
-        with open('%s/file/stations.json' % sevici_path, 'r') as stations_file:
+        tusbic_path = os.path.realpath(os.path.abspath(os.path.split(inspect.getfile(inspect.currentframe()))[0]))
+        with open('%s/file/stations.json' % tusbic_path, 'r') as stations_file:
             stations = json.loads(stations_file.read())
         return stations
     except Exception:
@@ -105,22 +107,22 @@ def load_stations():
 
 def select_id(orion_id):
     """
-    Select the sevici id
+    Select the tusbic id
         :param orion_id: orion_id
-        :rtype : sevici_id
+        :rtype : tusbic_id
     """
-    pattern = "urn::Sevilla:Sevici"
+    pattern = "urn::Santander:Tusbic"
     a = len(re.match(pattern, orion_id).group())
     return orion_id[a:]
 
 
-def get_station_data(sevici_id):
+def get_station_data(tusbic_id):
     """
-    Makes the sevici request
-        :param sevici_id: sevici id number
+    Makes the tusbic request
+        :param tusbic_id: tusbic id number
         :rtype : list
     """
-    url = 'http://www.sevici.es/service/stationdetails/seville/'+sevici_id
+    url = 'http://www.tusbic.es/service/stationdetails/santander/'+tusbic_id
     response = requests.get(url)
     response.raise_for_status()
     root = ET.fromstring(response.text)
@@ -141,7 +143,7 @@ def get_data(_id, _type, max_time=1):
     life_time = []
     try:
         fields = get_station_data(id_)
-        entity.entity_add(_id, 'sevici', ispattern='false')
+        entity.entity_add(_id, 'tusbic', ispattern='false')
 
         for s in fields:
             if s.tag == "updated":

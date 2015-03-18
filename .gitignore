@@ -6,3 +6,9 @@
 
 #Python
 *.pyc
+
+#log files
+*.log
+
+#config files
+*.ini
