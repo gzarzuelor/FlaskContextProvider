@@ -10452,3 +10452,284 @@ KeyError: u'sevici'
 2015-03-18 13:47:13,373 - INFO - Starting new HTTP connection (1): www.valenbisi.es
 2015-03-18 13:47:13,461 - DEBUG - "GET /service/stationdetails/seville/119 HTTP/1.1" 200 161
 2015-03-18 13:47:13,470 - INFO - 195.235.92.37 - - [18/Mar/2015 13:47:13] "POST /v1/queryContext HTTP/1.1" 200 -
+2015-03-18 19:22:56,768 - INFO - Starting new HTTP connection (1): orion.lab.fiware.org
+2015-03-18 19:22:58,441 - DEBUG - "POST /v1/registry/discoverContextAvailability HTTP/1.1" 200 36224
+2015-03-18 19:22:58,534 - INFO - Starting new HTTP connection (1): orion.lab.fiware.org
+2015-03-18 19:22:58,844 - DEBUG - "POST /v1/registry/discoverContextAvailability HTTP/1.1" 200 3400
+2015-03-18 19:22:58,850 - INFO - Starting new HTTP connection (1): orion.lab.fiware.org
+2015-03-18 19:23:01,057 - DEBUG - "POST /v1/registry/discoverContextAvailability HTTP/1.1" 200 94
+2015-03-18 19:23:01,059 - INFO - Starting new HTTP connection (1): orion.lab.fiware.org
+2015-03-18 19:23:01,747 - DEBUG - "POST /v1/registry/registerContext HTTP/1.1" 200 74
+2015-03-18 19:23:01,758 - INFO - Starting new HTTP connection (1): orion.lab.fiware.org
+2015-03-18 19:23:02,050 - DEBUG - "POST /v1/registry/discoverContextAvailability HTTP/1.1" 200 94
+2015-03-18 19:23:02,052 - INFO - Starting new HTTP connection (1): orion.lab.fiware.org
+2015-03-18 19:23:02,361 - DEBUG - "POST /v1/registry/registerContext HTTP/1.1" 200 74
+2015-03-18 19:23:02,370 - INFO -  * Running on http://0.0.0.0:1026/
+2015-03-18 19:23:11,560 - INFO - Starting new HTTP connection (1): www.sevici.es
+2015-03-18 19:23:11,780 - DEBUG - "GET /service/stationdetails/seville/1 HTTP/1.1" 200 162
+2015-03-18 19:23:11,805 - INFO - 130.206.81.46 - - [18/Mar/2015 19:23:11] "POST /v1/queryContext HTTP/1.1" 200 -
+2015-03-18 19:23:12,349 - INFO - 130.206.81.46 - - [18/Mar/2015 19:23:12] "POST /v1/queryContext HTTP/1.1" 200 -
+2015-03-18 19:23:29,162 - INFO - Starting new HTTP connection (1): www.sevici.es
+2015-03-18 19:23:29,248 - DEBUG - "GET /service/stationdetails/seville/2 HTTP/1.1" 200 161
+2015-03-18 19:23:29,253 - INFO - Starting new HTTP connection (1): www.sevici.es
+2015-03-18 19:23:29,340 - DEBUG - "GET /service/stationdetails/seville/3 HTTP/1.1" 200 162
+2015-03-18 19:23:29,345 - INFO - Starting new HTTP connection (1): www.sevici.es
+2015-03-18 19:23:29,432 - DEBUG - "GET /service/stationdetails/seville/4 HTTP/1.1" 200 162
+2015-03-18 19:23:29,437 - INFO - Starting new HTTP connection (1): www.sevici.es
+2015-03-18 19:23:29,525 - DEBUG - "GET /service/stationdetails/seville/5 HTTP/1.1" 200 160
+2015-03-18 19:23:29,530 - INFO - Starting new HTTP connection (1): www.sevici.es
+2015-03-18 19:23:29,618 - DEBUG - "GET /service/stationdetails/seville/6 HTTP/1.1" 200 159
+2015-03-18 19:23:29,623 - INFO - Starting new HTTP connection (1): www.sevici.es
+2015-03-18 19:23:29,712 - DEBUG - "GET /service/stationdetails/seville/7 HTTP/1.1" 200 162
+2015-03-18 19:23:29,717 - INFO - Starting new HTTP connection (1): www.sevici.es
+2015-03-18 19:23:29,804 - DEBUG - "GET /service/stationdetails/seville/8 HTTP/1.1" 200 161
+2015-03-18 19:23:29,808 - INFO - Starting new HTTP connection (1): www.sevici.es
+2015-03-18 19:23:29,896 - DEBUG - "GET /service/stationdetails/seville/9 HTTP/1.1" 200 162
+2015-03-18 19:23:29,902 - INFO - Starting new HTTP connection (1): www.sevici.es
+2015-03-18 19:23:29,992 - DEBUG - "GET /service/stationdetails/seville/10 HTTP/1.1" 200 161
+2015-03-18 19:23:29,999 - INFO - Starting new HTTP connection (1): www.sevici.es
+2015-03-18 19:23:30,088 - DEBUG - "GET /service/stationdetails/seville/11 HTTP/1.1" 200 161
+2015-03-18 19:23:30,093 - INFO - Starting new HTTP connection (1): www.sevici.es
+2015-03-18 19:23:30,189 - DEBUG - "GET /service/stationdetails/seville/12 HTTP/1.1" 200 161
+2015-03-18 19:23:30,195 - INFO - Starting new HTTP connection (1): www.sevici.es
+2015-03-18 19:23:30,283 - DEBUG - "GET /service/stationdetails/seville/13 HTTP/1.1" 200 161
+2015-03-18 19:23:30,288 - INFO - Starting new HTTP connection (1): www.sevici.es
+2015-03-18 19:23:30,374 - DEBUG - "GET /service/stationdetails/seville/14 HTTP/1.1" 200 158
+2015-03-18 19:23:30,379 - INFO - Starting new HTTP connection (1): www.sevici.es
+2015-03-18 19:23:30,468 - DEBUG - "GET /service/stationdetails/seville/15 HTTP/1.1" 200 160
+2015-03-18 19:23:30,472 - INFO - Starting new HTTP connection (1): www.sevici.es
+2015-03-18 19:23:30,573 - DEBUG - "GET /service/stationdetails/seville/16 HTTP/1.1" 200 159
+2015-03-18 19:23:30,577 - INFO - Starting new HTTP connection (1): www.sevici.es
+2015-03-18 19:23:30,665 - DEBUG - "GET /service/stationdetails/seville/17 HTTP/1.1" 200 161
+2015-03-18 19:23:30,672 - INFO - Starting new HTTP connection (1): www.sevici.es
+2015-03-18 19:23:30,758 - DEBUG - "GET /service/stationdetails/seville/18 HTTP/1.1" 200 161
+2015-03-18 19:23:30,762 - INFO - Starting new HTTP connection (1): www.sevici.es
+2015-03-18 19:23:30,856 - DEBUG - "GET /service/stationdetails/seville/19 HTTP/1.1" 200 161
+2015-03-18 19:23:30,861 - INFO - Starting new HTTP connection (1): www.sevici.es
+2015-03-18 19:23:30,976 - DEBUG - "GET /service/stationdetails/seville/20 HTTP/1.1" 200 160
+2015-03-18 19:23:30,982 - INFO - Starting new HTTP connection (1): www.sevici.es
+2015-03-18 19:23:31,088 - DEBUG - "GET /service/stationdetails/seville/21 HTTP/1.1" 200 161
+2015-03-18 19:23:31,093 - INFO - Starting new HTTP connection (1): www.sevici.es
+2015-03-18 19:23:31,179 - DEBUG - "GET /service/stationdetails/seville/22 HTTP/1.1" 200 159
+2015-03-18 19:23:31,184 - INFO - Starting new HTTP connection (1): www.sevici.es
+2015-03-18 19:23:31,272 - DEBUG - "GET /service/stationdetails/seville/23 HTTP/1.1" 200 159
+2015-03-18 19:23:31,278 - INFO - Starting new HTTP connection (1): www.sevici.es
+2015-03-18 19:23:31,365 - DEBUG - "GET /service/stationdetails/seville/24 HTTP/1.1" 200 160
+2015-03-18 19:23:31,370 - INFO - Starting new HTTP connection (1): www.sevici.es
+2015-03-18 19:23:31,458 - DEBUG - "GET /service/stationdetails/seville/25 HTTP/1.1" 200 162
+2015-03-18 19:23:31,464 - INFO - Starting new HTTP connection (1): www.sevici.es
+2015-03-18 19:23:31,550 - DEBUG - "GET /service/stationdetails/seville/26 HTTP/1.1" 200 162
+2015-03-18 19:23:31,555 - INFO - Starting new HTTP connection (1): www.sevici.es
+2015-03-18 19:23:31,644 - DEBUG - "GET /service/stationdetails/seville/27 HTTP/1.1" 200 161
+2015-03-18 19:23:31,652 - INFO - Starting new HTTP connection (1): www.sevici.es
+2015-03-18 19:23:31,738 - DEBUG - "GET /service/stationdetails/seville/28 HTTP/1.1" 200 160
+2015-03-18 19:23:31,746 - INFO - Starting new HTTP connection (1): www.sevici.es
+2015-03-18 19:23:31,833 - DEBUG - "GET /service/stationdetails/seville/29 HTTP/1.1" 200 161
+2015-03-18 19:23:31,839 - INFO - Starting new HTTP connection (1): www.sevici.es
+2015-03-18 19:23:31,926 - DEBUG - "GET /service/stationdetails/seville/30 HTTP/1.1" 200 162
+2015-03-18 19:23:31,931 - INFO - Starting new HTTP connection (1): www.sevici.es
+2015-03-18 19:23:32,021 - DEBUG - "GET /service/stationdetails/seville/31 HTTP/1.1" 200 161
+2015-03-18 19:23:32,027 - INFO - Starting new HTTP connection (1): www.sevici.es
+2015-03-18 19:23:32,115 - DEBUG - "GET /service/stationdetails/seville/32 HTTP/1.1" 200 161
+2015-03-18 19:23:32,120 - INFO - Starting new HTTP connection (1): www.sevici.es
+2015-03-18 19:23:32,208 - DEBUG - "GET /service/stationdetails/seville/33 HTTP/1.1" 200 160
+2015-03-18 19:23:32,213 - INFO - Starting new HTTP connection (1): www.sevici.es
+2015-03-18 19:23:32,300 - DEBUG - "GET /service/stationdetails/seville/34 HTTP/1.1" 200 161
+2015-03-18 19:23:32,305 - INFO - Starting new HTTP connection (1): www.sevici.es
+2015-03-18 19:23:32,394 - DEBUG - "GET /service/stationdetails/seville/35 HTTP/1.1" 200 162
+2015-03-18 19:23:32,399 - INFO - Starting new HTTP connection (1): www.sevici.es
+2015-03-18 19:23:32,491 - DEBUG - "GET /service/stationdetails/seville/36 HTTP/1.1" 200 161
+2015-03-18 19:23:32,497 - INFO - Starting new HTTP connection (1): www.sevici.es
+2015-03-18 19:23:32,584 - DEBUG - "GET /service/stationdetails/seville/37 HTTP/1.1" 200 161
+2015-03-18 19:23:32,591 - INFO - Starting new HTTP connection (1): www.sevici.es
+2015-03-18 19:23:32,681 - DEBUG - "GET /service/stationdetails/seville/38 HTTP/1.1" 200 162
+2015-03-18 19:23:32,685 - INFO - Starting new HTTP connection (1): www.sevici.es
+2015-03-18 19:23:32,809 - DEBUG - "GET /service/stationdetails/seville/39 HTTP/1.1" 200 161
+2015-03-18 19:23:32,814 - INFO - Starting new HTTP connection (1): www.sevici.es
+2015-03-18 19:23:32,901 - DEBUG - "GET /service/stationdetails/seville/40 HTTP/1.1" 200 161
+2015-03-18 19:23:32,924 - INFO - 130.206.81.46 - - [18/Mar/2015 19:23:32] "POST /v1/queryContext HTTP/1.1" 200 -
+2015-03-18 19:23:38,514 - INFO - 130.206.81.46 - - [18/Mar/2015 19:23:38] "POST /v1/queryContext HTTP/1.1" 200 -
+2015-03-18 19:24:32,618 - INFO - Starting new HTTP connection (1): www.tusbic.es
+2015-03-18 19:24:32,881 - DEBUG - "GET /service/stationdetails/santander/2 HTTP/1.1" 200 162
+2015-03-18 19:24:32,895 - INFO - Starting new HTTP connection (1): www.tusbic.es
+2015-03-18 19:24:32,982 - DEBUG - "GET /service/stationdetails/santander/3 HTTP/1.1" 200 159
+2015-03-18 19:24:32,985 - INFO - Starting new HTTP connection (1): www.tusbic.es
+2015-03-18 19:24:33,071 - DEBUG - "GET /service/stationdetails/santander/4 HTTP/1.1" 200 161
+2015-03-18 19:24:33,073 - INFO - Starting new HTTP connection (1): www.tusbic.es
+2015-03-18 19:24:33,161 - DEBUG - "GET /service/stationdetails/santander/5 HTTP/1.1" 200 161
+2015-03-18 19:24:33,163 - INFO - Starting new HTTP connection (1): www.tusbic.es
+2015-03-18 19:24:33,249 - DEBUG - "GET /service/stationdetails/santander/6 HTTP/1.1" 200 161
+2015-03-18 19:24:33,252 - INFO - Starting new HTTP connection (1): www.tusbic.es
+2015-03-18 19:24:33,339 - DEBUG - "GET /service/stationdetails/santander/7 HTTP/1.1" 200 162
+2015-03-18 19:24:33,342 - INFO - Starting new HTTP connection (1): www.tusbic.es
+2015-03-18 19:24:33,429 - DEBUG - "GET /service/stationdetails/santander/8 HTTP/1.1" 200 160
+2015-03-18 19:24:33,431 - INFO - Starting new HTTP connection (1): www.tusbic.es
+2015-03-18 19:24:33,519 - DEBUG - "GET /service/stationdetails/santander/9 HTTP/1.1" 200 160
+2015-03-18 19:24:33,522 - INFO - Starting new HTTP connection (1): www.tusbic.es
+2015-03-18 19:24:33,608 - DEBUG - "GET /service/stationdetails/santander/10 HTTP/1.1" 200 160
+2015-03-18 19:24:33,611 - INFO - Starting new HTTP connection (1): www.tusbic.es
+2015-03-18 19:24:33,699 - DEBUG - "GET /service/stationdetails/santander/11 HTTP/1.1" 200 161
+2015-03-18 19:24:33,702 - INFO - Starting new HTTP connection (1): www.tusbic.es
+2015-03-18 19:24:33,789 - DEBUG - "GET /service/stationdetails/santander/12 HTTP/1.1" 200 161
+2015-03-18 19:24:33,791 - INFO - Starting new HTTP connection (1): www.tusbic.es
+2015-03-18 19:24:33,879 - DEBUG - "GET /service/stationdetails/santander/13 HTTP/1.1" 200 161
+2015-03-18 19:24:33,882 - INFO - Starting new HTTP connection (1): www.tusbic.es
+2015-03-18 19:24:33,971 - DEBUG - "GET /service/stationdetails/santander/14 HTTP/1.1" 200 161
+2015-03-18 19:24:33,974 - INFO - Starting new HTTP connection (1): www.tusbic.es
+2015-03-18 19:24:34,062 - DEBUG - "GET /service/stationdetails/santander/15 HTTP/1.1" 200 160
+2015-03-18 19:24:34,064 - INFO - Starting new HTTP connection (1): www.tusbic.es
+2015-03-18 19:24:34,150 - DEBUG - "GET /service/stationdetails/santander/16 HTTP/1.1" 200 161
+2015-03-18 19:24:34,152 - INFO - Starting new HTTP connection (1): www.tusbic.es
+2015-03-18 19:24:34,240 - DEBUG - "GET /service/stationdetails/santander/17 HTTP/1.1" 200 161
+2015-03-18 19:24:34,249 - INFO - 130.206.81.46 - - [18/Mar/2015 19:24:34] "POST /v1/queryContext HTTP/1.1" 200 -
+2015-03-18 19:24:35,006 - INFO - 130.206.81.46 - - [18/Mar/2015 19:24:35] "POST /v1/queryContext HTTP/1.1" 200 -
+2015-03-18 20:34:24,128 - INFO - Starting new HTTP connection (1): www.sevici.es
+2015-03-18 20:34:24,479 - DEBUG - "GET /service/stationdetails/seville/1 HTTP/1.1" 200 162
+2015-03-18 20:34:24,486 - INFO - Starting new HTTP connection (1): www.sevici.es
+2015-03-18 20:34:24,573 - DEBUG - "GET /service/stationdetails/seville/2 HTTP/1.1" 200 161
+2015-03-18 20:34:24,578 - INFO - Starting new HTTP connection (1): www.sevici.es
+2015-03-18 20:34:24,666 - DEBUG - "GET /service/stationdetails/seville/3 HTTP/1.1" 200 161
+2015-03-18 20:34:24,671 - INFO - Starting new HTTP connection (1): www.sevici.es
+2015-03-18 20:34:24,758 - DEBUG - "GET /service/stationdetails/seville/4 HTTP/1.1" 200 162
+2015-03-18 20:34:24,762 - INFO - Starting new HTTP connection (1): www.sevici.es
+2015-03-18 20:34:24,857 - DEBUG - "GET /service/stationdetails/seville/5 HTTP/1.1" 200 162
+2015-03-18 20:34:24,861 - INFO - Starting new HTTP connection (1): www.sevici.es
+2015-03-18 20:34:24,947 - DEBUG - "GET /service/stationdetails/seville/6 HTTP/1.1" 200 158
+2015-03-18 20:34:24,951 - INFO - Starting new HTTP connection (1): www.sevici.es
+2015-03-18 20:34:25,038 - DEBUG - "GET /service/stationdetails/seville/7 HTTP/1.1" 200 159
+2015-03-18 20:34:25,043 - INFO - Starting new HTTP connection (1): www.sevici.es
+2015-03-18 20:34:25,129 - DEBUG - "GET /service/stationdetails/seville/8 HTTP/1.1" 200 161
+2015-03-18 20:34:25,133 - INFO - Starting new HTTP connection (1): www.sevici.es
+2015-03-18 20:34:25,221 - DEBUG - "GET /service/stationdetails/seville/9 HTTP/1.1" 200 161
+2015-03-18 20:34:25,226 - INFO - Starting new HTTP connection (1): www.sevici.es
+2015-03-18 20:34:25,313 - DEBUG - "GET /service/stationdetails/seville/10 HTTP/1.1" 200 161
+2015-03-18 20:34:25,318 - INFO - Starting new HTTP connection (1): www.sevici.es
+2015-03-18 20:34:25,406 - DEBUG - "GET /service/stationdetails/seville/11 HTTP/1.1" 200 161
+2015-03-18 20:34:25,411 - INFO - Starting new HTTP connection (1): www.sevici.es
+2015-03-18 20:34:25,500 - DEBUG - "GET /service/stationdetails/seville/12 HTTP/1.1" 200 161
+2015-03-18 20:34:25,506 - INFO - Starting new HTTP connection (1): www.sevici.es
+2015-03-18 20:34:25,595 - DEBUG - "GET /service/stationdetails/seville/13 HTTP/1.1" 200 161
+2015-03-18 20:34:25,599 - INFO - Starting new HTTP connection (1): www.sevici.es
+2015-03-18 20:34:25,686 - DEBUG - "GET /service/stationdetails/seville/14 HTTP/1.1" 200 162
+2015-03-18 20:34:25,691 - INFO - Starting new HTTP connection (1): www.sevici.es
+2015-03-18 20:34:25,780 - DEBUG - "GET /service/stationdetails/seville/15 HTTP/1.1" 200 161
+2015-03-18 20:34:25,786 - INFO - Starting new HTTP connection (1): www.sevici.es
+2015-03-18 20:34:25,872 - DEBUG - "GET /service/stationdetails/seville/16 HTTP/1.1" 200 158
+2015-03-18 20:34:25,877 - INFO - Starting new HTTP connection (1): www.sevici.es
+2015-03-18 20:34:25,964 - DEBUG - "GET /service/stationdetails/seville/17 HTTP/1.1" 200 161
+2015-03-18 20:34:25,968 - INFO - Starting new HTTP connection (1): www.sevici.es
+2015-03-18 20:34:26,056 - DEBUG - "GET /service/stationdetails/seville/18 HTTP/1.1" 200 161
+2015-03-18 20:34:26,061 - INFO - Starting new HTTP connection (1): www.sevici.es
+2015-03-18 20:34:26,148 - DEBUG - "GET /service/stationdetails/seville/19 HTTP/1.1" 200 161
+2015-03-18 20:34:26,153 - INFO - Starting new HTTP connection (1): www.sevici.es
+2015-03-18 20:34:26,239 - DEBUG - "GET /service/stationdetails/seville/20 HTTP/1.1" 200 161
+2015-03-18 20:34:26,245 - INFO - Starting new HTTP connection (1): www.sevici.es
+2015-03-18 20:34:26,334 - DEBUG - "GET /service/stationdetails/seville/21 HTTP/1.1" 200 159
+2015-03-18 20:34:26,340 - INFO - Starting new HTTP connection (1): www.sevici.es
+2015-03-18 20:34:26,427 - DEBUG - "GET /service/stationdetails/seville/22 HTTP/1.1" 200 161
+2015-03-18 20:34:26,432 - INFO - Starting new HTTP connection (1): www.sevici.es
+2015-03-18 20:34:26,520 - DEBUG - "GET /service/stationdetails/seville/23 HTTP/1.1" 200 159
+2015-03-18 20:34:26,525 - INFO - Starting new HTTP connection (1): www.sevici.es
+2015-03-18 20:34:26,614 - DEBUG - "GET /service/stationdetails/seville/24 HTTP/1.1" 200 161
+2015-03-18 20:34:26,619 - INFO - Starting new HTTP connection (1): www.sevici.es
+2015-03-18 20:34:26,709 - DEBUG - "GET /service/stationdetails/seville/25 HTTP/1.1" 200 161
+2015-03-18 20:34:26,713 - INFO - Starting new HTTP connection (1): www.sevici.es
+2015-03-18 20:34:26,799 - DEBUG - "GET /service/stationdetails/seville/26 HTTP/1.1" 200 160
+2015-03-18 20:34:26,804 - INFO - Starting new HTTP connection (1): www.sevici.es
+2015-03-18 20:34:26,894 - DEBUG - "GET /service/stationdetails/seville/27 HTTP/1.1" 200 161
+2015-03-18 20:34:26,901 - INFO - Starting new HTTP connection (1): www.sevici.es
+2015-03-18 20:34:26,989 - DEBUG - "GET /service/stationdetails/seville/28 HTTP/1.1" 200 161
+2015-03-18 20:34:26,994 - INFO - Starting new HTTP connection (1): www.sevici.es
+2015-03-18 20:34:27,086 - DEBUG - "GET /service/stationdetails/seville/29 HTTP/1.1" 200 161
+2015-03-18 20:34:27,092 - INFO - Starting new HTTP connection (1): www.sevici.es
+2015-03-18 20:34:27,178 - DEBUG - "GET /service/stationdetails/seville/30 HTTP/1.1" 200 158
+2015-03-18 20:34:27,184 - INFO - Starting new HTTP connection (1): www.sevici.es
+2015-03-18 20:34:27,272 - DEBUG - "GET /service/stationdetails/seville/31 HTTP/1.1" 200 160
+2015-03-18 20:34:27,276 - INFO - Starting new HTTP connection (1): www.sevici.es
+2015-03-18 20:34:27,364 - DEBUG - "GET /service/stationdetails/seville/32 HTTP/1.1" 200 161
+2015-03-18 20:34:27,372 - INFO - Starting new HTTP connection (1): www.sevici.es
+2015-03-18 20:34:27,460 - DEBUG - "GET /service/stationdetails/seville/33 HTTP/1.1" 200 160
+2015-03-18 20:34:27,466 - INFO - Starting new HTTP connection (1): www.sevici.es
+2015-03-18 20:34:27,554 - DEBUG - "GET /service/stationdetails/seville/34 HTTP/1.1" 200 161
+2015-03-18 20:34:27,559 - INFO - Starting new HTTP connection (1): www.sevici.es
+2015-03-18 20:34:27,655 - DEBUG - "GET /service/stationdetails/seville/35 HTTP/1.1" 200 161
+2015-03-18 20:34:27,661 - INFO - Starting new HTTP connection (1): www.sevici.es
+2015-03-18 20:34:27,747 - DEBUG - "GET /service/stationdetails/seville/36 HTTP/1.1" 200 162
+2015-03-18 20:34:27,752 - INFO - Starting new HTTP connection (1): www.sevici.es
+2015-03-18 20:34:27,849 - DEBUG - "GET /service/stationdetails/seville/37 HTTP/1.1" 200 160
+2015-03-18 20:34:27,855 - INFO - Starting new HTTP connection (1): www.sevici.es
+2015-03-18 20:34:27,941 - DEBUG - "GET /service/stationdetails/seville/38 HTTP/1.1" 200 161
+2015-03-18 20:34:27,947 - INFO - Starting new HTTP connection (1): www.sevici.es
+2015-03-18 20:34:28,038 - DEBUG - "GET /service/stationdetails/seville/39 HTTP/1.1" 200 161
+2015-03-18 20:34:28,044 - INFO - Starting new HTTP connection (1): www.sevici.es
+2015-03-18 20:34:28,131 - DEBUG - "GET /service/stationdetails/seville/40 HTTP/1.1" 200 162
+2015-03-18 20:34:28,149 - INFO - 130.206.81.46 - - [18/Mar/2015 20:34:28] "POST /v1/queryContext HTTP/1.1" 200 -
+2015-03-18 20:34:32,998 - INFO - 130.206.81.46 - - [18/Mar/2015 20:34:32] "POST /v1/queryContext HTTP/1.1" 200 -
+2015-03-18 23:26:58,902 - INFO - Starting new HTTP connection (1): www.tusbic.es
+2015-03-18 23:26:59,152 - DEBUG - "GET /service/stationdetails/santander/2 HTTP/1.1" 200 161
+2015-03-18 23:26:59,156 - INFO - Starting new HTTP connection (1): www.tusbic.es
+2015-03-18 23:26:59,242 - DEBUG - "GET /service/stationdetails/santander/3 HTTP/1.1" 200 160
+2015-03-18 23:26:59,245 - INFO - Starting new HTTP connection (1): www.tusbic.es
+2015-03-18 23:26:59,440 - DEBUG - "GET /service/stationdetails/santander/4 HTTP/1.1" 200 162
+2015-03-18 23:26:59,443 - INFO - Starting new HTTP connection (1): www.tusbic.es
+2015-03-18 23:26:59,529 - DEBUG - "GET /service/stationdetails/santander/5 HTTP/1.1" 200 161
+2015-03-18 23:26:59,533 - INFO - Starting new HTTP connection (1): www.tusbic.es
+2015-03-18 23:26:59,621 - DEBUG - "GET /service/stationdetails/santander/6 HTTP/1.1" 200 161
+2015-03-18 23:26:59,624 - INFO - Starting new HTTP connection (1): www.tusbic.es
+2015-03-18 23:26:59,710 - DEBUG - "GET /service/stationdetails/santander/7 HTTP/1.1" 200 161
+2015-03-18 23:26:59,713 - INFO - Starting new HTTP connection (1): www.tusbic.es
+2015-03-18 23:26:59,801 - DEBUG - "GET /service/stationdetails/santander/8 HTTP/1.1" 200 161
+2015-03-18 23:26:59,803 - INFO - Starting new HTTP connection (1): www.tusbic.es
+2015-03-18 23:26:59,889 - DEBUG - "GET /service/stationdetails/santander/9 HTTP/1.1" 200 160
+2015-03-18 23:26:59,892 - INFO - Starting new HTTP connection (1): www.tusbic.es
+2015-03-18 23:26:59,980 - DEBUG - "GET /service/stationdetails/santander/10 HTTP/1.1" 200 160
+2015-03-18 23:26:59,983 - INFO - Starting new HTTP connection (1): www.tusbic.es
+2015-03-18 23:27:00,071 - DEBUG - "GET /service/stationdetails/santander/11 HTTP/1.1" 200 161
+2015-03-18 23:27:00,074 - INFO - Starting new HTTP connection (1): www.tusbic.es
+2015-03-18 23:27:00,162 - DEBUG - "GET /service/stationdetails/santander/12 HTTP/1.1" 200 161
+2015-03-18 23:27:00,165 - INFO - Starting new HTTP connection (1): www.tusbic.es
+2015-03-18 23:27:00,252 - DEBUG - "GET /service/stationdetails/santander/13 HTTP/1.1" 200 161
+2015-03-18 23:27:00,255 - INFO - Starting new HTTP connection (1): www.tusbic.es
+2015-03-18 23:27:00,343 - DEBUG - "GET /service/stationdetails/santander/14 HTTP/1.1" 200 161
+2015-03-18 23:27:00,346 - INFO - Starting new HTTP connection (1): www.tusbic.es
+2015-03-18 23:27:00,435 - DEBUG - "GET /service/stationdetails/santander/15 HTTP/1.1" 200 160
+2015-03-18 23:27:00,438 - INFO - Starting new HTTP connection (1): www.tusbic.es
+2015-03-18 23:27:00,527 - DEBUG - "GET /service/stationdetails/santander/16 HTTP/1.1" 200 162
+2015-03-18 23:27:00,530 - INFO - Starting new HTTP connection (1): www.tusbic.es
+2015-03-18 23:27:00,617 - DEBUG - "GET /service/stationdetails/santander/17 HTTP/1.1" 200 161
+2015-03-18 23:27:00,627 - INFO - 130.206.81.46 - - [18/Mar/2015 23:27:00] "POST /v1/queryContext HTTP/1.1" 200 -
+2015-03-18 23:27:01,612 - INFO - 130.206.81.46 - - [18/Mar/2015 23:27:01] "POST /v1/queryContext HTTP/1.1" 200 -
+2015-03-19 09:03:21,974 - INFO - Starting new HTTP connection (1): www.tusbic.es
+2015-03-19 09:03:22,248 - DEBUG - "GET /service/stationdetails/santander/2 HTTP/1.1" 200 162
+2015-03-19 09:03:22,253 - INFO - Starting new HTTP connection (1): www.tusbic.es
+2015-03-19 09:03:22,346 - DEBUG - "GET /service/stationdetails/santander/3 HTTP/1.1" 200 161
+2015-03-19 09:03:22,349 - INFO - Starting new HTTP connection (1): www.tusbic.es
+2015-03-19 09:03:22,439 - DEBUG - "GET /service/stationdetails/santander/4 HTTP/1.1" 200 159
+2015-03-19 09:03:22,442 - INFO - Starting new HTTP connection (1): www.tusbic.es
+2015-03-19 09:03:22,531 - DEBUG - "GET /service/stationdetails/santander/5 HTTP/1.1" 200 161
+2015-03-19 09:03:22,539 - INFO - Starting new HTTP connection (1): www.tusbic.es
+2015-03-19 09:03:22,627 - DEBUG - "GET /service/stationdetails/santander/6 HTTP/1.1" 200 162
+2015-03-19 09:03:22,633 - INFO - Starting new HTTP connection (1): www.tusbic.es
+2015-03-19 09:03:22,721 - DEBUG - "GET /service/stationdetails/santander/7 HTTP/1.1" 200 161
+2015-03-19 09:03:22,723 - INFO - Starting new HTTP connection (1): www.tusbic.es
+2015-03-19 09:03:22,811 - DEBUG - "GET /service/stationdetails/santander/8 HTTP/1.1" 200 161
+2015-03-19 09:03:22,814 - INFO - Starting new HTTP connection (1): www.tusbic.es
+2015-03-19 09:03:22,902 - DEBUG - "GET /service/stationdetails/santander/9 HTTP/1.1" 200 161
+2015-03-19 09:03:22,905 - INFO - Starting new HTTP connection (1): www.tusbic.es
+2015-03-19 09:03:22,999 - DEBUG - "GET /service/stationdetails/santander/10 HTTP/1.1" 200 161
+2015-03-19 09:03:23,007 - INFO - Starting new HTTP connection (1): www.tusbic.es
+2015-03-19 09:03:23,093 - DEBUG - "GET /service/stationdetails/santander/11 HTTP/1.1" 200 161
+2015-03-19 09:03:23,096 - INFO - Starting new HTTP connection (1): www.tusbic.es
+2015-03-19 09:03:23,189 - DEBUG - "GET /service/stationdetails/santander/12 HTTP/1.1" 200 161
+2015-03-19 09:03:23,192 - INFO - Starting new HTTP connection (1): www.tusbic.es
+2015-03-19 09:03:23,281 - DEBUG - "GET /service/stationdetails/santander/13 HTTP/1.1" 200 161
+2015-03-19 09:03:23,284 - INFO - Starting new HTTP connection (1): www.tusbic.es
+2015-03-19 09:03:23,378 - DEBUG - "GET /service/stationdetails/santander/14 HTTP/1.1" 200 162
+2015-03-19 09:03:23,381 - INFO - Starting new HTTP connection (1): www.tusbic.es
+2015-03-19 09:03:23,473 - DEBUG - "GET /service/stationdetails/santander/15 HTTP/1.1" 200 160
+2015-03-19 09:03:23,476 - INFO - Starting new HTTP connection (1): www.tusbic.es
+2015-03-19 09:03:23,568 - DEBUG - "GET /service/stationdetails/santander/16 HTTP/1.1" 200 162
+2015-03-19 09:03:23,571 - INFO - Starting new HTTP connection (1): www.tusbic.es
+2015-03-19 09:03:23,659 - DEBUG - "GET /service/stationdetails/santander/17 HTTP/1.1" 200 161
+2015-03-19 09:03:23,678 - INFO - 130.206.81.46 - - [19/Mar/2015 09:03:23] "POST /v1/queryContext HTTP/1.1" 200 -
+2015-03-19 09:03:24,310 - INFO - 130.206.81.46 - - [19/Mar/2015 09:03:24] "POST /v1/queryContext HTTP/1.1" 200 -
