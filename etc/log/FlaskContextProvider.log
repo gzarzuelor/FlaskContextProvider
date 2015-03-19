@@ -10733,3 +10733,296 @@ KeyError: u'sevici'
 2015-03-19 09:03:23,659 - DEBUG - "GET /service/stationdetails/santander/17 HTTP/1.1" 200 161
 2015-03-19 09:03:23,678 - INFO - 130.206.81.46 - - [19/Mar/2015 09:03:23] "POST /v1/queryContext HTTP/1.1" 200 -
 2015-03-19 09:03:24,310 - INFO - 130.206.81.46 - - [19/Mar/2015 09:03:24] "POST /v1/queryContext HTTP/1.1" 200 -
+2015-03-19 13:18:59,661 - INFO - Starting new HTTP connection (1): orion.lab.fiware.org
+2015-03-19 13:19:01,739 - DEBUG - "POST /v1/registry/discoverContextAvailability HTTP/1.1" 200 36224
+2015-03-19 13:19:01,852 - INFO - Starting new HTTP connection (1): orion.lab.fiware.org
+2015-03-19 13:19:02,147 - DEBUG - "POST /v1/registry/discoverContextAvailability HTTP/1.1" 200 3400
+2015-03-19 13:19:02,181 - INFO - Starting new HTTP connection (1): orion.lab.fiware.org
+2015-03-19 13:19:02,607 - DEBUG - "POST /v1/registry/discoverContextAvailability HTTP/1.1" 200 40316
+2015-03-19 13:19:02,734 - INFO - Starting new HTTP connection (1): orion.lab.fiware.org
+2015-03-19 13:19:03,289 - DEBUG - "POST /v1/registry/discoverContextAvailability HTTP/1.1" 200 47431
+2015-03-19 13:19:03,529 - INFO -  * Running on http://0.0.0.0:1026/ (Press CTRL+C to quit)
+2015-03-19 13:20:28,255 - ERROR - Exception on /v1/queryContext [POST]
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\flask\app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Python27\lib\site-packages\flask\app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Python27\lib\site-packages\flask\app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Python27\lib\site-packages\flask\app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Python27\lib\site-packages\flask\app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\Users\b.gzr\Repositorios\FlaskContextProvider\tools\ContextProvider.py", line 92, in __provider_task__
+    if len(response[0]) != 0:
+TypeError: 'NoneType' object has no attribute '__getitem__'
+2015-03-19 13:20:28,338 - INFO - 127.0.0.1 - - [19/Mar/2015 13:20:28] "POST /v1/queryContext HTTP/1.1" 500 -
+2015-03-19 13:20:56,841 - INFO - Starting new HTTP connection (1): orion.lab.fiware.org
+2015-03-19 13:20:57,834 - DEBUG - "POST /v1/registry/discoverContextAvailability HTTP/1.1" 200 36224
+2015-03-19 13:20:57,947 - INFO - Starting new HTTP connection (1): orion.lab.fiware.org
+2015-03-19 13:20:58,569 - DEBUG - "POST /v1/registry/discoverContextAvailability HTTP/1.1" 200 3400
+2015-03-19 13:20:58,582 - INFO - Starting new HTTP connection (1): orion.lab.fiware.org
+2015-03-19 13:20:59,131 - DEBUG - "POST /v1/registry/discoverContextAvailability HTTP/1.1" 200 40316
+2015-03-19 13:20:59,259 - INFO - Starting new HTTP connection (1): orion.lab.fiware.org
+2015-03-19 13:20:59,673 - DEBUG - "POST /v1/registry/discoverContextAvailability HTTP/1.1" 200 47431
+2015-03-19 13:20:59,809 - INFO -  * Running on http://0.0.0.0:1026/ (Press CTRL+C to quit)
+2015-03-19 13:21:01,617 - ERROR - Exception on /v1/queryContext [POST]
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\flask\app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Python27\lib\site-packages\flask\app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Python27\lib\site-packages\flask\app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Python27\lib\site-packages\flask\app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Python27\lib\site-packages\flask\app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\Users\b.gzr\Repositorios\FlaskContextProvider\tools\ContextProvider.py", line 92, in __provider_task__
+    if len(response[0]) != 0:
+TypeError: 'NoneType' object has no attribute '__getitem__'
+2015-03-19 13:21:01,619 - INFO - 127.0.0.1 - - [19/Mar/2015 13:21:01] "POST /v1/queryContext HTTP/1.1" 500 -
+2015-03-19 13:23:14,338 - INFO - Starting new HTTP connection (1): orion.lab.fiware.org
+2015-03-19 13:23:14,775 - DEBUG - "POST /v1/registry/discoverContextAvailability HTTP/1.1" 200 36224
+2015-03-19 13:23:14,907 - INFO - Starting new HTTP connection (1): orion.lab.fiware.org
+2015-03-19 13:23:15,213 - DEBUG - "POST /v1/registry/discoverContextAvailability HTTP/1.1" 200 3400
+2015-03-19 13:23:15,224 - INFO - Starting new HTTP connection (1): orion.lab.fiware.org
+2015-03-19 13:23:15,667 - DEBUG - "POST /v1/registry/discoverContextAvailability HTTP/1.1" 200 40316
+2015-03-19 13:23:15,813 - INFO - Starting new HTTP connection (1): orion.lab.fiware.org
+2015-03-19 13:23:16,532 - DEBUG - "POST /v1/registry/discoverContextAvailability HTTP/1.1" 200 47431
+2015-03-19 13:23:16,686 - INFO -  * Running on http://0.0.0.0:1026/ (Press CTRL+C to quit)
+2015-03-19 13:23:18,996 - ERROR - Exception on /v1/queryContext [POST]
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\flask\app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Python27\lib\site-packages\flask\app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Python27\lib\site-packages\flask\app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Python27\lib\site-packages\flask\app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Python27\lib\site-packages\flask\app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\Users\b.gzr\Repositorios\FlaskContextProvider\tools\ContextProvider.py", line 90, in __provider_task__
+    response = f(entity_id_list[i], entity_type_list[i], self.max_cache_time)
+  File "C:\Users\b.gzr\Repositorios\FlaskContextProvider\providers\bikerenting\bikerenting.py", line 30, in get_data
+    return sevici.get_data(_id,_type,max_time=max_time)
+  File "C:\Users\b.gzr\Repositorios\FlaskContextProvider\providers\sevici\sevici.py", line 141, in get_data
+    id_ = select_id(_id)
+  File "C:\Users\b.gzr\Repositorios\FlaskContextProvider\providers\sevici\sevici.py", line 115, in select_id
+    a = len(re.match(pattern, orion_id).group())
+AttributeError: 'NoneType' object has no attribute 'group'
+2015-03-19 13:23:19,000 - INFO - 127.0.0.1 - - [19/Mar/2015 13:23:19] "POST /v1/queryContext HTTP/1.1" 500 -
+2015-03-19 13:24:05,243 - ERROR - Exception on /v1/queryContext [POST]
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\flask\app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Python27\lib\site-packages\flask\app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Python27\lib\site-packages\flask\app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Python27\lib\site-packages\flask\app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Python27\lib\site-packages\flask\app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\Users\b.gzr\Repositorios\FlaskContextProvider\tools\ContextProvider.py", line 90, in __provider_task__
+    response = f(entity_id_list[i], entity_type_list[i], self.max_cache_time)
+  File "C:\Users\b.gzr\Repositorios\FlaskContextProvider\providers\bikerenting\bikerenting.py", line 30, in get_data
+    return sevici.get_data(_id,_type,max_time=max_time)
+  File "C:\Users\b.gzr\Repositorios\FlaskContextProvider\providers\sevici\sevici.py", line 141, in get_data
+    id_ = select_id(_id)
+  File "C:\Users\b.gzr\Repositorios\FlaskContextProvider\providers\sevici\sevici.py", line 115, in select_id
+    a = len(re.match(pattern, orion_id).group())
+AttributeError: 'NoneType' object has no attribute 'group'
+2015-03-19 13:24:05,244 - INFO - 127.0.0.1 - - [19/Mar/2015 13:24:05] "POST /v1/queryContext HTTP/1.1" 500 -
+2015-03-19 13:24:27,398 - ERROR - Exception on /v1/queryContext [POST]
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\flask\app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Python27\lib\site-packages\flask\app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Python27\lib\site-packages\flask\app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Python27\lib\site-packages\flask\app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Python27\lib\site-packages\flask\app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\Users\b.gzr\Repositorios\FlaskContextProvider\tools\ContextProvider.py", line 92, in __provider_task__
+    if len(response[0]) != 0:
+TypeError: 'NoneType' object has no attribute '__getitem__'
+2015-03-19 13:24:27,400 - INFO - 127.0.0.1 - - [19/Mar/2015 13:24:27] "POST /v1/queryContext HTTP/1.1" 500 -
+2015-03-19 13:24:46,559 - ERROR - Exception on /v1/queryContext [POST]
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\flask\app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Python27\lib\site-packages\flask\app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Python27\lib\site-packages\flask\app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Python27\lib\site-packages\flask\app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Python27\lib\site-packages\flask\app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\Users\b.gzr\Repositorios\FlaskContextProvider\tools\ContextProvider.py", line 92, in __provider_task__
+    if len(response[0]) != 0:
+TypeError: 'NoneType' object has no attribute '__getitem__'
+2015-03-19 13:24:46,559 - INFO - 127.0.0.1 - - [19/Mar/2015 13:24:46] "POST /v1/queryContext HTTP/1.1" 500 -
+2015-03-19 13:25:56,111 - INFO - Starting new HTTP connection (1): orion.lab.fiware.org
+2015-03-19 13:25:56,562 - DEBUG - "POST /v1/registry/discoverContextAvailability HTTP/1.1" 200 36224
+2015-03-19 13:25:56,693 - INFO - Starting new HTTP connection (1): orion.lab.fiware.org
+2015-03-19 13:25:57,005 - DEBUG - "POST /v1/registry/discoverContextAvailability HTTP/1.1" 200 3400
+2015-03-19 13:25:57,020 - INFO - Starting new HTTP connection (1): orion.lab.fiware.org
+2015-03-19 13:25:57,430 - DEBUG - "POST /v1/registry/discoverContextAvailability HTTP/1.1" 200 40316
+2015-03-19 13:25:57,561 - INFO - Starting new HTTP connection (1): orion.lab.fiware.org
+2015-03-19 13:25:57,982 - DEBUG - "POST /v1/registry/discoverContextAvailability HTTP/1.1" 200 47431
+2015-03-19 13:25:58,118 - INFO -  * Running on http://0.0.0.0:1026/ (Press CTRL+C to quit)
+2015-03-19 13:26:01,259 - ERROR - Exception on /v1/queryContext [POST]
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\flask\app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Python27\lib\site-packages\flask\app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Python27\lib\site-packages\flask\app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Python27\lib\site-packages\flask\app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Python27\lib\site-packages\flask\app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\Users\b.gzr\Repositorios\FlaskContextProvider\tools\ContextProvider.py", line 92, in __provider_task__
+    if len(response[0]) != 0:
+TypeError: 'NoneType' object has no attribute '__getitem__'
+2015-03-19 13:26:01,263 - INFO - 127.0.0.1 - - [19/Mar/2015 13:26:01] "POST /v1/queryContext HTTP/1.1" 500 -
+2015-03-19 13:27:03,809 - ERROR - Exception on /v1/queryContext [POST]
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\flask\app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Python27\lib\site-packages\flask\app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Python27\lib\site-packages\flask\app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Python27\lib\site-packages\flask\app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Python27\lib\site-packages\flask\app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\Users\b.gzr\Repositorios\FlaskContextProvider\tools\ContextProvider.py", line 90, in __provider_task__
+    response = f(entity_id_list[i], entity_type_list[i], self.max_cache_time)
+  File "C:\Users\b.gzr\Repositorios\FlaskContextProvider\providers\bikerenting\bikerenting.py", line 30, in get_data
+    return sevici.get_data(_id,_type,max_time=max_time)
+  File "C:\Users\b.gzr\Repositorios\FlaskContextProvider\providers\sevici\sevici.py", line 141, in get_data
+    id_ = select_id(_id)
+  File "C:\Users\b.gzr\Repositorios\FlaskContextProvider\providers\sevici\sevici.py", line 115, in select_id
+    a = len(re.match(pattern, orion_id).group())
+AttributeError: 'NoneType' object has no attribute 'group'
+2015-03-19 13:27:03,812 - INFO - 127.0.0.1 - - [19/Mar/2015 13:27:03] "POST /v1/queryContext HTTP/1.1" 500 -
+2015-03-19 13:27:17,301 - ERROR - Exception on /v1/queryContext [POST]
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\flask\app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Python27\lib\site-packages\flask\app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Python27\lib\site-packages\flask\app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Python27\lib\site-packages\flask\app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Python27\lib\site-packages\flask\app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\Users\b.gzr\Repositorios\FlaskContextProvider\tools\ContextProvider.py", line 90, in __provider_task__
+    response = f(entity_id_list[i], entity_type_list[i], self.max_cache_time)
+  File "C:\Users\b.gzr\Repositorios\FlaskContextProvider\providers\bikerenting\bikerenting.py", line 33, in get_data
+    return tusbic.get_data(_id,_type,max_time=max_time)
+  File "C:\Users\b.gzr\Repositorios\FlaskContextProvider\providers\tusbic\tusbic.py", line 141, in get_data
+    id_ = select_id(_id)
+  File "C:\Users\b.gzr\Repositorios\FlaskContextProvider\providers\tusbic\tusbic.py", line 115, in select_id
+    a = len(re.match(pattern, orion_id).group())
+AttributeError: 'NoneType' object has no attribute 'group'
+2015-03-19 13:27:17,302 - INFO - 127.0.0.1 - - [19/Mar/2015 13:27:17] "POST /v1/queryContext HTTP/1.1" 500 -
+2015-03-19 13:29:58,588 - ERROR - Exception on /v1/queryContext [POST]
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\flask\app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Python27\lib\site-packages\flask\app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Python27\lib\site-packages\flask\app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Python27\lib\site-packages\flask\app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Python27\lib\site-packages\flask\app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\Users\b.gzr\Repositorios\FlaskContextProvider\tools\ContextProvider.py", line 92, in __provider_task__
+    if len(response[0]) != 0:
+TypeError: 'NoneType' object has no attribute '__getitem__'
+2015-03-19 13:29:58,591 - INFO - 127.0.0.1 - - [19/Mar/2015 13:29:58] "POST /v1/queryContext HTTP/1.1" 500 -
+2015-03-19 13:30:09,006 - ERROR - Exception on /v1/queryContext [POST]
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\flask\app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Python27\lib\site-packages\flask\app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Python27\lib\site-packages\flask\app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Python27\lib\site-packages\flask\app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Python27\lib\site-packages\flask\app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\Users\b.gzr\Repositorios\FlaskContextProvider\tools\ContextProvider.py", line 92, in __provider_task__
+    if len(response[0]) != 0:
+TypeError: 'NoneType' object has no attribute '__getitem__'
+2015-03-19 13:30:09,006 - INFO - 127.0.0.1 - - [19/Mar/2015 13:30:09] "POST /v1/queryContext HTTP/1.1" 500 -
+2015-03-19 13:30:26,141 - INFO - Starting new HTTP connection (1): orion.lab.fiware.org
+2015-03-19 13:30:30,029 - DEBUG - "POST /v1/registry/discoverContextAvailability HTTP/1.1" 200 36224
+2015-03-19 13:30:30,141 - INFO - Starting new HTTP connection (1): orion.lab.fiware.org
+2015-03-19 13:30:30,701 - DEBUG - "POST /v1/registry/discoverContextAvailability HTTP/1.1" 200 3400
+2015-03-19 13:30:30,713 - INFO - Starting new HTTP connection (1): orion.lab.fiware.org
+2015-03-19 13:30:31,605 - DEBUG - "POST /v1/registry/discoverContextAvailability HTTP/1.1" 200 40316
+2015-03-19 13:30:31,763 - INFO - Starting new HTTP connection (1): orion.lab.fiware.org
+2015-03-19 13:30:32,398 - DEBUG - "POST /v1/registry/discoverContextAvailability HTTP/1.1" 200 47431
+2015-03-19 13:30:32,535 - INFO -  * Running on http://0.0.0.0:1026/ (Press CTRL+C to quit)
+2015-03-19 13:30:36,674 - INFO - 127.0.0.1 - - [19/Mar/2015 13:30:36] "POST /v1/queryContext HTTP/1.1" 200 -
+2015-03-19 13:31:06,280 - INFO - Starting new HTTP connection (1): orion.lab.fiware.org
+2015-03-19 13:31:07,612 - DEBUG - "POST /v1/registry/discoverContextAvailability HTTP/1.1" 200 36224
+2015-03-19 13:31:07,726 - INFO - Starting new HTTP connection (1): orion.lab.fiware.org
+2015-03-19 13:31:08,033 - DEBUG - "POST /v1/registry/discoverContextAvailability HTTP/1.1" 200 3400
+2015-03-19 13:31:08,046 - INFO - Starting new HTTP connection (1): orion.lab.fiware.org
+2015-03-19 13:31:08,467 - DEBUG - "POST /v1/registry/discoverContextAvailability HTTP/1.1" 200 40316
+2015-03-19 13:31:08,598 - INFO - Starting new HTTP connection (1): orion.lab.fiware.org
+2015-03-19 13:31:09,022 - DEBUG - "POST /v1/registry/discoverContextAvailability HTTP/1.1" 200 47431
+2015-03-19 13:31:09,157 - INFO -  * Running on http://0.0.0.0:1026/ (Press CTRL+C to quit)
+2015-03-19 13:31:12,684 - INFO - Starting new HTTP connection (1): www.tusbic.es
+2015-03-19 13:31:12,927 - DEBUG - "GET /service/stationdetails/santander/2 HTTP/1.1" 200 162
+2015-03-19 13:31:15,430 - INFO - 127.0.0.1 - - [19/Mar/2015 13:31:15] "POST /v1/queryContext HTTP/1.1" 200 -
+2015-03-19 14:01:54,410 - INFO - Starting new HTTP connection (1): orion.lab.fiware.org
+2015-03-19 14:01:54,865 - DEBUG - "POST /v1/registry/discoverContextAvailability HTTP/1.1" 200 94
+2015-03-19 14:01:54,868 - INFO - Starting new HTTP connection (1): orion.lab.fiware.org
+2015-03-19 14:01:55,259 - DEBUG - "POST /v1/registry/registerContext HTTP/1.1" 200 74
+2015-03-19 14:01:55,275 - INFO - Starting new HTTP connection (1): orion.lab.fiware.org
+2015-03-19 14:01:57,621 - DEBUG - "POST /v1/registry/discoverContextAvailability HTTP/1.1" 200 94
+2015-03-19 14:01:57,625 - INFO - Starting new HTTP connection (1): orion.lab.fiware.org
+2015-03-19 14:02:00,898 - DEBUG - "POST /v1/registry/registerContext HTTP/1.1" 200 74
+2015-03-19 14:02:00,918 - INFO - Starting new HTTP connection (1): orion.lab.fiware.org
+2015-03-19 14:02:01,283 - DEBUG - "POST /v1/registry/discoverContextAvailability HTTP/1.1" 200 94
+2015-03-19 14:02:01,286 - INFO - Starting new HTTP connection (1): orion.lab.fiware.org
+2015-03-19 14:02:04,470 - DEBUG - "POST /v1/registry/registerContext HTTP/1.1" 200 74
+2015-03-19 14:02:04,509 - INFO - Starting new HTTP connection (1): orion.lab.fiware.org
+2015-03-19 14:02:05,663 - DEBUG - "POST /v1/registry/discoverContextAvailability HTTP/1.1" 200 94
+2015-03-19 14:02:05,665 - INFO - Starting new HTTP connection (1): orion.lab.fiware.org
+2015-03-19 14:02:06,104 - DEBUG - "POST /v1/registry/registerContext HTTP/1.1" 200 74
+2015-03-19 14:02:06,160 - INFO -  * Running on http://0.0.0.0:1026/ (Press CTRL+C to quit)
+2015-03-19 14:02:34,265 - INFO - Starting new HTTP connection (1): orion.lab.fiware.org
+2015-03-19 14:02:36,434 - DEBUG - "POST /v1/registry/discoverContextAvailability HTTP/1.1" 200 34524
+2015-03-19 14:02:36,563 - INFO - Starting new HTTP connection (1): orion.lab.fiware.org
+2015-03-19 14:02:39,190 - DEBUG - "POST /v1/registry/discoverContextAvailability HTTP/1.1" 200 3376
+2015-03-19 14:02:39,203 - INFO - Starting new HTTP connection (1): orion.lab.fiware.org
+2015-03-19 14:02:42,359 - DEBUG - "POST /v1/registry/discoverContextAvailability HTTP/1.1" 200 37400
+2015-03-19 14:02:42,499 - INFO - Starting new HTTP connection (1): orion.lab.fiware.org
+2015-03-19 14:02:42,917 - DEBUG - "POST /v1/registry/discoverContextAvailability HTTP/1.1" 200 44807
+2015-03-19 14:02:43,084 - INFO -  * Running on http://0.0.0.0:1026/ (Press CTRL+C to quit)
+2015-03-19 14:02:54,164 - INFO - 127.0.0.1 - - [19/Mar/2015 14:02:54] "POST /v1/queryContext HTTP/1.1" 200 -
+2015-03-19 14:03:04,176 - INFO - Starting new HTTP connection (1): www.tusbic.es
+2015-03-19 14:03:04,369 - DEBUG - "GET /service/stationdetails/santander/2 HTTP/1.1" 200 162
+2015-03-19 14:03:04,375 - INFO - 127.0.0.1 - - [19/Mar/2015 14:03:04] "POST /v1/queryContext HTTP/1.1" 200 -
+2015-03-19 14:03:16,170 - INFO - Starting new HTTP connection (1): www.tusbic.es
+2015-03-19 14:03:16,259 - DEBUG - "GET /service/stationdetails/santander/2 HTTP/1.1" 200 162
+2015-03-19 14:03:16,273 - INFO - Starting new HTTP connection (1): www.sevici.es
+2015-03-19 14:03:16,802 - DEBUG - "GET /service/stationdetails/seville/2 HTTP/1.1" 200 159
+2015-03-19 14:03:16,812 - INFO - 127.0.0.1 - - [19/Mar/2015 14:03:16] "POST /v1/queryContext HTTP/1.1" 200 -

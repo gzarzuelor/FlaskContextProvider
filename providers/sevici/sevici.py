@@ -111,7 +111,7 @@ def select_id(orion_id):
         :param orion_id: orion_id
         :rtype : sevici_id
     """
-    pattern = "urn::Sevilla:Sevici"
+    pattern = "Sevici."
     a = len(re.match(pattern, orion_id).group())
     return orion_id[a:]
 
@@ -143,7 +143,7 @@ def get_data(_id, _type, max_time=1):
     life_time = []
     try:
         fields = get_station_data(id_)
-        entity.entity_add(_id, 'sevici', ispattern='false')
+        entity.entity_add(_id, 'bikerenting', ispattern='false')
 
         for s in fields:
             if s.tag == "updated":
@@ -169,6 +169,7 @@ def get_data(_id, _type, max_time=1):
                     entity.attribute.metadata.metadata_add('location', 'string', 'WGS84')
                     entity.attribute.add_metadatas_to_attrib('position')
                     entity.attribute.metadata.metadata_list_purge()
+                    entity.attribute.attribute_add('street', 'string', station['fulladdress'])
 
         entity.add_attributes_to_entity(_id)
         entity.attribute.attribute_list_purge()
