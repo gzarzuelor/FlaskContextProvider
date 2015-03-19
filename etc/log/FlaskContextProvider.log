@@ -11026,3 +11026,45 @@ TypeError: 'NoneType' object has no attribute '__getitem__'
 2015-03-19 14:03:16,273 - INFO - Starting new HTTP connection (1): www.sevici.es
 2015-03-19 14:03:16,802 - DEBUG - "GET /service/stationdetails/seville/2 HTTP/1.1" 200 159
 2015-03-19 14:03:16,812 - INFO - 127.0.0.1 - - [19/Mar/2015 14:03:16] "POST /v1/queryContext HTTP/1.1" 200 -
+2015-03-19 14:22:03,423 - INFO - Starting new HTTP connection (1): orion.lab.fiware.org
+2015-03-19 14:22:03,977 - DEBUG - "POST /v1/registry/discoverContextAvailability HTTP/1.1" 200 34524
+2015-03-19 14:22:04,088 - INFO - Starting new HTTP connection (1): orion.lab.fiware.org
+2015-03-19 14:22:07,163 - DEBUG - "POST /v1/registry/discoverContextAvailability HTTP/1.1" 200 3376
+2015-03-19 14:22:07,177 - INFO - Starting new HTTP connection (1): orion.lab.fiware.org
+2015-03-19 14:22:07,538 - DEBUG - "POST /v1/registry/discoverContextAvailability HTTP/1.1" 200 37400
+2015-03-19 14:22:07,676 - INFO - Starting new HTTP connection (1): orion.lab.fiware.org
+2015-03-19 14:22:08,704 - DEBUG - "POST /v1/registry/discoverContextAvailability HTTP/1.1" 200 44807
+2015-03-19 14:22:08,869 - INFO -  * Running on http://0.0.0.0:1026/ (Press CTRL+C to quit)
+2015-03-19 14:22:22,029 - INFO - Starting new HTTP connection (1): www.tusbic.es
+2015-03-19 14:22:22,223 - DEBUG - "GET /service/stationdetails/santander/2 HTTP/1.1" 200 162
+2015-03-19 14:22:22,250 - INFO - Starting new HTTP connection (1): www.tusbic.es
+2015-03-19 14:22:22,338 - DEBUG - "GET /service/stationdetails/santander/3 HTTP/1.1" 200 161
+2015-03-19 14:22:22,344 - INFO - Starting new HTTP connection (1): www.tusbic.es
+2015-03-19 14:22:22,433 - DEBUG - "GET /service/stationdetails/santander/4 HTTP/1.1" 200 162
+2015-03-19 14:22:22,437 - INFO - Starting new HTTP connection (1): www.tusbic.es
+2015-03-19 14:22:22,530 - DEBUG - "GET /service/stationdetails/santander/5 HTTP/1.1" 200 162
+2015-03-19 14:22:22,535 - INFO - Starting new HTTP connection (1): www.tusbic.es
+2015-03-19 14:22:22,625 - DEBUG - "GET /service/stationdetails/santander/6 HTTP/1.1" 200 161
+2015-03-19 14:22:22,628 - INFO - Starting new HTTP connection (1): www.tusbic.es
+2015-03-19 14:22:22,709 - DEBUG - "GET /service/stationdetails/santander/7 HTTP/1.1" 200 162
+2015-03-19 14:22:22,713 - INFO - Starting new HTTP connection (1): www.tusbic.es
+2015-03-19 14:22:22,803 - DEBUG - "GET /service/stationdetails/santander/8 HTTP/1.1" 200 161
+2015-03-19 14:22:22,808 - INFO - Starting new HTTP connection (1): www.tusbic.es
+2015-03-19 14:22:22,891 - DEBUG - "GET /service/stationdetails/santander/9 HTTP/1.1" 200 160
+2015-03-19 14:22:22,894 - INFO - Starting new HTTP connection (1): www.tusbic.es
+2015-03-19 14:22:22,976 - DEBUG - "GET /service/stationdetails/santander/10 HTTP/1.1" 200 161
+2015-03-19 14:22:22,980 - INFO - Starting new HTTP connection (1): www.tusbic.es
+2015-03-19 14:22:23,069 - DEBUG - "GET /service/stationdetails/santander/11 HTTP/1.1" 200 162
+2015-03-19 14:22:23,075 - INFO - Starting new HTTP connection (1): www.tusbic.es
+2015-03-19 14:22:23,154 - DEBUG - "GET /service/stationdetails/santander/12 HTTP/1.1" 200 162
+2015-03-19 14:22:23,158 - INFO - Starting new HTTP connection (1): www.tusbic.es
+2015-03-19 14:22:23,247 - DEBUG - "GET /service/stationdetails/santander/13 HTTP/1.1" 200 162
+2015-03-19 14:22:23,252 - INFO - Starting new HTTP connection (1): www.tusbic.es
+2015-03-19 14:22:23,341 - DEBUG - "GET /service/stationdetails/santander/14 HTTP/1.1" 200 162
+2015-03-19 14:22:23,345 - INFO - Starting new HTTP connection (1): www.tusbic.es
+2015-03-19 14:22:23,436 - DEBUG - "GET /service/stationdetails/santander/15 HTTP/1.1" 200 160
+2015-03-19 14:22:23,440 - INFO - Starting new HTTP connection (1): www.tusbic.es
+2015-03-19 14:22:23,529 - DEBUG - "GET /service/stationdetails/santander/16 HTTP/1.1" 200 162
+2015-03-19 14:22:23,533 - INFO - Starting new HTTP connection (1): www.tusbic.es
+2015-03-19 14:22:23,624 - DEBUG - "GET /service/stationdetails/santander/17 HTTP/1.1" 200 161
+2015-03-19 14:22:23,640 - INFO - 127.0.0.1 - - [19/Mar/2015 14:22:23] "POST /v1/queryContext HTTP/1.1" 200 -
