@@ -31,7 +31,7 @@ def get_data(_id, _type, max_time=1):
         return tusbic.get_data(_id,_type,max_time=max_time)
     elif _id.find('Villo.') != -1:
         return villo.get_data(_id,_type,max_time=max_time)
-    elif _id.find('Valenvisi.') != -1:
+    elif _id.find('Valenbisi.') != -1:
         return valenvisi.get_data(_id,_type,max_time=max_time)
     else:
         return [[], 1]
