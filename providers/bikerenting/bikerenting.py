@@ -20,7 +20,7 @@
 from providers.sevici import sevici as sevici
 from providers.tusbic import tusbic as tusbic
 from providers.villo import villo as villo
-from providers.valenbisi import valenbisi as valenvisi
+from providers.valenbisi import valenbisi as valenbisi
 
 
 
@@ -32,6 +32,6 @@ def get_data(_id, _type, max_time=1):
     elif _id.find('Villo.') != -1:
         return villo.get_data(_id,_type,max_time=max_time)
     elif _id.find('Valenbisi.') != -1:
-        return valenvisi.get_data(_id,_type,max_time=max_time)
+        return valenbisi.get_data(_id,_type,max_time=max_time)
     else:
         return [[], 1]
