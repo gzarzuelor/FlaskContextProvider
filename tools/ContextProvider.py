@@ -185,29 +185,24 @@ class ContextProvider():
                     else:
                         orion_id.append(entity_dict)
 
+                if offset != 0 and limit != 0:
+                    orion_id = orion_id[offset:offset+limit]
+                elif offset == 0 and limit != 0:
+                    orion_id = orion_id[:limit]
+                elif offset != 0 and limit == 0:
+                    orion_id = orion_id[offset:]
+                else:
+                    orion_id = orion_id[:]
+
                 query_context_request = ET.fromstring(cb_request.data)
                 attributes = query_context_request.findall('.//attributeList//attribute')
                 if len(attributes) != 0:
                     attribute_list = []
                     for attribute in attributes:
                         attribute_list.append(attribute.text)
-                    if offset != 0 and limit != 0:
-                        orion_data = {'entities': orion_id[offset:offset+limit], 'attributes': attribute_list}
-                    elif offset == 0 and limit != 0:
-                        orion_data = {'entities': orion_id[:limit], 'attributes': attribute_list}
-                    elif offset != 0 and limit == 0:
-                        orion_data = {'entities': orion_id[offset:], 'attributes': attribute_list}
-                    else:
-                        orion_data = {'entities': orion_id[:], 'attributes': attribute_list}
+                    orion_data = {'entities': orion_id, 'attributes': attribute_list}
                 else:
-                    if offset != 0 and limit != 0:
-                        orion_data = {'entities': orion_id[offset:offset+limit]}
-                    elif offset == 0 and limit != 0:
-                        orion_data = {'entities': orion_id[:limit]}
-                    elif offset != 0 and limit == 0:
-                        orion_data = {'entities': orion_id[offset:]}
-                    else:
-                        orion_data = {'entities': orion_id[:]}
+                    orion_data = {'entities': orion_id}
 
             except ET.ParseError:
                 return 0
