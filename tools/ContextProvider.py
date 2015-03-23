@@ -201,6 +201,7 @@ class ContextProvider():
                     for attribute in attributes:
                         attribute_list.append(attribute.text)
                     orion_data = {'entities': orion_id, 'attributes': attribute_list}
+                    
                 else:
                     orion_data = {'entities': orion_id}
 
