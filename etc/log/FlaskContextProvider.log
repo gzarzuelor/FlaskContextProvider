@@ -22028,3 +22028,485 @@ KeyError: ''
 2015-03-20 13:03:45,000 - INFO - 130.206.81.46 - - [20/Mar/2015 13:03:45] "POST /v1/queryContext HTTP/1.1" 200 -
 2015-03-20 13:19:31,450 - INFO - 130.206.81.46 - - [20/Mar/2015 13:19:31] "POST /v1/queryContext HTTP/1.1" 200 -
 2015-03-20 13:19:32,498 - INFO - 130.206.81.46 - - [20/Mar/2015 13:19:32] "POST /v1/queryContext HTTP/1.1" 200 -
+2015-03-23 10:42:36,714 - INFO - Starting new HTTP connection (1): orion.lab.fiware.org
+2015-03-23 10:42:37,168 - DEBUG - "POST /v1/registry/discoverContextAvailability HTTP/1.1" 200 34524
+2015-03-23 10:42:37,282 - INFO - Starting new HTTP connection (1): orion.lab.fiware.org
+2015-03-23 10:42:37,601 - DEBUG - "POST /v1/registry/discoverContextAvailability HTTP/1.1" 200 3376
+2015-03-23 10:42:37,615 - INFO - Starting new HTTP connection (1): orion.lab.fiware.org
+2015-03-23 10:42:38,934 - DEBUG - "POST /v1/registry/discoverContextAvailability HTTP/1.1" 200 37400
+2015-03-23 10:42:39,073 - INFO - Starting new HTTP connection (1): orion.lab.fiware.org
+2015-03-23 10:42:39,496 - DEBUG - "POST /v1/registry/discoverContextAvailability HTTP/1.1" 200 44807
+2015-03-23 10:42:39,854 - INFO -  * Running on http://0.0.0.0:1026/ (Press CTRL+C to quit)
+2015-03-23 10:44:42,538 - ERROR - Exception on /v1/queryContext [POST]
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\flask\app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Python27\lib\site-packages\flask\app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Python27\lib\site-packages\flask\app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Python27\lib\site-packages\flask\app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Python27\lib\site-packages\flask\app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\Users\b.gzr\Repositorios\FlaskContextProvider\tools\ContextProvider.py", line 70, in __provider_task__
+    self.orion_data = self.__get_cb_data__(request)
+  File "C:\Users\b.gzr\Repositorios\FlaskContextProvider\tools\ContextProvider.py", line 139, in __get_cb_data__
+    print cb_request.GET['limit']
+  File "C:\Python27\lib\site-packages\werkzeug\local.py", line 338, in __getattr__
+    return getattr(self._get_current_object(), name)
+AttributeError: 'Request' object has no attribute 'GET'
+2015-03-23 10:44:42,582 - INFO - 127.0.0.1 - - [23/Mar/2015 10:44:42] "POST /v1/queryContext?limit=300 HTTP/1.1" 500 -
+2015-03-23 10:46:43,336 - INFO - Starting new HTTP connection (1): orion.lab.fiware.org
+2015-03-23 10:46:43,733 - DEBUG - "POST /v1/registry/discoverContextAvailability HTTP/1.1" 200 34524
+2015-03-23 10:46:43,849 - INFO - Starting new HTTP connection (1): orion.lab.fiware.org
+2015-03-23 10:46:44,148 - DEBUG - "POST /v1/registry/discoverContextAvailability HTTP/1.1" 200 3376
+2015-03-23 10:46:44,161 - INFO - Starting new HTTP connection (1): orion.lab.fiware.org
+2015-03-23 10:46:44,533 - DEBUG - "POST /v1/registry/discoverContextAvailability HTTP/1.1" 200 37400
+2015-03-23 10:46:44,674 - INFO - Starting new HTTP connection (1): orion.lab.fiware.org
+2015-03-23 10:46:45,345 - DEBUG - "POST /v1/registry/discoverContextAvailability HTTP/1.1" 200 44807
+2015-03-23 10:46:45,513 - INFO -  * Running on http://0.0.0.0:1026/ (Press CTRL+C to quit)
+2015-03-23 10:46:55,301 - INFO - Starting new HTTP connection (1): www.tusbic.es
+2015-03-23 10:46:55,565 - DEBUG - "GET /service/stationdetails/santander/2 HTTP/1.1" 200 160
+2015-03-23 10:46:55,848 - INFO - Starting new HTTP connection (1): www.tusbic.es
+2015-03-23 10:46:55,936 - DEBUG - "GET /service/stationdetails/santander/3 HTTP/1.1" 200 159
+2015-03-23 10:46:55,957 - INFO - Starting new HTTP connection (1): www.tusbic.es
+2015-03-23 10:46:56,038 - DEBUG - "GET /service/stationdetails/santander/4 HTTP/1.1" 200 159
+2015-03-23 10:46:56,045 - INFO - Starting new HTTP connection (1): www.tusbic.es
+2015-03-23 10:46:56,135 - DEBUG - "GET /service/stationdetails/santander/5 HTTP/1.1" 200 161
+2015-03-23 10:46:56,157 - INFO - Starting new HTTP connection (1): www.tusbic.es
+2015-03-23 10:46:56,246 - DEBUG - "GET /service/stationdetails/santander/6 HTTP/1.1" 200 161
+2015-03-23 10:46:56,252 - INFO - Starting new HTTP connection (1): www.tusbic.es
+2015-03-23 10:46:56,339 - DEBUG - "GET /service/stationdetails/santander/7 HTTP/1.1" 200 162
+2015-03-23 10:46:56,345 - INFO - Starting new HTTP connection (1): www.tusbic.es
+2015-03-23 10:46:56,426 - DEBUG - "GET /service/stationdetails/santander/8 HTTP/1.1" 200 161
+2015-03-23 10:46:56,430 - INFO - Starting new HTTP connection (1): www.tusbic.es
+2015-03-23 10:46:56,517 - DEBUG - "GET /service/stationdetails/santander/9 HTTP/1.1" 200 161
+2015-03-23 10:46:56,522 - INFO - Starting new HTTP connection (1): www.tusbic.es
+2015-03-23 10:46:56,611 - DEBUG - "GET /service/stationdetails/santander/10 HTTP/1.1" 200 161
+2015-03-23 10:46:56,641 - INFO - Starting new HTTP connection (1): www.tusbic.es
+2015-03-23 10:46:56,740 - DEBUG - "GET /service/stationdetails/santander/11 HTTP/1.1" 200 161
+2015-03-23 10:46:56,753 - INFO - Starting new HTTP connection (1): www.tusbic.es
+2015-03-23 10:46:56,842 - DEBUG - "GET /service/stationdetails/santander/12 HTTP/1.1" 200 161
+2015-03-23 10:46:56,848 - INFO - Starting new HTTP connection (1): www.tusbic.es
+2015-03-23 10:46:56,937 - DEBUG - "GET /service/stationdetails/santander/13 HTTP/1.1" 200 161
+2015-03-23 10:46:56,943 - INFO - Starting new HTTP connection (1): www.tusbic.es
+2015-03-23 10:46:57,032 - DEBUG - "GET /service/stationdetails/santander/14 HTTP/1.1" 200 161
+2015-03-23 10:46:57,038 - INFO - Starting new HTTP connection (1): www.tusbic.es
+2015-03-23 10:46:57,127 - DEBUG - "GET /service/stationdetails/santander/15 HTTP/1.1" 200 160
+2015-03-23 10:46:57,131 - INFO - Starting new HTTP connection (1): www.tusbic.es
+2015-03-23 10:46:57,213 - DEBUG - "GET /service/stationdetails/santander/16 HTTP/1.1" 200 162
+2015-03-23 10:46:57,219 - INFO - Starting new HTTP connection (1): www.tusbic.es
+2015-03-23 10:46:57,301 - DEBUG - "GET /service/stationdetails/santander/17 HTTP/1.1" 200 160
+2015-03-23 10:46:57,319 - INFO - 127.0.0.1 - - [23/Mar/2015 10:46:57] "POST /v1/queryContext?limit=300 HTTP/1.1" 200 -
+2015-03-23 10:48:34,510 - INFO - Starting new HTTP connection (1): orion.lab.fiware.org
+2015-03-23 10:48:34,959 - DEBUG - "POST /v1/registry/discoverContextAvailability HTTP/1.1" 200 34524
+2015-03-23 10:48:35,086 - INFO - Starting new HTTP connection (1): orion.lab.fiware.org
+2015-03-23 10:48:35,398 - DEBUG - "POST /v1/registry/discoverContextAvailability HTTP/1.1" 200 3376
+2015-03-23 10:48:35,410 - INFO - Starting new HTTP connection (1): orion.lab.fiware.org
+2015-03-23 10:48:35,884 - DEBUG - "POST /v1/registry/discoverContextAvailability HTTP/1.1" 200 37400
+2015-03-23 10:48:36,026 - INFO - Starting new HTTP connection (1): orion.lab.fiware.org
+2015-03-23 10:48:36,448 - DEBUG - "POST /v1/registry/discoverContextAvailability HTTP/1.1" 200 44807
+2015-03-23 10:48:36,617 - INFO -  * Running on http://0.0.0.0:1026/ (Press CTRL+C to quit)
+2015-03-23 10:48:39,479 - INFO - Starting new HTTP connection (1): www.tusbic.es
+2015-03-23 10:48:39,565 - DEBUG - "GET /service/stationdetails/santander/2 HTTP/1.1" 200 161
+2015-03-23 10:48:39,572 - INFO - Starting new HTTP connection (1): www.tusbic.es
+2015-03-23 10:48:39,655 - DEBUG - "GET /service/stationdetails/santander/3 HTTP/1.1" 200 159
+2015-03-23 10:48:39,661 - INFO - Starting new HTTP connection (1): www.tusbic.es
+2015-03-23 10:48:39,743 - DEBUG - "GET /service/stationdetails/santander/5 HTTP/1.1" 200 161
+2015-03-23 10:48:39,747 - INFO - Starting new HTTP connection (1): www.tusbic.es
+2015-03-23 10:48:39,836 - DEBUG - "GET /service/stationdetails/santander/8 HTTP/1.1" 200 161
+2015-03-23 10:48:39,841 - INFO - Starting new HTTP connection (1): www.tusbic.es
+2015-03-23 10:48:39,930 - DEBUG - "GET /service/stationdetails/santander/11 HTTP/1.1" 200 162
+2015-03-23 10:48:39,934 - INFO - Starting new HTTP connection (1): www.tusbic.es
+2015-03-23 10:48:40,016 - DEBUG - "GET /service/stationdetails/santander/13 HTTP/1.1" 200 162
+2015-03-23 10:48:40,019 - INFO - Starting new HTTP connection (1): www.tusbic.es
+2015-03-23 10:48:40,101 - DEBUG - "GET /service/stationdetails/santander/14 HTTP/1.1" 200 161
+2015-03-23 10:48:40,105 - INFO - Starting new HTTP connection (1): www.tusbic.es
+2015-03-23 10:48:40,198 - DEBUG - "GET /service/stationdetails/santander/17 HTTP/1.1" 200 161
+2015-03-23 10:48:40,214 - INFO - 127.0.0.1 - - [23/Mar/2015 10:48:40] "POST /v1/queryContext?limit=300 HTTP/1.1" 200 -
+2015-03-23 10:49:11,266 - INFO - Starting new HTTP connection (1): orion.lab.fiware.org
+2015-03-23 10:49:13,931 - DEBUG - "POST /v1/registry/discoverContextAvailability HTTP/1.1" 200 34524
+2015-03-23 10:49:14,042 - INFO - Starting new HTTP connection (1): orion.lab.fiware.org
+2015-03-23 10:49:14,351 - DEBUG - "POST /v1/registry/discoverContextAvailability HTTP/1.1" 200 3376
+2015-03-23 10:49:14,390 - INFO - Starting new HTTP connection (1): orion.lab.fiware.org
+2015-03-23 10:49:16,325 - DEBUG - "POST /v1/registry/discoverContextAvailability HTTP/1.1" 200 37400
+2015-03-23 10:49:16,467 - INFO - Starting new HTTP connection (1): orion.lab.fiware.org
+2015-03-23 10:49:16,887 - DEBUG - "POST /v1/registry/discoverContextAvailability HTTP/1.1" 200 44807
+2015-03-23 10:49:17,058 - INFO -  * Running on http://0.0.0.0:1026/ (Press CTRL+C to quit)
+2015-03-23 10:49:18,926 - INFO - 127.0.0.1 - - [23/Mar/2015 10:49:18] "POST /v1/queryContext?limit=300 HTTP/1.1" 200 -
+2015-03-23 10:49:45,161 - INFO - Starting new HTTP connection (1): orion.lab.fiware.org
+2015-03-23 10:49:46,121 - DEBUG - "POST /v1/registry/discoverContextAvailability HTTP/1.1" 200 34524
+2015-03-23 10:49:46,250 - INFO - Starting new HTTP connection (1): orion.lab.fiware.org
+2015-03-23 10:49:46,615 - DEBUG - "POST /v1/registry/discoverContextAvailability HTTP/1.1" 200 3376
+2015-03-23 10:49:46,627 - INFO - Starting new HTTP connection (1): orion.lab.fiware.org
+2015-03-23 10:49:47,020 - DEBUG - "POST /v1/registry/discoverContextAvailability HTTP/1.1" 200 37400
+2015-03-23 10:49:47,164 - INFO - Starting new HTTP connection (1): orion.lab.fiware.org
+2015-03-23 10:49:49,141 - DEBUG - "POST /v1/registry/discoverContextAvailability HTTP/1.1" 200 44807
+2015-03-23 10:49:49,303 - INFO -  * Running on http://0.0.0.0:1026/ (Press CTRL+C to quit)
+2015-03-23 10:49:50,283 - INFO - 127.0.0.1 - - [23/Mar/2015 10:49:50] "POST /v1/queryContext?limit=300 HTTP/1.1" 200 -
+2015-03-23 10:53:36,734 - INFO - Starting new HTTP connection (1): orion.lab.fiware.org
+2015-03-23 10:53:37,657 - DEBUG - "POST /v1/registry/discoverContextAvailability HTTP/1.1" 200 34524
+2015-03-23 10:53:37,766 - INFO - Starting new HTTP connection (1): orion.lab.fiware.org
+2015-03-23 10:53:38,078 - DEBUG - "POST /v1/registry/discoverContextAvailability HTTP/1.1" 200 3376
+2015-03-23 10:53:38,091 - INFO - Starting new HTTP connection (1): orion.lab.fiware.org
+2015-03-23 10:53:38,506 - DEBUG - "POST /v1/registry/discoverContextAvailability HTTP/1.1" 200 37400
+2015-03-23 10:53:38,667 - INFO - Starting new HTTP connection (1): orion.lab.fiware.org
+2015-03-23 10:53:42,026 - DEBUG - "POST /v1/registry/discoverContextAvailability HTTP/1.1" 200 44807
+2015-03-23 10:53:42,240 - INFO -  * Running on http://0.0.0.0:1026/ (Press CTRL+C to quit)
+2015-03-23 10:53:45,269 - ERROR - Exception on /v1/queryContext [POST]
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\flask\app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Python27\lib\site-packages\flask\app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Python27\lib\site-packages\flask\app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Python27\lib\site-packages\flask\app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Python27\lib\site-packages\flask\app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\Users\b.gzr\Repositorios\FlaskContextProvider\tools\ContextProvider.py", line 70, in __provider_task__
+    self.orion_data = self.__get_cb_data__(request)
+  File "C:\Users\b.gzr\Repositorios\FlaskContextProvider\tools\ContextProvider.py", line 140, in __get_cb_data__
+    print int(cb_request.args.get('offset'))
+TypeError: int() argument must be a string or a number, not 'NoneType'
+2015-03-23 10:53:45,272 - INFO - 127.0.0.1 - - [23/Mar/2015 10:53:45] "POST /v1/queryContext?limit=300 HTTP/1.1" 500 -
+2015-03-23 10:54:46,380 - INFO - Starting new HTTP connection (1): orion.lab.fiware.org
+2015-03-23 10:54:49,278 - DEBUG - "POST /v1/registry/discoverContextAvailability HTTP/1.1" 200 34524
+2015-03-23 10:54:49,405 - INFO - Starting new HTTP connection (1): orion.lab.fiware.org
+2015-03-23 10:54:51,513 - DEBUG - "POST /v1/registry/discoverContextAvailability HTTP/1.1" 200 3376
+2015-03-23 10:54:51,526 - INFO - Starting new HTTP connection (1): orion.lab.fiware.org
+2015-03-23 10:54:51,891 - DEBUG - "POST /v1/registry/discoverContextAvailability HTTP/1.1" 200 37400
+2015-03-23 10:54:52,029 - INFO - Starting new HTTP connection (1): orion.lab.fiware.org
+2015-03-23 10:54:53,427 - DEBUG - "POST /v1/registry/discoverContextAvailability HTTP/1.1" 200 44807
+2015-03-23 10:54:53,591 - INFO -  * Running on http://0.0.0.0:1026/ (Press CTRL+C to quit)
+2015-03-23 10:54:56,194 - INFO - Starting new HTTP connection (1): www.tusbic.es
+2015-03-23 10:54:56,285 - DEBUG - "GET /service/stationdetails/santander/2 HTTP/1.1" 200 160
+2015-03-23 10:54:56,292 - INFO - Starting new HTTP connection (1): www.tusbic.es
+2015-03-23 10:54:56,380 - DEBUG - "GET /service/stationdetails/santander/3 HTTP/1.1" 200 158
+2015-03-23 10:54:56,384 - INFO - Starting new HTTP connection (1): www.tusbic.es
+2015-03-23 10:54:56,473 - DEBUG - "GET /service/stationdetails/santander/4 HTTP/1.1" 200 158
+2015-03-23 10:54:56,477 - INFO - Starting new HTTP connection (1): www.tusbic.es
+2015-03-23 10:54:56,566 - DEBUG - "GET /service/stationdetails/santander/5 HTTP/1.1" 200 161
+2015-03-23 10:54:56,571 - INFO - Starting new HTTP connection (1): www.tusbic.es
+2015-03-23 10:54:56,651 - DEBUG - "GET /service/stationdetails/santander/6 HTTP/1.1" 200 161
+2015-03-23 10:54:56,655 - INFO - Starting new HTTP connection (1): www.tusbic.es
+2015-03-23 10:54:56,743 - DEBUG - "GET /service/stationdetails/santander/7 HTTP/1.1" 200 161
+2015-03-23 10:54:56,749 - INFO - Starting new HTTP connection (1): www.tusbic.es
+2015-03-23 10:54:56,838 - DEBUG - "GET /service/stationdetails/santander/8 HTTP/1.1" 200 161
+2015-03-23 10:54:56,842 - INFO - Starting new HTTP connection (1): www.tusbic.es
+2015-03-23 10:54:56,931 - DEBUG - "GET /service/stationdetails/santander/9 HTTP/1.1" 200 161
+2015-03-23 10:54:56,936 - INFO - Starting new HTTP connection (1): www.tusbic.es
+2015-03-23 10:54:57,025 - DEBUG - "GET /service/stationdetails/santander/10 HTTP/1.1" 200 161
+2015-03-23 10:54:57,029 - INFO - Starting new HTTP connection (1): www.tusbic.es
+2015-03-23 10:54:57,128 - DEBUG - "GET /service/stationdetails/santander/11 HTTP/1.1" 200 161
+2015-03-23 10:54:57,132 - INFO - Starting new HTTP connection (1): www.tusbic.es
+2015-03-23 10:54:57,221 - DEBUG - "GET /service/stationdetails/santander/12 HTTP/1.1" 200 160
+2015-03-23 10:54:57,226 - INFO - Starting new HTTP connection (1): www.tusbic.es
+2015-03-23 10:54:57,315 - DEBUG - "GET /service/stationdetails/santander/13 HTTP/1.1" 200 160
+2015-03-23 10:54:57,319 - INFO - Starting new HTTP connection (1): www.tusbic.es
+2015-03-23 10:54:57,401 - DEBUG - "GET /service/stationdetails/santander/14 HTTP/1.1" 200 161
+2015-03-23 10:54:57,405 - INFO - Starting new HTTP connection (1): www.tusbic.es
+2015-03-23 10:54:57,493 - DEBUG - "GET /service/stationdetails/santander/15 HTTP/1.1" 200 160
+2015-03-23 10:54:57,499 - INFO - Starting new HTTP connection (1): www.tusbic.es
+2015-03-23 10:54:57,586 - DEBUG - "GET /service/stationdetails/santander/16 HTTP/1.1" 200 161
+2015-03-23 10:54:57,591 - INFO - Starting new HTTP connection (1): www.tusbic.es
+2015-03-23 10:54:57,680 - DEBUG - "GET /service/stationdetails/santander/17 HTTP/1.1" 200 160
+2015-03-23 10:54:57,696 - INFO - 127.0.0.1 - - [23/Mar/2015 10:54:57] "POST /v1/queryContext?limit=300 HTTP/1.1" 200 -
+2015-03-23 10:55:22,104 - INFO - Starting new HTTP connection (1): orion.lab.fiware.org
+2015-03-23 10:55:22,601 - DEBUG - "POST /v1/registry/discoverContextAvailability HTTP/1.1" 200 34524
+2015-03-23 10:55:22,711 - INFO - Starting new HTTP connection (1): orion.lab.fiware.org
+2015-03-23 10:55:23,026 - DEBUG - "POST /v1/registry/discoverContextAvailability HTTP/1.1" 200 3376
+2015-03-23 10:55:23,039 - INFO - Starting new HTTP connection (1): orion.lab.fiware.org
+2015-03-23 10:55:23,443 - DEBUG - "POST /v1/registry/discoverContextAvailability HTTP/1.1" 200 37400
+2015-03-23 10:55:23,584 - INFO - Starting new HTTP connection (1): orion.lab.fiware.org
+2015-03-23 10:55:24,825 - DEBUG - "POST /v1/registry/discoverContextAvailability HTTP/1.1" 200 44807
+2015-03-23 10:55:25,009 - INFO -  * Running on http://0.0.0.0:1026/ (Press CTRL+C to quit)
+2015-03-23 10:55:35,680 - INFO - Starting new HTTP connection (1): www.tusbic.es
+2015-03-23 10:55:35,770 - DEBUG - "GET /service/stationdetails/santander/1 HTTP/1.1" 200 159
+2015-03-23 10:55:35,799 - INFO - 127.0.0.1 - - [23/Mar/2015 10:55:35] "POST /v1/queryContext?limit=300 HTTP/1.1" 200 -
+2015-03-23 10:59:38,207 - INFO - Starting new HTTP connection (1): orion.lab.fiware.org
+2015-03-23 10:59:38,602 - DEBUG - "POST /v1/registry/discoverContextAvailability HTTP/1.1" 200 34524
+2015-03-23 10:59:38,713 - INFO - Starting new HTTP connection (1): orion.lab.fiware.org
+2015-03-23 10:59:39,509 - DEBUG - "POST /v1/registry/discoverContextAvailability HTTP/1.1" 200 3376
+2015-03-23 10:59:39,520 - INFO - Starting new HTTP connection (1): orion.lab.fiware.org
+2015-03-23 10:59:43,210 - DEBUG - "POST /v1/registry/discoverContextAvailability HTTP/1.1" 200 37400
+2015-03-23 10:59:43,357 - INFO - Starting new HTTP connection (1): orion.lab.fiware.org
+2015-03-23 10:59:43,772 - DEBUG - "POST /v1/registry/discoverContextAvailability HTTP/1.1" 200 44807
+2015-03-23 10:59:43,936 - INFO -  * Running on http://0.0.0.0:1026/ (Press CTRL+C to quit)
+2015-03-23 10:59:45,426 - ERROR - Exception on /v1/queryContext [POST]
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\flask\app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Python27\lib\site-packages\flask\app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Python27\lib\site-packages\flask\app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Python27\lib\site-packages\flask\app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Python27\lib\site-packages\flask\app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\Users\b.gzr\Repositorios\FlaskContextProvider\tools\ContextProvider.py", line 70, in __provider_task__
+    self.orion_data = self.__get_cb_data__(request)
+  File "C:\Users\b.gzr\Repositorios\FlaskContextProvider\tools\ContextProvider.py", line 140, in __get_cb_data__
+    offset = int(cb_request.args.get('offset'))
+TypeError: int() argument must be a string or a number, not 'NoneType'
+2015-03-23 10:59:45,430 - INFO - 127.0.0.1 - - [23/Mar/2015 10:59:45] "POST /v1/queryContext?limit=300 HTTP/1.1" 500 -
+2015-03-23 12:02:41,313 - INFO - Starting new HTTP connection (1): orion.lab.fiware.org
+2015-03-23 12:02:45,634 - DEBUG - "POST /v1/registry/discoverContextAvailability HTTP/1.1" 200 34524
+2015-03-23 12:02:45,765 - INFO - Starting new HTTP connection (1): orion.lab.fiware.org
+2015-03-23 12:02:46,154 - DEBUG - "POST /v1/registry/discoverContextAvailability HTTP/1.1" 200 3376
+2015-03-23 12:02:46,168 - INFO - Starting new HTTP connection (1): orion.lab.fiware.org
+2015-03-23 12:02:49,716 - DEBUG - "POST /v1/registry/discoverContextAvailability HTTP/1.1" 200 37400
+2015-03-23 12:02:49,884 - INFO - Starting new HTTP connection (1): orion.lab.fiware.org
+2015-03-23 12:02:50,628 - DEBUG - "POST /v1/registry/discoverContextAvailability HTTP/1.1" 200 44807
+2015-03-23 12:02:50,805 - INFO -  * Running on http://0.0.0.0:1026/ (Press CTRL+C to quit)
+2015-03-23 12:02:53,742 - ERROR - Exception on /v1/queryContext [POST]
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\flask\app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Python27\lib\site-packages\flask\app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Python27\lib\site-packages\flask\app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Python27\lib\site-packages\flask\app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Python27\lib\site-packages\flask\app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\Users\b.gzr\Repositorios\FlaskContextProvider\tools\ContextProvider.py", line 70, in __provider_task__
+    self.orion_data = self.__get_cb_data__(request)
+  File "C:\Users\b.gzr\Repositorios\FlaskContextProvider\tools\ContextProvider.py", line 140, in __get_cb_data__
+    offset = int(cb_request.args.get('offset'))
+TypeError: int() argument must be a string or a number, not 'NoneType'
+2015-03-23 12:02:53,746 - INFO - 127.0.0.1 - - [23/Mar/2015 12:02:53] "POST /v1/queryContext?limit=300 HTTP/1.1" 500 -
+2015-03-23 12:03:56,496 - INFO - Starting new HTTP connection (1): orion.lab.fiware.org
+2015-03-23 12:04:01,328 - DEBUG - "POST /v1/registry/discoverContextAvailability HTTP/1.1" 200 34524
+2015-03-23 12:04:01,451 - INFO - Starting new HTTP connection (1): orion.lab.fiware.org
+2015-03-23 12:04:05,591 - DEBUG - "POST /v1/registry/discoverContextAvailability HTTP/1.1" 200 3376
+2015-03-23 12:04:05,602 - INFO - Starting new HTTP connection (1): orion.lab.fiware.org
+2015-03-23 12:04:05,963 - DEBUG - "POST /v1/registry/discoverContextAvailability HTTP/1.1" 200 37400
+2015-03-23 12:04:06,151 - INFO - Starting new HTTP connection (1): orion.lab.fiware.org
+2015-03-23 12:04:06,605 - DEBUG - "POST /v1/registry/discoverContextAvailability HTTP/1.1" 200 44807
+2015-03-23 12:04:06,845 - INFO -  * Running on http://0.0.0.0:1026/ (Press CTRL+C to quit)
+2015-03-23 12:04:21,634 - INFO - Starting new HTTP connection (1): www.tusbic.es
+2015-03-23 12:04:21,772 - DEBUG - "GET /service/stationdetails/santander/1 HTTP/1.1" 200 159
+2015-03-23 12:04:21,778 - INFO - 127.0.0.1 - - [23/Mar/2015 12:04:21] "POST /v1/queryContext?limit=300 HTTP/1.1" 200 -
+2015-03-23 12:07:18,716 - INFO - Starting new HTTP connection (1): orion.lab.fiware.org
+2015-03-23 12:07:22,512 - DEBUG - "POST /v1/registry/discoverContextAvailability HTTP/1.1" 200 34524
+2015-03-23 12:07:22,621 - INFO - Starting new HTTP connection (1): orion.lab.fiware.org
+2015-03-23 12:07:25,836 - DEBUG - "POST /v1/registry/discoverContextAvailability HTTP/1.1" 200 3376
+2015-03-23 12:07:25,849 - INFO - Starting new HTTP connection (1): orion.lab.fiware.org
+2015-03-23 12:07:26,674 - DEBUG - "POST /v1/registry/discoverContextAvailability HTTP/1.1" 200 37400
+2015-03-23 12:07:26,831 - INFO - Starting new HTTP connection (1): orion.lab.fiware.org
+2015-03-23 12:07:28,467 - DEBUG - "POST /v1/registry/discoverContextAvailability HTTP/1.1" 200 44807
+2015-03-23 12:07:28,680 - INFO -  * Running on http://0.0.0.0:1026/ (Press CTRL+C to quit)
+2015-03-23 12:07:32,667 - INFO - Starting new HTTP connection (1): www.tusbic.es
+2015-03-23 12:07:32,747 - DEBUG - "GET /service/stationdetails/santander/1 HTTP/1.1" 200 159
+2015-03-23 12:07:32,753 - INFO - 127.0.0.1 - - [23/Mar/2015 12:07:32] "POST /v1/queryContext?limit=300 HTTP/1.1" 200 -
+2015-03-23 12:09:11,528 - INFO - Starting new HTTP connection (1): www.tusbic.es
+2015-03-23 12:09:11,625 - DEBUG - "GET /service/stationdetails/santander/2 HTTP/1.1" 200 161
+2015-03-23 12:09:11,630 - INFO - Starting new HTTP connection (1): www.tusbic.es
+2015-03-23 12:09:11,710 - DEBUG - "GET /service/stationdetails/santander/3 HTTP/1.1" 200 159
+2015-03-23 12:09:11,714 - INFO - Starting new HTTP connection (1): www.tusbic.es
+2015-03-23 12:09:11,803 - DEBUG - "GET /service/stationdetails/santander/4 HTTP/1.1" 200 159
+2015-03-23 12:09:11,808 - INFO - Starting new HTTP connection (1): www.tusbic.es
+2015-03-23 12:09:11,898 - DEBUG - "GET /service/stationdetails/santander/5 HTTP/1.1" 200 161
+2015-03-23 12:09:11,903 - INFO - Starting new HTTP connection (1): www.tusbic.es
+2015-03-23 12:09:11,984 - DEBUG - "GET /service/stationdetails/santander/6 HTTP/1.1" 200 161
+2015-03-23 12:09:11,990 - INFO - Starting new HTTP connection (1): www.tusbic.es
+2015-03-23 12:09:12,078 - DEBUG - "GET /service/stationdetails/santander/7 HTTP/1.1" 200 161
+2015-03-23 12:09:12,085 - INFO - Starting new HTTP connection (1): www.tusbic.es
+2015-03-23 12:09:12,174 - DEBUG - "GET /service/stationdetails/santander/8 HTTP/1.1" 200 162
+2015-03-23 12:09:12,177 - INFO - Starting new HTTP connection (1): www.tusbic.es
+2015-03-23 12:09:12,267 - DEBUG - "GET /service/stationdetails/santander/9 HTTP/1.1" 200 161
+2015-03-23 12:09:12,272 - INFO - Starting new HTTP connection (1): www.tusbic.es
+2015-03-23 12:09:12,361 - DEBUG - "GET /service/stationdetails/santander/10 HTTP/1.1" 200 161
+2015-03-23 12:09:12,365 - INFO - Starting new HTTP connection (1): www.tusbic.es
+2015-03-23 12:09:12,453 - DEBUG - "GET /service/stationdetails/santander/11 HTTP/1.1" 200 161
+2015-03-23 12:09:12,459 - INFO - Starting new HTTP connection (1): www.tusbic.es
+2015-03-23 12:09:12,549 - DEBUG - "GET /service/stationdetails/santander/12 HTTP/1.1" 200 161
+2015-03-23 12:09:12,552 - INFO - Starting new HTTP connection (1): www.tusbic.es
+2015-03-23 12:09:12,644 - DEBUG - "GET /service/stationdetails/santander/13 HTTP/1.1" 200 162
+2015-03-23 12:09:12,651 - INFO - Starting new HTTP connection (1): www.tusbic.es
+2015-03-23 12:09:12,730 - DEBUG - "GET /service/stationdetails/santander/14 HTTP/1.1" 200 161
+2015-03-23 12:09:12,736 - INFO - Starting new HTTP connection (1): www.tusbic.es
+2015-03-23 12:09:12,816 - DEBUG - "GET /service/stationdetails/santander/15 HTTP/1.1" 200 160
+2015-03-23 12:09:12,821 - INFO - Starting new HTTP connection (1): www.tusbic.es
+2015-03-23 12:09:12,910 - DEBUG - "GET /service/stationdetails/santander/16 HTTP/1.1" 200 161
+2015-03-23 12:09:12,914 - INFO - Starting new HTTP connection (1): www.tusbic.es
+2015-03-23 12:09:12,996 - DEBUG - "GET /service/stationdetails/santander/17 HTTP/1.1" 200 162
+2015-03-23 12:09:13,013 - INFO - 127.0.0.1 - - [23/Mar/2015 12:09:13] "POST /v1/queryContext?limit=300 HTTP/1.1" 200 -
+2015-03-23 12:09:15,164 - INFO - Starting new HTTP connection (1): orion.lab.fiware.org
+2015-03-23 12:09:22,526 - DEBUG - "POST /v1/registry/discoverContextAvailability HTTP/1.1" 200 34524
+2015-03-23 12:09:22,657 - INFO - Starting new HTTP connection (1): orion.lab.fiware.org
+2015-03-23 12:09:29,007 - DEBUG - "POST /v1/registry/discoverContextAvailability HTTP/1.1" 200 3376
+2015-03-23 12:09:29,020 - INFO - Starting new HTTP connection (1): orion.lab.fiware.org
+2015-03-23 12:09:29,506 - DEBUG - "POST /v1/registry/discoverContextAvailability HTTP/1.1" 200 37400
+2015-03-23 12:09:29,647 - INFO - Starting new HTTP connection (1): orion.lab.fiware.org
+2015-03-23 12:09:34,869 - DEBUG - "POST /v1/registry/discoverContextAvailability HTTP/1.1" 200 44807
+2015-03-23 12:09:35,105 - INFO -  * Running on http://0.0.0.0:1026/ (Press CTRL+C to quit)
+2015-03-23 12:09:52,177 - INFO - Starting new HTTP connection (1): www.tusbic.es
+2015-03-23 12:09:52,257 - DEBUG - "GET /service/stationdetails/santander/2 HTTP/1.1" 200 161
+2015-03-23 12:09:52,265 - INFO - Starting new HTTP connection (1): www.tusbic.es
+2015-03-23 12:09:52,346 - DEBUG - "GET /service/stationdetails/santander/3 HTTP/1.1" 200 159
+2015-03-23 12:09:52,351 - INFO - Starting new HTTP connection (1): www.tusbic.es
+2015-03-23 12:09:52,443 - DEBUG - "GET /service/stationdetails/santander/4 HTTP/1.1" 200 159
+2015-03-23 12:09:52,447 - INFO - Starting new HTTP connection (1): www.tusbic.es
+2015-03-23 12:09:52,536 - DEBUG - "GET /service/stationdetails/santander/5 HTTP/1.1" 200 161
+2015-03-23 12:09:52,542 - INFO - Starting new HTTP connection (1): www.tusbic.es
+2015-03-23 12:09:52,622 - DEBUG - "GET /service/stationdetails/santander/6 HTTP/1.1" 200 162
+2015-03-23 12:09:52,627 - INFO - Starting new HTTP connection (1): www.tusbic.es
+2015-03-23 12:09:52,717 - DEBUG - "GET /service/stationdetails/santander/7 HTTP/1.1" 200 162
+2015-03-23 12:09:52,720 - INFO - Starting new HTTP connection (1): www.tusbic.es
+2015-03-23 12:09:52,806 - DEBUG - "GET /service/stationdetails/santander/8 HTTP/1.1" 200 162
+2015-03-23 12:09:52,811 - INFO - Starting new HTTP connection (1): www.tusbic.es
+2015-03-23 12:09:52,901 - DEBUG - "GET /service/stationdetails/santander/9 HTTP/1.1" 200 161
+2015-03-23 12:09:52,904 - INFO - Starting new HTTP connection (1): www.tusbic.es
+2015-03-23 12:09:52,986 - DEBUG - "GET /service/stationdetails/santander/10 HTTP/1.1" 200 161
+2015-03-23 12:09:52,990 - INFO - Starting new HTTP connection (1): www.tusbic.es
+2015-03-23 12:09:53,071 - DEBUG - "GET /service/stationdetails/santander/11 HTTP/1.1" 200 161
+2015-03-23 12:09:53,075 - INFO - Starting new HTTP connection (1): www.tusbic.es
+2015-03-23 12:09:53,167 - DEBUG - "GET /service/stationdetails/santander/12 HTTP/1.1" 200 162
+2015-03-23 12:09:53,171 - INFO - Starting new HTTP connection (1): www.tusbic.es
+2015-03-23 12:09:53,255 - DEBUG - "GET /service/stationdetails/santander/13 HTTP/1.1" 200 162
+2015-03-23 12:09:53,259 - INFO - Starting new HTTP connection (1): www.tusbic.es
+2015-03-23 12:09:53,348 - DEBUG - "GET /service/stationdetails/santander/14 HTTP/1.1" 200 161
+2015-03-23 12:09:53,352 - INFO - Starting new HTTP connection (1): www.tusbic.es
+2015-03-23 12:09:53,441 - DEBUG - "GET /service/stationdetails/santander/15 HTTP/1.1" 200 160
+2015-03-23 12:09:53,446 - INFO - Starting new HTTP connection (1): www.tusbic.es
+2015-03-23 12:09:53,535 - DEBUG - "GET /service/stationdetails/santander/16 HTTP/1.1" 200 162
+2015-03-23 12:09:53,539 - INFO - Starting new HTTP connection (1): www.tusbic.es
+2015-03-23 12:09:53,628 - DEBUG - "GET /service/stationdetails/santander/17 HTTP/1.1" 200 161
+2015-03-23 12:09:53,645 - INFO - 127.0.0.1 - - [23/Mar/2015 12:09:53] "POST /v1/queryContext?limit=300 HTTP/1.1" 200 -
+2015-03-23 12:10:04,065 - INFO - Starting new HTTP connection (1): www.tusbic.es
+2015-03-23 12:10:04,168 - DEBUG - "GET /service/stationdetails/santander/2 HTTP/1.1" 200 161
+2015-03-23 12:10:04,173 - INFO - Starting new HTTP connection (1): www.tusbic.es
+2015-03-23 12:10:04,263 - DEBUG - "GET /service/stationdetails/santander/3 HTTP/1.1" 200 159
+2015-03-23 12:10:04,266 - INFO - Starting new HTTP connection (1): www.tusbic.es
+2015-03-23 12:10:04,349 - DEBUG - "GET /service/stationdetails/santander/5 HTTP/1.1" 200 161
+2015-03-23 12:10:04,354 - INFO - Starting new HTTP connection (1): www.tusbic.es
+2015-03-23 12:10:04,434 - DEBUG - "GET /service/stationdetails/santander/8 HTTP/1.1" 200 162
+2015-03-23 12:10:04,438 - INFO - Starting new HTTP connection (1): www.tusbic.es
+2015-03-23 12:10:04,528 - DEBUG - "GET /service/stationdetails/santander/11 HTTP/1.1" 200 161
+2015-03-23 12:10:04,532 - INFO - Starting new HTTP connection (1): www.tusbic.es
+2015-03-23 12:10:04,617 - DEBUG - "GET /service/stationdetails/santander/13 HTTP/1.1" 200 162
+2015-03-23 12:10:04,621 - INFO - Starting new HTTP connection (1): www.tusbic.es
+2015-03-23 12:10:04,717 - DEBUG - "GET /service/stationdetails/santander/14 HTTP/1.1" 200 161
+2015-03-23 12:10:04,721 - INFO - Starting new HTTP connection (1): www.tusbic.es
+2015-03-23 12:10:04,815 - DEBUG - "GET /service/stationdetails/santander/17 HTTP/1.1" 200 161
+2015-03-23 12:10:04,832 - INFO - 127.0.0.1 - - [23/Mar/2015 12:10:04] "POST /v1/queryContext?limit=300 HTTP/1.1" 200 -
+2015-03-23 12:10:12,799 - INFO - Starting new HTTP connection (1): www.tusbic.es
+2015-03-23 12:10:12,881 - DEBUG - "GET /service/stationdetails/santander/2 HTTP/1.1" 200 161
+2015-03-23 12:10:12,884 - INFO - Starting new HTTP connection (1): www.tusbic.es
+2015-03-23 12:10:12,980 - DEBUG - "GET /service/stationdetails/santander/3 HTTP/1.1" 200 159
+2015-03-23 12:10:12,984 - INFO - Starting new HTTP connection (1): www.tusbic.es
+2015-03-23 12:10:13,075 - DEBUG - "GET /service/stationdetails/santander/5 HTTP/1.1" 200 161
+2015-03-23 12:10:13,079 - INFO - Starting new HTTP connection (1): www.tusbic.es
+2015-03-23 12:10:13,171 - DEBUG - "GET /service/stationdetails/santander/8 HTTP/1.1" 200 162
+2015-03-23 12:10:13,174 - INFO - Starting new HTTP connection (1): www.tusbic.es
+2015-03-23 12:10:13,266 - DEBUG - "GET /service/stationdetails/santander/11 HTTP/1.1" 200 161
+2015-03-23 12:10:13,270 - INFO - Starting new HTTP connection (1): www.tusbic.es
+2015-03-23 12:10:13,352 - DEBUG - "GET /service/stationdetails/santander/13 HTTP/1.1" 200 162
+2015-03-23 12:10:13,357 - INFO - Starting new HTTP connection (1): www.tusbic.es
+2015-03-23 12:10:13,447 - DEBUG - "GET /service/stationdetails/santander/14 HTTP/1.1" 200 161
+2015-03-23 12:10:13,450 - INFO - Starting new HTTP connection (1): www.tusbic.es
+2015-03-23 12:10:13,542 - DEBUG - "GET /service/stationdetails/santander/17 HTTP/1.1" 200 161
+2015-03-23 12:10:13,559 - INFO - 127.0.0.1 - - [23/Mar/2015 12:10:13] "POST /v1/queryContext?limit=300 HTTP/1.1" 200 -
+2015-03-23 12:10:23,770 - INFO - Starting new HTTP connection (1): www.tusbic.es
+2015-03-23 12:10:23,868 - DEBUG - "GET /service/stationdetails/santander/2 HTTP/1.1" 200 161
+2015-03-23 12:10:23,871 - INFO - 127.0.0.1 - - [23/Mar/2015 12:10:23] "POST /v1/queryContext?limit=1 HTTP/1.1" 200 -
+2015-03-23 12:10:49,789 - INFO - 127.0.0.1 - - [23/Mar/2015 12:10:49] "POST /v1/queryContext?offset=3&limit=1 HTTP/1.1" 200 -
+2015-03-23 12:12:17,533 - INFO - 127.0.0.1 - - [23/Mar/2015 12:12:17] "POST /v1/queryContext?offset=2&limit=1 HTTP/1.1" 200 -
+2015-03-23 12:12:26,568 - INFO - Starting new HTTP connection (1): www.tusbic.es
+2015-03-23 12:12:26,660 - DEBUG - "GET /service/stationdetails/santander/2 HTTP/1.1" 200 161
+2015-03-23 12:12:26,664 - INFO - 127.0.0.1 - - [23/Mar/2015 12:12:26] "POST /v1/queryContext?offset=0&limit=1 HTTP/1.1" 200 -
+2015-03-23 12:12:46,891 - INFO - Starting new HTTP connection (1): www.tusbic.es
+2015-03-23 12:12:46,983 - DEBUG - "GET /service/stationdetails/santander/3 HTTP/1.1" 200 159
+2015-03-23 12:12:46,986 - INFO - 127.0.0.1 - - [23/Mar/2015 12:12:46] "POST /v1/queryContext?offset=1&limit=2 HTTP/1.1" 200 -
+2015-03-23 12:20:03,753 - INFO - Starting new HTTP connection (1): orion.lab.fiware.org
+2015-03-23 12:20:09,532 - DEBUG - "POST /v1/registry/discoverContextAvailability HTTP/1.1" 200 34524
+2015-03-23 12:20:09,642 - INFO - Starting new HTTP connection (1): orion.lab.fiware.org
+2015-03-23 12:20:12,174 - DEBUG - "POST /v1/registry/discoverContextAvailability HTTP/1.1" 200 3376
+2015-03-23 12:20:12,187 - INFO - Starting new HTTP connection (1): orion.lab.fiware.org
+2015-03-23 12:20:15,335 - DEBUG - "POST /v1/registry/discoverContextAvailability HTTP/1.1" 200 37400
+2015-03-23 12:20:15,471 - INFO - Starting new HTTP connection (1): orion.lab.fiware.org
+2015-03-23 12:20:25,625 - DEBUG - "POST /v1/registry/discoverContextAvailability HTTP/1.1" 200 44807
+2015-03-23 12:20:25,811 - INFO -  * Running on http://0.0.0.0:1026/ (Press CTRL+C to quit)
+2015-03-23 12:21:10,263 - INFO - Starting new HTTP connection (1): orion.lab.fiware.org
+2015-03-23 12:21:19,322 - DEBUG - "POST /v1/registry/discoverContextAvailability HTTP/1.1" 200 34524
+2015-03-23 12:21:19,431 - INFO - Starting new HTTP connection (1): orion.lab.fiware.org
+2015-03-23 12:21:25,657 - DEBUG - "POST /v1/registry/discoverContextAvailability HTTP/1.1" 200 3376
+2015-03-23 12:21:25,723 - INFO - Starting new HTTP connection (1): orion.lab.fiware.org
+2015-03-23 12:21:38,025 - DEBUG - "POST /v1/registry/discoverContextAvailability HTTP/1.1" 200 37400
+2015-03-23 12:21:38,227 - INFO - Starting new HTTP connection (1): orion.lab.fiware.org
+2015-03-23 12:21:46,766 - DEBUG - "POST /v1/registry/discoverContextAvailability HTTP/1.1" 200 44807
+2015-03-23 12:21:46,948 - INFO -  * Running on http://0.0.0.0:1026/ (Press CTRL+C to quit)
+2015-03-23 12:21:49,098 - INFO - Starting new HTTP connection (1): www.tusbic.es
+2015-03-23 12:21:49,384 - DEBUG - "GET /service/stationdetails/santander/3 HTTP/1.1" 200 159
+2015-03-23 12:21:49,391 - INFO - Starting new HTTP connection (1): www.tusbic.es
+2015-03-23 12:21:49,482 - DEBUG - "GET /service/stationdetails/santander/4 HTTP/1.1" 200 159
+2015-03-23 12:21:49,486 - INFO - 127.0.0.1 - - [23/Mar/2015 12:21:49] "POST /v1/queryContext?offset=1&limit=2 HTTP/1.1" 200 -
+2015-03-23 12:23:21,926 - INFO - 127.0.0.1 - - [23/Mar/2015 12:23:21] "POST /v1/queryContext?offset=1&limit=1 HTTP/1.1" 200 -
+2015-03-23 12:23:35,607 - INFO - Starting new HTTP connection (1): www.tusbic.es
+2015-03-23 12:23:35,696 - DEBUG - "GET /service/stationdetails/santander/2 HTTP/1.1" 200 161
+2015-03-23 12:23:35,700 - INFO - 127.0.0.1 - - [23/Mar/2015 12:23:35] "POST /v1/queryContext?offset=0&limit=1 HTTP/1.1" 200 -
+2015-03-23 12:23:52,273 - INFO - 127.0.0.1 - - [23/Mar/2015 12:23:52] "POST /v1/queryContext?offset=20&limit=1 HTTP/1.1" 200 -
+2015-03-23 12:23:58,125 - INFO - Starting new HTTP connection (1): www.tusbic.es
+2015-03-23 12:23:58,299 - DEBUG - "GET /service/stationdetails/santander/16 HTTP/1.1" 200 161
+2015-03-23 12:23:58,302 - INFO - 127.0.0.1 - - [23/Mar/2015 12:23:58] "POST /v1/queryContext?offset=14&limit=1 HTTP/1.1" 200 -
+2015-03-23 12:26:21,933 - INFO - Starting new HTTP connection (1): orion.lab.fiware.org
+2015-03-23 12:26:31,539 - DEBUG - "POST /v1/registry/discoverContextAvailability HTTP/1.1" 200 34524
+2015-03-23 12:26:31,650 - INFO - Starting new HTTP connection (1): orion.lab.fiware.org
+2015-03-23 12:26:34,895 - DEBUG - "POST /v1/registry/discoverContextAvailability HTTP/1.1" 200 3376
+2015-03-23 12:26:34,908 - INFO - Starting new HTTP connection (1): orion.lab.fiware.org
+2015-03-23 12:26:50,163 - DEBUG - "POST /v1/registry/discoverContextAvailability HTTP/1.1" 200 37400
+2015-03-23 12:26:50,302 - INFO - Starting new HTTP connection (1): orion.lab.fiware.org
+2015-03-23 12:26:52,487 - DEBUG - "POST /v1/registry/discoverContextAvailability HTTP/1.1" 200 44807
+2015-03-23 12:26:52,651 - INFO -  * Running on http://0.0.0.0:1026/ (Press CTRL+C to quit)
+2015-03-23 12:26:54,273 - INFO - 127.0.0.1 - - [23/Mar/2015 12:26:54] "POST /v1/queryContext?offset=14&limit=1 HTTP/1.1" 200 -
+2015-03-23 12:27:02,628 - INFO - Starting new HTTP connection (1): www.tusbic.es
+2015-03-23 12:27:02,779 - DEBUG - "GET /service/stationdetails/santander/2 HTTP/1.1" 200 161
+2015-03-23 12:27:02,788 - INFO - 127.0.0.1 - - [23/Mar/2015 12:27:02] "POST /v1/queryContext?offset=0&limit=1 HTTP/1.1" 200 -
+2015-03-23 12:27:14,539 - INFO - Starting new HTTP connection (1): www.tusbic.es
+2015-03-23 12:27:14,628 - DEBUG - "GET /service/stationdetails/santander/3 HTTP/1.1" 200 159
+2015-03-23 12:27:14,634 - INFO - Starting new HTTP connection (1): www.tusbic.es
+2015-03-23 12:27:14,723 - DEBUG - "GET /service/stationdetails/santander/5 HTTP/1.1" 200 162
+2015-03-23 12:27:14,729 - INFO - Starting new HTTP connection (1): www.tusbic.es
+2015-03-23 12:27:14,811 - DEBUG - "GET /service/stationdetails/santander/6 HTTP/1.1" 200 161
+2015-03-23 12:27:14,815 - INFO - Starting new HTTP connection (1): www.tusbic.es
+2015-03-23 12:27:14,897 - DEBUG - "GET /service/stationdetails/santander/7 HTTP/1.1" 200 162
+2015-03-23 12:27:14,901 - INFO - Starting new HTTP connection (1): www.tusbic.es
+2015-03-23 12:27:14,982 - DEBUG - "GET /service/stationdetails/santander/8 HTTP/1.1" 200 162
+2015-03-23 12:27:14,986 - INFO - Starting new HTTP connection (1): www.tusbic.es
+2015-03-23 12:27:15,075 - DEBUG - "GET /service/stationdetails/santander/9 HTTP/1.1" 200 161
+2015-03-23 12:27:15,081 - INFO - Starting new HTTP connection (1): www.tusbic.es
+2015-03-23 12:27:15,171 - DEBUG - "GET /service/stationdetails/santander/10 HTTP/1.1" 200 160
+2015-03-23 12:27:15,174 - INFO - Starting new HTTP connection (1): www.tusbic.es
+2015-03-23 12:27:15,266 - DEBUG - "GET /service/stationdetails/santander/11 HTTP/1.1" 200 161
+2015-03-23 12:27:15,269 - INFO - Starting new HTTP connection (1): www.tusbic.es
+2015-03-23 12:27:15,351 - DEBUG - "GET /service/stationdetails/santander/12 HTTP/1.1" 200 160
+2015-03-23 12:27:15,358 - INFO - Starting new HTTP connection (1): www.tusbic.es
+2015-03-23 12:27:15,440 - DEBUG - "GET /service/stationdetails/santander/13 HTTP/1.1" 200 162
+2015-03-23 12:27:15,444 - INFO - Starting new HTTP connection (1): www.tusbic.es
+2015-03-23 12:27:15,536 - DEBUG - "GET /service/stationdetails/santander/14 HTTP/1.1" 200 161
+2015-03-23 12:27:15,539 - INFO - Starting new HTTP connection (1): www.tusbic.es
+2015-03-23 12:27:15,621 - DEBUG - "GET /service/stationdetails/santander/15 HTTP/1.1" 200 161
+2015-03-23 12:27:15,628 - INFO - Starting new HTTP connection (1): www.tusbic.es
+2015-03-23 12:27:15,711 - DEBUG - "GET /service/stationdetails/santander/17 HTTP/1.1" 200 161
+2015-03-23 12:27:15,730 - INFO - 127.0.0.1 - - [23/Mar/2015 12:27:15] "POST /v1/queryContext?offset=0 HTTP/1.1" 200 -
+2015-03-23 12:27:21,157 - INFO - Starting new HTTP connection (1): www.tusbic.es
+2015-03-23 12:27:21,237 - DEBUG - "GET /service/stationdetails/santander/12 HTTP/1.1" 200 160
+2015-03-23 12:27:21,243 - INFO - Starting new HTTP connection (1): www.tusbic.es
+2015-03-23 12:27:21,334 - DEBUG - "GET /service/stationdetails/santander/16 HTTP/1.1" 200 162
+2015-03-23 12:27:21,342 - INFO - 127.0.0.1 - - [23/Mar/2015 12:27:21] "POST /v1/queryContext?offset=10 HTTP/1.1" 200 -
+2015-03-23 12:27:27,049 - INFO - 127.0.0.1 - - [23/Mar/2015 12:27:27] "POST /v1/queryContext?offset=14 HTTP/1.1" 200 -
+2015-03-23 12:27:33,996 - INFO - 127.0.0.1 - - [23/Mar/2015 12:27:33] "POST /v1/queryContext?offset=15 HTTP/1.1" 200 -
+2015-03-23 12:27:40,358 - INFO - 127.0.0.1 - - [23/Mar/2015 12:27:40] "POST /v1/queryContext?offset=16 HTTP/1.1" 200 -
+2015-03-23 12:28:20,529 - INFO - Starting new HTTP connection (1): www.tusbic.es
+2015-03-23 12:28:20,618 - DEBUG - "GET /service/stationdetails/santander/4 HTTP/1.1" 200 159
+2015-03-23 12:28:20,624 - INFO - Starting new HTTP connection (1): www.tusbic.es
+2015-03-23 12:28:20,713 - DEBUG - "GET /service/stationdetails/santander/9 HTTP/1.1" 200 161
+2015-03-23 12:28:20,717 - INFO - Starting new HTTP connection (1): www.tusbic.es
+2015-03-23 12:28:20,805 - DEBUG - "GET /service/stationdetails/santander/10 HTTP/1.1" 200 160
+2015-03-23 12:28:20,823 - INFO - 127.0.0.1 - - [23/Mar/2015 12:28:20] "POST /v1/queryContext HTTP/1.1" 200 -
