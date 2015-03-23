@@ -136,6 +136,16 @@ class ContextProvider():
             :param cb_request: ContextBroker request
             :rtype : dict
         """
+
+        try:
+            offset = int(cb_request.args.get('offset'))
+        except TypeError:
+            offset = 0
+        try:
+            limit = int(cb_request.args.get('limit'))
+        except TypeError:
+            limit = 0
+
         entity_list = []
         if self.c_type == 'application/json':
             entities = cb_request.json['entities']
@@ -148,7 +158,15 @@ class ContextProvider():
                 else:
                     entity_list.append({'id': entity['id'], 'type': entity['type'], 'isPattern': 'false'})
 
-            cb_request.json['entities'] = entity_list
+            if offset != 0 and limit != 0:
+                cb_request.json['entities'] = entity_list[offset:offset+limit]
+            elif offset == 0 and limit != 0:
+                cb_request.json['entities'] = entity_list[:limit]
+            elif offset != 0 and limit == 0:
+                cb_request.json['entities'] = entity_list[offset:]
+            else:
+                cb_request.json['entities'] = entity_list[:]
+
             return cb_request.json
 
         else:
@@ -173,9 +191,23 @@ class ContextProvider():
                     attribute_list = []
                     for attribute in attributes:
                         attribute_list.append(attribute.text)
-                    orion_data = {'entities': orion_id, 'attributes': attribute_list}
+                    if offset != 0 and limit != 0:
+                        orion_data = {'entities': orion_id[offset:offset+limit], 'attributes': attribute_list}
+                    elif offset == 0 and limit != 0:
+                        orion_data = {'entities': orion_id[:limit], 'attributes': attribute_list}
+                    elif offset != 0 and limit == 0:
+                        orion_data = {'entities': orion_id[offset:], 'attributes': attribute_list}
+                    else:
+                        orion_data = {'entities': orion_id[:], 'attributes': attribute_list}
                 else:
-                    orion_data = {'entities': orion_id}
+                    if offset != 0 and limit != 0:
+                        orion_data = {'entities': orion_id[offset:offset+limit]}
+                    elif offset == 0 and limit != 0:
+                        orion_data = {'entities': orion_id[:limit]}
+                    elif offset != 0 and limit == 0:
+                        orion_data = {'entities': orion_id[offset:]}
+                    else:
+                        orion_data = {'entities': orion_id[:]}
 
             except ET.ParseError:
                 return 0

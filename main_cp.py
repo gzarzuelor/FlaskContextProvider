@@ -21,6 +21,7 @@ import tools.ContextProvider as CP
 import tools.DataManager as DM
 from providers.bikerenting import bikerenting as bikerenting
 
+
 def get_data_example(_id, _type, max_cache_time):
     """
         This is an example function which shows you how to manage the data in order
