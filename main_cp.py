@@ -16,7 +16,7 @@
 # You should have received a copy of the GNU Affero General Public License
 # along with Orion Context Broker. If not, see http://www.gnu.org/licenses/.
 
-
+import sys
 import tools.ContextProvider as CP
 import tools.DataManager as DM
 from providers.bikerenting import bikerenting as bikerenting
@@ -64,5 +64,14 @@ def get_data_example(_id, _type, max_cache_time):
 
     return response
 
+args = ['-r']
+for arg in sys.argv:
+    if arg[0] == '-' and arg not in args:
+        print "%s is not a valid argument" % arg
+        exit(-1)
 
-CP.ContextProvider(bikerenting=bikerenting.get_data)
+reg = True
+if '-r' in sys.argv and sys.argv[2].lower() in ['0', 'false', 'off', 'no']:
+    reg = False
+
+CP.ContextProvider(bikerenting=bikerenting.get_data, r=reg)
