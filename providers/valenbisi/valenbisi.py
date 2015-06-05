@@ -169,7 +169,7 @@ def get_data(_id, _type, max_time=1):
                     entity.attribute.metadata.metadata_add('location', 'string', 'WGS84')
                     entity.attribute.add_metadatas_to_attrib('position')
                     entity.attribute.metadata.metadata_list_purge()
-                    street = str(station['fulladdress']).title().replace('/','').replace('(','').replace(')','').replace("'","")
+                    street = str(station['fulladdress']).title().replace('/','').replace('(','').replace(')','').replace("'","").replace("-","")
                     entity.attribute.attribute_add('street', 'string', street)
 
         entity.add_attributes_to_entity(_id)

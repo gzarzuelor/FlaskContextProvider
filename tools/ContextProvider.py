@@ -56,7 +56,8 @@ class ContextProvider():
         self.cache = self.__start_cache__()
 
         self.reg = R.Registry(self.public_provider_url)
-        self.reg.get_registered_entities()
+        if kwargs['r']:
+            self.reg.get_registered_entities()
 
         app = Flask('ContextProvider')
         @app.route(route, methods=['POST'])
