@@ -11,7 +11,7 @@
         :rtype : list
     """
     ```           
-    At [main.py](https://github.com/gzarrub/FlaskContextProvider/blob/master/main.py) there is an example get data function
+    At [main.py](https://github.com/gzarrub/FlaskContextProvider/blob/master/main_cp.py) there is an example get data function
     to see a more complex and complete example see: [sevici.py](https://github.com/gzarrub/FlaskContextProvider/blob/master/providers/sevici/sevici.py)
 
     The function will be called one time for each entity that the Context Provider
